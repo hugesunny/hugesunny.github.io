@@ -1,14 +1,12 @@
 ---
-title: 'Projects'
-date: 2024-05-19
+title: 'Research'
 type: landing
 
-# Page sections
 sections:
   - block: collection
     content:
-      title: Selected Projects
-      text: I enjoy making things. Here are a selection of projects that I have worked on over the years.
+      title: Research Themes
+      text: My research connects molecular design, thin-film structure, interfaces, and charge transport in conjugated polymers and organic electronic devices.
       filters:
         folders:
           - projects
@@ -18,5 +16,5 @@ sections:
       columns: 3
       show_date: false
       show_read_time: false
-      show_read_more: false
+      show_read_more: true
 ---
