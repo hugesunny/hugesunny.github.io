@@ -1,6 +1,6 @@
 <a class="academic-skip" href="#academic-main">Skip to content</a>
 <header class="academic-header"><div class="academic-nav-inner">
-  <a class="academic-brand" href="{{ site.Home.RelPermalink }}" aria-label="Seung Hyun Kim home"><img src="{{ "images/sk-logo.svg" | relURL }}" width="44" height="44" alt="SK"></a>
+  <a class="academic-brand" href="{{ site.Home.RelPermalink }}" aria-label="{{ site.Params.hugoblox.identity.name }} home">{{ site.Params.hugoblox.identity.name }}</a>
   <button class="academic-menu-toggle" type="button" aria-controls="academic-navigation" aria-expanded="false" aria-label="Open navigation"><span aria-hidden="true">☰</span></button>
   <nav id="academic-navigation" class="academic-navigation" aria-label="Main navigation">
     {{ $page := . }}{{ range site.Menus.main }}
