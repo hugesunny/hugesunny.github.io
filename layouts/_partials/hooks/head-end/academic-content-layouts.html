@@ -1,0 +1,73 @@
+<style>
+/* Experience: preserve the restrained academic style while improving scanability. */
+.academic-records-experience .academic-record-section { margin-bottom:56px; }
+.academic-career-list { border-left:1px solid #ccdce8; margin-left:5px; }
+.academic-career-item { position:relative; display:grid; grid-template-columns:135px minmax(0,1fr); gap:28px; padding:0 0 36px 27px; }
+.academic-career-item:last-child { padding-bottom:0; }
+.academic-career-item::before { content:''; position:absolute; left:-4px; top:8px; width:7px; height:7px; border-radius:50%; background:#779fbe; }
+.academic-career-date,.academic-service-date,.academic-teaching-date { color:#507697; font-size:.8125rem; font-weight:600; padding-top:3px; }
+.academic-career-body h3,.academic-project-card h3,.academic-service-list h3,.academic-skills-grid h3,.academic-teaching-entry h3 { color:var(--academic-navy); font-size:1.05rem; line-height:1.5; margin:0; font-weight:600; }
+.academic-career-institution { margin:5px 0 0; font-weight:550; color:#40566b; }
+.academic-career-meta { margin:4px 0 0; color:var(--academic-muted); font-size:.875rem; }
+.academic-career-body ul,.academic-teaching-entry ul { margin:15px 0 0; padding-left:20px; list-style:disc; }
+.academic-career-body li,.academic-teaching-entry li { margin-top:7px; font-size:.9375rem; line-height:1.75; }
+.academic-career-body li::marker,.academic-teaching-entry li::marker { color:#7299b8; }
+.academic-project-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.academic-project-card { border:1px solid var(--academic-line); border-top:2px solid #9dbdd6; border-radius:4px; padding:20px 21px 22px; background:#fff; }
+.academic-project-date { display:block; margin-bottom:11px; color:#507697; font-size:.75rem; font-weight:650; letter-spacing:.04em; }
+.academic-project-meta { margin:8px 0 12px; color:#496277; font-size:.8125rem; font-weight:550; }
+.academic-project-card>p:last-child { margin:0; color:var(--academic-muted); font-size:.875rem; line-height:1.7; }
+.academic-service-list article { display:grid; grid-template-columns:135px minmax(0,1fr); gap:28px; padding:20px 0 23px; border-bottom:1px solid var(--academic-line); }
+.academic-service-list article:first-child { padding-top:0; }
+.academic-service-list article:last-child { border-bottom:0; padding-bottom:0; }
+.academic-service-list p { margin:7px 0 0; color:var(--academic-muted); font-size:.9375rem; line-height:1.75; }
+.academic-skills-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:26px 42px; }
+.academic-skills-grid article { border-top:1px solid #cbdbe7; padding-top:16px; }
+.academic-skills-grid h3 { font-size:.9375rem; }
+.academic-skills-grid p { margin:8px 0 0; color:var(--academic-muted); font-size:.875rem; line-height:1.7; }
+
+/* Teaching: numbered groups and compact role/date rows. */
+.academic-teaching-section { display:grid; grid-template-columns:58px minmax(0,1fr); gap:24px; margin-bottom:58px; }
+.academic-teaching-section:last-child { margin-bottom:20px; }
+.academic-teaching-index { color:#507697; font-size:.75rem; font-weight:650; letter-spacing:.08em; padding-top:7px; }
+.academic-teaching-section>div:last-child>h2 { font-size:1.45rem; padding-bottom:14px; margin:0 0 4px; border-bottom:1px solid var(--academic-line); }
+.academic-teaching-entry { display:grid; grid-template-columns:125px minmax(0,1fr); gap:24px; padding:23px 0 25px; border-bottom:1px solid var(--academic-line); }
+.academic-teaching-entry:last-child { border-bottom:0; }
+.academic-teaching-org { margin:6px 0 0; color:#496277; font-size:.875rem; font-weight:550; }
+.academic-teaching-entry .academic-prose { margin-top:10px; font-size:.9375rem; color:var(--academic-muted); }
+.academic-teaching-entry .academic-prose p { margin:0; }
+
+/* Publications: optional ToC graphic on the right, only when the list requests it. */
+.academic-publication.academic-publication-with-toc { grid-template-columns:72px minmax(0,1fr) 180px; align-items:start; }
+.academic-pub-toc { width:180px; min-height:118px; display:flex; align-items:center; justify-content:flex-end; align-self:center; }
+.academic-pub-toc img { display:block; max-width:180px; max-height:132px; width:auto; height:auto; object-fit:contain; border:1px solid #e1e7ec; border-radius:3px; background:#fff; }
+.academic-pub-toc:hover img { border-color:#a9bfd0; }
+
+@media(max-width:900px) {
+  .academic-project-grid { grid-template-columns:1fr; }
+  .academic-skills-grid { gap:24px 30px; }
+  .academic-publication.academic-publication-with-toc { grid-template-columns:64px minmax(0,1fr) 145px; }
+  .academic-pub-toc { width:145px; }
+  .academic-pub-toc img { max-width:145px; max-height:118px; }
+}
+
+@media(max-width:640px) {
+  .academic-records-experience .academic-record-section { margin-bottom:44px; }
+  .academic-career-item,.academic-service-list article,.academic-teaching-entry { grid-template-columns:1fr; gap:7px; }
+  .academic-career-item { padding-left:22px; padding-bottom:31px; }
+  .academic-skills-grid { grid-template-columns:1fr; gap:23px; }
+  .academic-teaching-section { grid-template-columns:36px minmax(0,1fr); gap:12px; margin-bottom:44px; }
+  .academic-teaching-section>div:last-child>h2 { font-size:1.3rem; }
+  .academic-publication.academic-publication-with-toc { grid-template-columns:minmax(0,1fr) 100px; column-gap:15px; row-gap:5px; }
+  .academic-publication-with-toc .academic-pub-year { grid-column:1; grid-row:1; }
+  .academic-publication-with-toc .academic-publication-body { grid-column:1; grid-row:2; }
+  .academic-publication-with-toc .academic-pub-toc { grid-column:2; grid-row:1 / span 2; width:100px; min-height:0; align-self:start; padding-top:3px; }
+  .academic-publication-with-toc .academic-pub-toc img { max-width:100px; max-height:96px; }
+}
+
+@media(max-width:420px) {
+  .academic-publication.academic-publication-with-toc { grid-template-columns:minmax(0,1fr) 88px; column-gap:12px; }
+  .academic-publication-with-toc .academic-pub-toc { width:88px; }
+  .academic-publication-with-toc .academic-pub-toc img { max-width:88px; max-height:88px; }
+}
+</style>
