@@ -6,7 +6,7 @@ authors:
 - T. T. Duong
 - Y. Chang
 - Y. E. Lee
-- S. H. Kim
+- Seung Hyun Kim
 - H. Kong
 - J. Kim
 - S. H. Kim
