@@ -1,116 +1,82 @@
 schema: hugoblox/author/v1
 slug: me
 is_owner: true
+
 name:
-  display: Dr. Alex Johnson
-  given: Alex
-  family: Johnson
-  alternate: ''  # Example: 王伟
-  pronunciation: ''  # Example: Wáng Wěi
-  pronouns: he/him
+  display: Seung Hyun Kim
+  given: Seung Hyun
+  family: Kim
+  alternate: ''
+  pronunciation: ''
+  pronouns: ''
+
 postnominals:
   - PhD
-  - MIEEE
-status:
-  icon: "☕️"
-role: Senior AI Research Scientist
+
+role: Postdoctoral Research Associate
+
 bio: |
-  Alex Johnson is a Senior AI Research Scientist at Meta AI. His research
-  has been published in top conferences like NeurIPS and ICML, with over
-  10,000 citations. Alex is passionate about pushing the boundaries of AI
-  while ensuring ethical development.
+  Seung Hyun Kim is a Postdoctoral Research Associate in the Department of Chemistry
+  at the University of North Carolina at Chapel Hill, working under the guidance of
+  Prof. Wei You. He earned his Ph.D. in Chemical Engineering at Pohang University of
+  Science and Technology (POSTECH) under the supervision of Prof. Kilwon Cho.
+
+  His research focuses on conjugated polymers and organic semiconductors, with
+  particular emphasis on structure-property relationships, charge transport,
+  mechanical deformation, molecular and interface engineering, organic
+  photodetectors, and organic electrochemical transistors.
 
 affiliations:
-  - name: Meta AI
-    url: https://ai.meta.com/
+  - name: Department of Chemistry, University of North Carolina at Chapel Hill
+    url: https://chem.unc.edu/
 
 links:
   - icon: at-symbol
-    url: mailto:alex.johnson@example.com
-    label: E-mail Me
-  - icon: brands/x
-    url: https://x.com/example
-  - icon: brands/github
-    url: https://github.com/example
-  - icon: brands/linkedin
-    url: https://www.linkedin.com/in/example/
+    url: mailto:shyunkim@unc.edu
+    label: Email
   - icon: academicons/google-scholar
-    url: https://scholar.google.com/citations?user=example
+    url: https://scholar.google.com/citations?user=LhXDN0UAAAAJ&hl=en
+    label: Google Scholar
   - icon: academicons/orcid
-    url: https://orcid.org/0000-0002-1825-0097
+    url: https://orcid.org/0000-0002-1135-1477
+    label: ORCID
+  - icon: brands/linkedin
+    url: https://www.linkedin.com/in/seung-hyun-kim/
+    label: LinkedIn
+  - icon: brands/github
+    url: https://github.com/hugesunny
+    label: GitHub
 
 interests:
-  - Large Language Models
-  - Computer Vision
-  - Reinforcement Learning
-  - AI Ethics
+  - Conjugated polymer structure-property relationships
+  - Mechanical deformation and charge transport in organic semiconductors
+  - Deformable organic field-effect transistors (OFETs)
+  - Mixed ionic-electronic transport in organic electrochemical transistors (OECTs)
+  - Near-infrared and SWIR organic photodetectors (OPDs)
 
 education:
-  - degree: PhD Computer Science
-    institution: Stanford University
-    start: 2015-09-01
-    end: 2019-06-30
+  - degree: PhD in Chemical Engineering
+    institution: Pohang University of Science and Technology (POSTECH)
+    start: 2016-01-01
+    end: 2023-08-01
     summary: |
-      Thesis on scaling laws for neural language models. Published 5 papers in NeurIPS and ICML.
-    button:
-      text: Download dissertation
-      url: /resume.pdf
-      icon: hero/arrow-down-tray
-  - degree: MS Computer Science
-    institution: Carnegie Mellon University
-    start: 2013-09-01
-    end: 2015-05-31
-  - degree: BS Computer Science
-    institution: MIT
-    start: 2009-09-01
-    end: 2013-05-31
+      Integrated M.S./Ph.D. program.
 
-experience:
-  - role: Senior AI Research Scientist
-    org: Meta AI
-    start: 2020-01-01
-    summary: |
-      Leading research on multimodal AI systems. Contributed to Llama 2 and other open-source models.
-    button:
-      text: View portfolio
-      url: /
-      icon: hero/arrow-down-tray
-  - role: AI Research Intern
-    org: OpenAI
-    start: 2019-06-01
-    end: 2019-12-31
-    summary: |
-      Worked on GPT-3 scaling. Co-authored paper on prompt engineering.
+      Dissertation: *Studies on the Multiscale Strain Dependency of Structural
+      Properties and Charge Transport in Organic Semiconductor Thin Films*
 
-skills:
-  - name: Technical Skills
-    items:
-      - label: Python
-        level: 5
-      - label: Machine Learning
-        level: 5
-      - label: Cloud Computing
-        level: 4
-  - name: Research & Communication
-    items:
-      - label: Academic Writing
-        level: 5
-      - label: Conference Presentations
-        level: 4
-      - label: Grant Proposals
-        level: 4
+  - degree: BS in Chemical Engineering
+    institution: Pohang University of Science and Technology (POSTECH)
+    start: 2012-01-01
+    end: 2016-02-01
+    summary: |
+      magna cum laude. Exchange Student, Technische Universität Berlin
+      (Fall 2014-Spring 2015).
 
 languages:
-  - name: English
+  - name: Korean
     level: 5
     label: Native
-  - name: Spanish
+  - name: English
     level: 4
-    label: Fluent
-
-awards:
-  - title: Best Paper Award
-    awarder: NeurIPS
-    date: "2022-12-01"
-    summary: Awarded for groundbreaking work on efficient training of large models.
-    icon: hero/trophy
+    label: Professional working proficiency
