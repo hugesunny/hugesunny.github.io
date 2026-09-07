@@ -1,0 +1,30 @@
+{{ define "main" }}
+{{ $pub := partial "functions/resolve_publication.html" . }}
+{{ $extra := index hugo.Data.publication_details (path.Base .File.Dir) }}
+<main id="academic-main" class="academic-container academic-records academic-paper" tabindex="-1" data-pagefind-body>
+  <span data-pagefind-filter="type" hidden>publications</span>
+  <header class="academic-paper-header">
+    <a class="academic-more" href="{{ "publications/" | relURL }}">← All publications</a>
+    <p class="academic-eyebrow">Journal article · {{ .Date.Format "2006" }}</p>
+    <h1 data-pagefind-meta="title">{{ .Title }}</h1>
+    <div class="academic-paper-authors">{{ partial "page_metadata_authors" . }}</div>
+    <p class="academic-paper-journal">{{ $pub.display | markdownify }}</p>
+    <div class="academic-publication-actions">{{ partial "page_links" (dict "page" . "is_list" 0) }}</div>
+  </header>
+  {{ with .Params.abstract }}
+  <section class="academic-paper-section"><h2>Abstract</h2><div class="academic-prose">{{ . | markdownify }}</div></section>
+  {{ else }}
+  {{ with $extra }}
+  <section class="academic-paper-section">
+    <h2>{{ if .abstract_html }}Abstract{{ else }}Research overview{{ end }}</h2>
+    <div class="academic-prose">{{ if .abstract_html }}{{ .abstract_html | safeHTML }}{{ else }}<p>{{ .summary }}</p>{{ end }}</div>
+    <p class="academic-source">{{ if .abstract_html }}Abstract from{{ else }}Summary based on{{ end }} <a href="{{ .source_url }}" target="_blank" rel="noopener noreferrer">{{ .source_label }}</a>{{ with .license_url }} · <a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $extra.license_label }}</a>{{ end }}.</p>
+  </section>
+  {{ end }}
+  {{ end }}
+  {{ with .Content }}<section class="academic-paper-section academic-prose">{{ . }}</section>{{ end }}
+  {{ with $extra.image }}
+  <figure class="academic-paper-figure"><img src="{{ .url }}" alt="{{ .alt }}" loading="lazy"><figcaption>{{ .caption }} <a href="{{ .source_url }}" target="_blank" rel="noopener noreferrer">Source</a> · <a href="{{ .license_url }}" target="_blank" rel="noopener noreferrer">{{ .license_label }}</a></figcaption></figure>
+  {{ end }}
+</main>
+{{ end }}
