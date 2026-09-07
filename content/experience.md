@@ -1,6 +1,7 @@
 ---
 title: 'Experience'
 type: landing
+academic: true
 
 sections:
   - block: markdown

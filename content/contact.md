@@ -1,6 +1,7 @@
 ---
 title: 'Contact'
 type: landing
+academic: true
 
 sections:
   - block: markdown

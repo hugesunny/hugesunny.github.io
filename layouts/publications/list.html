@@ -1,0 +1,8 @@
+{{ define "main" }}
+<main id="academic-main" class="academic-container academic-records" tabindex="-1" data-pagefind-body>
+  <header class="academic-page-intro"><p class="academic-eyebrow">Journal articles</p><h1>{{ .Title }}</h1><div class="academic-prose">{{ .Content }}</div><p class="academic-intro-note">Publications on conjugated polymers, organic semiconductors, and organic electronic devices.</p></header>
+  {{ $paginator := .Paginate .RegularPages.ByDate.Reverse }}
+  {{ range $paginator.Pages }}{{ partial "views/citation.html" (dict "item" .) }}{{ end }}
+  {{ partial "components/paginator" . }}
+</main>
+{{ end }}

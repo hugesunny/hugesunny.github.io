@@ -1,6 +1,7 @@
 ---
 title: 'Teaching & Mentoring'
 type: landing
+academic: true
 
 sections:
   - block: markdown

@@ -1,0 +1,13 @@
+<a class="academic-skip" href="#academic-main">Skip to content</a>
+<header class="academic-header"><div class="academic-nav-inner">
+  <a class="academic-brand" href="{{ site.Home.RelPermalink }}">{{ site.Params.hugoblox.identity.name }}<span aria-hidden="true">.</span></a>
+  <button class="academic-menu-toggle" type="button" aria-controls="academic-navigation" aria-expanded="false" aria-label="Open navigation"><span aria-hidden="true">☰</span></button>
+  <nav id="academic-navigation" class="academic-navigation" aria-label="Main navigation">
+    {{ $page := . }}{{ range site.Menus.main }}
+    {{ $active := or (eq (.URL | relURL) $page.RelPermalink) (and (eq .Name "Publications") (eq $page.Section "publications")) }}
+    <a href="{{ .URL | relURL }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
+    {{ end }}
+  </nav>
+  {{ if site.Params.hugoblox.header.search }}<button class="academic-search" type="button" aria-label="Search publications and site" data-search-toggle>{{ partial "functions/get_icon" (dict "name" "hero/magnifying-glass" "attributes" `width="18" height="18" aria-hidden="true"`) }}</button>{{ end }}
+</div></header>
+{{ if site.Params.hugoblox.header.search }}{{ partial "components/search-modal.html" . }}{{ end }}

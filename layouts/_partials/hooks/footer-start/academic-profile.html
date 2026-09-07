@@ -1,0 +1,2 @@
+{{ $profile := partial "functions/get_author_profile" (dict "slug" "me") }}
+<div class="academic-footer-profile"><div><strong>{{ $profile.title }}, {{ delimit $profile.postnominals ", " }}</strong><p>{{ $profile.role }}, UNC-Chapel Hill</p></div><div class="academic-social-links">{{ range $profile.links }}<a href="{{ .url }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .label }}</a>{{ end }}</div></div>

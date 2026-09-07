@@ -1,0 +1,32 @@
+{{ define "main" }}
+{{ $profile := partial "functions/get_author_profile" (dict "slug" "me") }}
+{{ $design := hugo.Data.academic }}
+<main id="academic-main" class="academic-home" tabindex="-1" data-pagefind-body>
+  <section class="academic-container academic-hero" aria-labelledby="profile-name">
+    <div>
+      <p class="academic-eyebrow">{{ $design.eyebrow }}</p>
+      <h1 id="profile-name">{{ $profile.title }}{{ with $profile.postnominals }}<span class="academic-degree">, {{ delimit . ", " }}</span>{{ end }}</h1>
+      <p class="academic-role">{{ $profile.role }}</p>
+      {{ range $profile.affiliations }}<p class="academic-affiliation"><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ range $i, $line := split .name ", " }}{{ if $i }}<br>{{ end }}{{ $line }}{{ end }}</a></p>{{ end }}
+      <p class="academic-location">{{ $design.location }}</p>
+      <p class="academic-descriptor">{{ $design.descriptor }}</p>
+      <div class="academic-actions">
+        <a class="academic-button primary" href="{{ "research/" | relURL }}">Research <span aria-hidden="true">→</span></a>
+        <a class="academic-button" href="{{ "publications/" | relURL }}">Publications</a>
+        {{ range $profile.links }}{{ if eq .label "Google Scholar" }}<a class="academic-text-link" href="{{ .url }}" target="_blank" rel="noopener noreferrer">Google Scholar <span aria-hidden="true">↗</span></a>{{ end }}{{ end }}
+        {{ with $design.cv_url }}<a class="academic-text-link" href="{{ . | relURL }}">CV <span aria-hidden="true">↗</span></a>{{ end }}
+      </div>
+    </div>
+    {{ with $profile.avatar }}{{ $portrait := .Fill "540x540 webp q85" }}
+    <figure class="academic-portrait"><img src="{{ $portrait.RelPermalink }}" width="270" height="270" alt="{{ $profile.title }}, {{ delimit $profile.postnominals ", " }}" fetchpriority="high"><figcaption>{{ $design.department }}<br><strong>UNC-Chapel Hill</strong></figcaption></figure>
+    {{ end }}
+  </section>
+  <section class="academic-journey" aria-label="Research perspective"><div class="academic-container"><p class="academic-eyebrow">Connecting structure to function</p><ol>{{ range $i, $step := $design.journey }}<li><span class="academic-step">{{ printf "%02d" (add $i 1) }}</span>{{ $step }}{{ if lt $i (sub (len $design.journey) 1) }}<span class="academic-arrow" aria-hidden="true">→</span>{{ end }}</li>{{ end }}</ol></div></section>
+  <section class="academic-container academic-section academic-about"><div><p class="academic-eyebrow">Background</p><h2>About Me</h2><a class="academic-more" href="{{ "experience/" | relURL }}">Experience & education <span aria-hidden="true">→</span></a></div><div class="academic-prose">{{ $profile.bio | markdownify }}</div></section>
+  <section class="academic-container academic-section"><div class="academic-section-heading"><div><p class="academic-eyebrow">Research directions</p><h2>Structure. Transport. Devices.</h2></div><a class="academic-more" href="{{ "research/" | relURL }}">Explore research <span aria-hidden="true">→</span></a></div><div class="academic-theme-grid">{{ range $i, $theme := $design.research }}<article><span class="academic-step">{{ printf "%02d" (add $i 1) }}</span><h3><a href="{{ "research/" | relURL }}#theme-{{ add $i 1 }}">{{ $theme.short_title }}</a></h3><p>{{ $theme.summary }}</p></article>{{ end }}</div></section>
+  <section class="academic-container academic-section" id="papers"><div class="academic-section-heading"><div><p class="academic-eyebrow">Recent work</p><h2>Selected Publications</h2></div><a class="academic-more" href="{{ "publications/" | relURL }}">View all publications <span aria-hidden="true">→</span></a></div>
+    {{ $papers := (where site.RegularPages "Section" "publications").ByDate.Reverse }}
+    <div class="academic-bibliography">{{ range first ($design.selected_publication_count | default 5) $papers }}{{ partial "views/citation.html" (dict "item" .) }}{{ end }}</div>
+  </section>
+</main>
+{{ end }}
