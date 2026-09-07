@@ -3,18 +3,22 @@
 {{ $design := hugo.Data.academic }}
 <main id="academic-main" class="academic-home" tabindex="-1" data-pagefind-body>
   <section class="academic-container academic-hero" aria-labelledby="profile-name">
-    <div>
-      <p class="academic-eyebrow">{{ $design.eyebrow }}</p>
-      <h1 id="profile-name">{{ $profile.title }}{{ with $profile.postnominals }}<span class="academic-degree">, {{ delimit . ", " }}</span>{{ end }}</h1>
-      <p class="academic-role">{{ $profile.role }}</p>
-      {{ range $profile.affiliations }}<p class="academic-affiliation"><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ range $i, $line := split .name ", " }}{{ if $i }}<br>{{ end }}{{ $line }}{{ end }}</a></p>{{ end }}
-      <p class="academic-location">{{ $design.location }}</p>
-      <p class="academic-descriptor">{{ $design.descriptor }}</p>
-      <div class="academic-actions">
-        <a class="academic-button primary" href="{{ "research/" | relURL }}">Research <span aria-hidden="true">→</span></a>
-        <a class="academic-button" href="{{ "publications/" | relURL }}">Publications</a>
-        {{ range $profile.links }}{{ if eq .label "Google Scholar" }}<a class="academic-text-link" href="{{ .url }}" target="_blank" rel="noopener noreferrer">Google Scholar <span aria-hidden="true">↗</span></a>{{ end }}{{ end }}
-        {{ with $design.cv_url }}<a class="academic-text-link" href="{{ . | relURL }}">CV <span aria-hidden="true">↗</span></a>{{ end }}
+    <div class="academic-hero-copy">
+      <div class="academic-hero-identity">
+        <p class="academic-eyebrow">{{ $design.eyebrow }}</p>
+        <h1 id="profile-name">{{ $profile.title }}{{ with $profile.postnominals }}<span class="academic-degree">, {{ delimit . ", " }}</span>{{ end }}</h1>
+        <p class="academic-role">{{ $profile.role }}</p>
+        {{ range $profile.affiliations }}<p class="academic-affiliation"><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ range $i, $line := split .name ", " }}{{ if $i }}<br>{{ end }}{{ $line }}{{ end }}</a></p>{{ end }}
+        <p class="academic-location">{{ $design.location }}</p>
+      </div>
+      <div class="academic-hero-details">
+        <p class="academic-descriptor">{{ $design.descriptor }}</p>
+        <div class="academic-actions">
+          <a class="academic-button primary" href="{{ "research/" | relURL }}">Research <span aria-hidden="true">→</span></a>
+          <a class="academic-button" href="{{ "publications/" | relURL }}">Publications</a>
+          {{ range $profile.links }}{{ if eq .label "Google Scholar" }}<a class="academic-text-link" href="{{ .url }}" target="_blank" rel="noopener noreferrer">Google Scholar <span aria-hidden="true">↗</span></a>{{ end }}{{ end }}
+          {{ with $design.cv_url }}<a class="academic-text-link" href="{{ . | relURL }}">CV <span aria-hidden="true">↗</span></a>{{ end }}
+        </div>
       </div>
     </div>
     {{ with $profile.avatar }}{{ $portrait := .Fill "540x540 webp q85" }}
