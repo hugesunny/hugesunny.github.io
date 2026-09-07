@@ -1,0 +1,25 @@
+# Presentation settings only. Author and publication data remain HugoBlox-native.
+eyebrow: Organic materials & electronics
+descriptor: Organic Semiconductors · Conjugated Polymers · Organic Electronics
+location: Chapel Hill, NC, USA
+department: Department of Chemistry
+institution: University of North Carolina at Chapel Hill
+cv_url: /uploads/resume.pdf
+journey:
+  - Molecular structure
+  - Thin-film structure
+  - Interfaces
+  - Charge transport
+  - Device performance
+research_intro: My research focuses on understanding and controlling the relationships among molecular structure, thin-film morphology, interfaces, and charge transport in conjugated polymers for emerging organic electronic devices.
+research:
+  - page: /projects/conjugated-polymer-structure-property/
+    short_title: Structure–property relationships
+    summary: Connecting molecular packing and thin-film microstructure to charge transport in conjugated polymers.
+  - page: /projects/deformable-organic-electronics/
+    short_title: Deformable organic electronics
+    summary: Understanding structural evolution and charge transport under mechanical deformation.
+  - page: /projects/opd-oect/
+    short_title: Optoelectronic & electrochemical devices
+    summary: Engineering molecules and interfaces for organic photodetectors and electrochemical transistors.
+selected_publication_count: 5

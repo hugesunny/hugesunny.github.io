@@ -1,0 +1,10 @@
+{{ define "main" }}
+<main id="academic-main" class="academic-container academic-records" tabindex="-1" data-pagefind-body>
+  <header class="academic-page-intro"><p class="academic-eyebrow">Molecules to devices</p><h1>{{ .Title }}</h1><p class="academic-intro-note">{{ hugo.Data.academic.research_intro }}</p></header>
+  {{ range $i, $theme := hugo.Data.academic.research }}{{ with site.GetPage $theme.page }}
+  <section class="academic-research-theme" id="theme-{{ add $i 1 }}"><div><span class="academic-step">{{ printf "%02d" (add $i 1) }}</span><h2>{{ .Title }}</h2></div><div class="academic-prose">{{ .Content }}</div></section>
+  {{ end }}{{ end }}
+  {{ $profile := partial "functions/get_author_profile" (dict "slug" "me") }}
+  <section class="academic-interests"><p class="academic-eyebrow">Scientific focus</p><h2>Research Interests</h2><ul>{{ range $profile.interests }}<li>{{ . }}</li>{{ end }}</ul></section>
+</main>
+{{ end }}

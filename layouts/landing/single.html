@@ -1,0 +1,14 @@
+{{ define "main" }}
+{{ if .Params.academic }}
+<main id="academic-main" class="academic-container academic-records" tabindex="-1" data-pagefind-body>
+  <header class="academic-page-intro"><p class="academic-eyebrow">{{ .Params.eyebrow | default "Academic profile" }}</p><h1>{{ .Title }}</h1></header>
+  {{ range .Params.sections }}
+  <section class="academic-record-section"><h2>{{ .content.title }}</h2><div class="academic-prose{{ if eq .content.title "Research Experience" }} academic-timeline{{ end }}">{{ .content.text | markdownify }}</div></section>
+  {{ end }}
+  {{ if eq .File.ContentBaseName "experience" }}
+  {{ $profile := partial "functions/get_author_profile" (dict "slug" "me") }}
+  <section class="academic-record-section"><h2>Education</h2><div class="academic-education">{{ range $profile.education }}<article><div class="academic-step">{{ (time .start).Format "2006" }}–{{ (time .end).Format "2006" }}</div><div><h3>{{ .degree }}</h3><p>{{ .institution }}</p><div class="academic-prose">{{ .summary | markdownify }}</div></div></article>{{ end }}</div></section>
+  {{ end }}
+</main>
+{{ else }}{{ partial "landing_page.html" . }}{{ end }}
+{{ end }}

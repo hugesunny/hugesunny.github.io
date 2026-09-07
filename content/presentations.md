@@ -1,6 +1,7 @@
 ---
 title: 'Presentations'
 type: landing
+academic: true
 
 sections:
   - block: markdown
