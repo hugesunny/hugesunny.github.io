@@ -1,0 +1,149 @@
+<script>
+(function () {
+  var root = document.documentElement;
+  var theme = 'light';
+  try {
+    theme = localStorage.getItem('academic-theme') || 'light';
+  } catch (e) {}
+  if (theme === 'dark') {
+    root.classList.add('academic-dark', 'dark');
+    root.style.colorScheme = 'dark';
+  } else {
+    root.classList.remove('academic-dark', 'dark');
+    root.style.colorScheme = 'light';
+  }
+})();
+</script>
+<style>
+/* Persistent light/dark theme for the custom academic presentation layer. */
+html.academic-dark {
+  --academic-navy:#eaf2f8;
+  --academic-blue:#7bafd4;
+  --academic-text:#d3dce5;
+  --academic-muted:#9eafbe;
+  --academic-line:#2a3947;
+  --academic-wash:#131f2a;
+  --hb-color-background:#0f1720;
+  --hb-color-foreground:#d3dce5;
+  --hb-color-header-bg:#101a24;
+  --hb-color-header-fg:#eaf2f8;
+  color-scheme:dark;
+}
+html.academic-dark body,
+html.academic-dark body.page-wrapper,
+html.academic-dark .page-body { background:#0f1720; color:var(--academic-text); }
+html.academic-dark .academic-header { background:#101a24; border-bottom-color:var(--academic-line); }
+html.academic-dark .academic-navigation a,
+html.academic-dark .academic-brand,
+html.academic-dark .academic-search,
+html.academic-dark .academic-theme-toggle,
+html.academic-dark .academic-menu-toggle { color:#eaf2f8; }
+html.academic-dark .academic-navigation a[aria-current] { color:#fff; }
+html.academic-dark .academic-navigation a:hover,
+html.academic-dark .academic-home a:hover,
+html.academic-dark .academic-records a:hover { color:#9bc7e5; }
+html.academic-dark .academic-eyebrow { color:#8fb7d3; }
+html.academic-dark .academic-role,
+html.academic-dark .academic-home h1,
+html.academic-dark .academic-home h2,
+html.academic-dark .academic-home h3,
+html.academic-dark .academic-records h1,
+html.academic-dark .academic-records h2,
+html.academic-dark .academic-records h3,
+html.academic-dark .academic-publication h3,
+html.academic-dark .page-body .prose h1,
+html.academic-dark .page-body .prose h2,
+html.academic-dark .page-body .prose h3,
+html.academic-dark .academic-portrait strong,
+html.academic-dark .academic-footer-profile strong { color:#eaf2f8; }
+html.academic-dark .academic-affiliation,
+html.academic-dark .academic-prose,
+html.academic-dark .page-body .prose { color:#d3dce5; }
+html.academic-dark .academic-location,
+html.academic-dark .academic-descriptor,
+html.academic-dark .academic-intro-note,
+html.academic-dark .academic-authors,
+html.academic-dark .academic-authors .font-bold,
+html.academic-dark .academic-journal span,
+html.academic-dark .academic-portrait figcaption,
+html.academic-dark .academic-education .academic-prose { color:#9eafbe; }
+html.academic-dark .academic-journal,
+html.academic-dark .academic-more,
+html.academic-dark .academic-text-link,
+html.academic-dark .academic-prose a,
+html.academic-dark .page-body .prose a,
+html.academic-dark .academic-publication-actions .hb-attachment-link,
+html.academic-dark .academic-social-links a { color:#9bc7e5; }
+html.academic-dark .academic-prose a { text-decoration-color:#46677e; }
+html.academic-dark .academic-step,
+html.academic-dark .academic-pub-year,
+html.academic-dark .academic-career-date,
+html.academic-dark .academic-service-date,
+html.academic-dark .academic-teaching-date,
+html.academic-dark .academic-teaching-index,
+html.academic-dark .academic-project-date { color:#8fb7d3; }
+html.academic-dark .academic-journey,
+html.academic-dark .academic-interests { background:#131f2a; border-color:var(--academic-line); }
+html.academic-dark .academic-journey li { color:#dce9f2; }
+html.academic-dark .academic-section,
+html.academic-dark .academic-page-intro,
+html.academic-dark .academic-record-section>h2,
+html.academic-dark .academic-research-theme,
+html.academic-dark .academic-publication,
+html.academic-dark .academic-teaching-entry,
+html.academic-dark .academic-teaching-section>div:last-child>h2,
+html.academic-dark .academic-service-list article { border-color:var(--academic-line); }
+html.academic-dark .academic-timeline,
+html.academic-dark .academic-career-list { border-left-color:#385269; }
+html.academic-dark .academic-theme-grid article,
+html.academic-dark .academic-skills-grid article { border-color:#45657d; }
+html.academic-dark .academic-button { color:#eaf2f8; border-color:#6f92ad; }
+html.academic-dark .academic-button:hover { background:#182838; color:#fff; }
+html.academic-dark .academic-button.primary { background:#7bafd4; border-color:#7bafd4; color:#0f1720; }
+html.academic-dark .academic-button.primary:hover { background:#96c2df; color:#0f1720; }
+html.academic-dark .academic-project-card { background:#16212c; border-color:#334858; border-top-color:#6f9fbe; }
+html.academic-dark .academic-career-institution,
+html.academic-dark .academic-project-meta,
+html.academic-dark .academic-teaching-org { color:#b6c8d6; }
+html.academic-dark .academic-career-meta,
+html.academic-dark .academic-project-card>p:last-child,
+html.academic-dark .academic-service-list p,
+html.academic-dark .academic-skills-grid p,
+html.academic-dark .academic-teaching-entry .academic-prose { color:#9eafbe; }
+html.academic-dark .page-footer { background:#0c141c; border-top-color:var(--academic-line); color:#9eafbe; }
+html.academic-dark .academic-pub-toc img { background:#fff; border-color:#425464; }
+html.academic-dark .academic-pub-toc:hover img { border-color:#7bafd4; }
+html.academic-dark .academic-skip { background:#7bafd4; color:#0f1720; }
+
+.academic-theme-toggle {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  flex:0 0 44px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  background:transparent;
+  color:var(--academic-navy);
+  cursor:pointer;
+}
+.academic-theme-toggle:hover { background:var(--academic-wash); }
+.academic-theme-toggle svg { width:18px; height:18px; }
+.academic-theme-toggle .theme-icon-sun { display:none; }
+html.academic-dark .academic-theme-toggle .theme-icon-moon { display:none; }
+html.academic-dark .academic-theme-toggle .theme-icon-sun { display:block; }
+
+@media(max-width:900px) {
+  html.academic-dark .academic-navigation { background:#101a24; border-bottom-color:var(--academic-line); }
+}
+@media(prefers-reduced-motion:no-preference) {
+  body.page-wrapper,
+  .academic-header,
+  .page-footer,
+  .academic-journey,
+  .academic-interests,
+  .academic-project-card { transition:background-color .18s ease,color .18s ease,border-color .18s ease; }
+}
+</style>
