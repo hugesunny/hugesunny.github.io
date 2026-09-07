@@ -49,6 +49,6 @@ TOC images have not been copied from subscription publisher pages. The detail la
 
 ## Branding, footer, and map
 
-The original SK monogram is `static/images/sk-logo.svg`, used in both navigation and favicon. A locally authored `site_footer.html` renders the profile and site copyright without the promotional footer. The pinned HugoBlox source is MIT-licensed; its copyright and permission notice are retained in `licenses/HugoBlox-MIT.md`. No license key or validation logic is modified.
+The original SK monogram is `static/images/sk-logo.svg` for navigation. HugoBlox generates the favicon from `assets/media/icon.svg` and the Apple touch icon from `assets/media/icon.png`. Keep these assets consistent; do not add a second favicon through a head hook. A locally authored `site_footer.html` renders the profile and site copyright without the promotional footer. The pinned HugoBlox source is MIT-licensed; its copyright and permission notice are retained in `licenses/HugoBlox-MIT.md`. No license key or validation logic is modified.
 
 The Contact layout includes a lazy-loaded Google Maps embed for Kenan Laboratories, 125 South Road, with a direct Maps link. Education appears first on the Experience page.
