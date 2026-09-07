@@ -1,0 +1,12 @@
+{{/* Prefer verified issue dates; preserve partial-date precision in the sort key. */}}
+{{ $records := slice }}
+{{ range . }}
+  {{ $date := .Date.Format "2006-01-02" }}
+  {{ with index hugo.Data.publication_details (path.Base .File.Dir) }}
+    {{ with .sort_date }}{{ $date = . }}{{ end }}
+  {{ end }}
+  {{ $records = $records | append (dict "page" . "date" $date) }}
+{{ end }}
+{{ $pages := slice }}
+{{ range sort $records "date" "desc" }}{{ $pages = $pages | append .page }}{{ end }}
+{{ return $pages }}
