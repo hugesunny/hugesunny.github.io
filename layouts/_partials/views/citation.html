@@ -1,13 +1,20 @@
 {{/* Local presentation override; native links and citation behavior remain upstream. */}}
 {{ $item := .item }}
 {{ $pub := partial "functions/resolve_publication.html" $item }}
-<article class="pub-list-item view-citation academic-publication">
+{{ $toc := $item.Resources.GetMatch "toc.*" }}
+{{ $showToc := and (.show_toc | default false) $toc }}
+<article class="pub-list-item view-citation academic-publication{{ if $showToc }} academic-publication-with-toc{{ end }}">
   <span class="academic-pub-year">{{ $item.Date.Format "2006" }}</span>
-  <div>
+  <div class="academic-publication-body">
     <h3><a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a></h3>
     <div class="article-metadata li-cite-author academic-authors">{{ partial "page_metadata_authors" $item }}</div>
     <p class="academic-journal">{{ with $pub.display_short }}{{ . | markdownify }}{{ end }}<span>, {{ $item.Date.Format "2006" }}</span></p>
     {{ with $item.Params.awards }}<div>{{ partial "components/award_badge.html" (dict "award" (index . 0) "page" $item "variant" "inline") }}</div>{{ end }}
     {{ if partial "functions/has_attachments" $item }}<div class="academic-publication-actions">{{ partial "page_links" (dict "page" $item "is_list" 1) }}</div>{{ end }}
   </div>
+  {{ if $showToc }}
+  <a class="academic-pub-toc" href="{{ $item.RelPermalink }}" aria-label="View {{ $item.Title }}">
+    <img src="{{ $toc.RelPermalink }}" alt="" loading="lazy" decoding="async">
+  </a>
+  {{ end }}
 </article>
