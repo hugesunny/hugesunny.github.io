@@ -13,8 +13,8 @@
     {{ if partial "functions/has_attachments" $item }}<div class="academic-publication-actions">{{ partial "page_links" (dict "page" $item "is_list" 1) }}</div>{{ end }}
   </div>
   {{ if $showToc }}
-  <a class="academic-pub-toc" href="{{ $item.RelPermalink }}" aria-label="View {{ $item.Title }}">
-    <img src="{{ $toc.RelPermalink }}" alt="" loading="lazy" decoding="async">
-  </a>
+  <button class="academic-pub-toc" type="button" data-toc-lightbox data-toc-src="{{ $toc.RelPermalink }}" data-toc-title="{{ $item.Title }}" aria-label="Enlarge ToC image for {{ $item.Title }}">
+    <img src="{{ $toc.RelPermalink }}" alt="ToC graphic for {{ $item.Title }}" loading="lazy" decoding="async">
+  </button>
   {{ end }}
 </article>
