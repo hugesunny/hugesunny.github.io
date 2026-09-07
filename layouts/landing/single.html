@@ -98,7 +98,7 @@
   {{ else }}
     {{ if eq $pageName "contact" }}<div class="academic-contact-grid">{{ end }}
     {{ range .Params.sections }}
-    <section class="academic-record-section"><h2>{{ .content.title }}</h2><div class="academic-prose">{{ .content.text | markdownify }}</div></section>
+    <section class="academic-record-section">{{ if ne $pageName "contact" }}<h2>{{ .content.title }}</h2>{{ end }}<div class="academic-prose">{{ .content.text | markdownify }}</div></section>
     {{ end }}
     {{ if eq $pageName "contact" }}
     <aside class="academic-map"><iframe title="Kenan Laboratories, UNC-Chapel Hill on Google Maps" src="https://maps.google.com/maps?q=Kenan%20Laboratories%2C%20125%20South%20Road%2C%20Chapel%20Hill%2C%20NC&amp;z=16&amp;hl=en&amp;output=embed" width="600" height="450" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><a href="https://www.google.com/maps/search/?api=1&amp;query=Kenan+Laboratories+125+South+Road+Chapel+Hill+NC" target="_blank" rel="noopener noreferrer">Open in Google Maps ↗</a></aside>
