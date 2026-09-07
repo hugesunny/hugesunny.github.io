@@ -1,0 +1,125 @@
+<style>
+.academic-pub-toc {
+  padding:0;
+  border:0;
+  background:transparent;
+  color:inherit;
+  font:inherit;
+  cursor:zoom-in;
+}
+.academic-pub-toc:focus-visible {
+  outline:3px solid #356b93;
+  outline-offset:5px;
+  border-radius:3px;
+}
+.academic-toc-lightbox {
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:32px;
+  background:rgba(8,14,20,.86);
+  backdrop-filter:blur(5px);
+}
+.academic-toc-lightbox.is-open { display:flex; }
+.academic-toc-lightbox-panel {
+  position:relative;
+  max-width:min(1200px,94vw);
+  max-height:92vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+}
+.academic-toc-lightbox-image {
+  display:block;
+  max-width:100%;
+  max-height:84vh;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  background:#fff;
+  border-radius:4px;
+  box-shadow:0 18px 60px rgba(0,0,0,.35);
+}
+.academic-toc-lightbox-caption {
+  max-width:900px;
+  margin:0;
+  color:#eaf2f8;
+  font-size:.8125rem;
+  line-height:1.5;
+  text-align:center;
+}
+.academic-toc-lightbox-close {
+  position:absolute;
+  top:-16px;
+  right:-16px;
+  width:42px;
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:50%;
+  background:#101a24;
+  color:#fff;
+  font-size:1.45rem;
+  line-height:1;
+  cursor:pointer;
+}
+.academic-toc-lightbox-close:hover { background:#1c2d3d; }
+body.academic-lightbox-open { overflow:hidden; }
+@media(max-width:640px) {
+  .academic-toc-lightbox { padding:20px; }
+  .academic-toc-lightbox-image { max-height:80vh; }
+  .academic-toc-lightbox-close { top:-12px; right:-8px; }
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var triggers = document.querySelectorAll('[data-toc-lightbox]');
+  if (!triggers.length) return;
+
+  var lightbox = document.createElement('div');
+  lightbox.className = 'academic-toc-lightbox';
+  lightbox.setAttribute('role', 'dialog');
+  lightbox.setAttribute('aria-modal', 'true');
+  lightbox.setAttribute('aria-label', 'Publication ToC image preview');
+  lightbox.innerHTML = '<div class="academic-toc-lightbox-panel"><button class="academic-toc-lightbox-close" type="button" aria-label="Close image preview">×</button><img class="academic-toc-lightbox-image" alt=""><p class="academic-toc-lightbox-caption"></p></div>';
+  document.body.appendChild(lightbox);
+
+  var image = lightbox.querySelector('.academic-toc-lightbox-image');
+  var caption = lightbox.querySelector('.academic-toc-lightbox-caption');
+  var closeButton = lightbox.querySelector('.academic-toc-lightbox-close');
+  var lastTrigger = null;
+
+  function closeLightbox() {
+    lightbox.classList.remove('is-open');
+    document.body.classList.remove('academic-lightbox-open');
+    image.removeAttribute('src');
+    if (lastTrigger) lastTrigger.focus();
+  }
+
+  triggers.forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+      lastTrigger = trigger;
+      image.src = trigger.getAttribute('data-toc-src');
+      image.alt = trigger.querySelector('img') ? trigger.querySelector('img').alt : 'Publication ToC graphic';
+      caption.textContent = trigger.getAttribute('data-toc-title') || '';
+      lightbox.classList.add('is-open');
+      document.body.classList.add('academic-lightbox-open');
+      closeButton.focus();
+    });
+  });
+
+  closeButton.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', function (event) {
+    if (event.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+  });
+});
+</script>
