@@ -13,9 +13,6 @@
         <p class="academic-affiliation"><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ range $i, $line := split .name ", " }}{{ if $i }}<br>{{ end }}{{ $line }}{{ end }}</a></p>
         {{ end }}
       </div>
-      {{ with resources.Get "media/profile-old-well.png" }}{{ $portrait := .Resize "840x webp q90" }}
-      <figure class="academic-portrait"><img src="{{ $portrait.RelPermalink }}" width="{{ $portrait.Width }}" height="{{ $portrait.Height }}" alt="{{ $profile.title }} at the Old Well on the UNC Chapel Hill campus" fetchpriority="high"><figcaption>At the Old Well, UNC Chapel Hill</figcaption></figure>
-      {{ end }}
     </div>
     <div class="academic-hero-description">
       <div class="academic-prose academic-hero-intro">{{ $design.home_intro | markdownify }}</div>
@@ -27,6 +24,9 @@
         {{ range $profile.links }}{{ if eq .label "Email" }}<a href="{{ .url }}">Email</a>{{ end }}{{ end }}
       </nav>
     </div>
+    {{ with resources.Get "media/profile-old-well.png" }}{{ $portrait := .Resize "840x webp q90" }}
+    <figure class="academic-portrait"><img src="{{ $portrait.RelPermalink }}" width="{{ $portrait.Width }}" height="{{ $portrait.Height }}" alt="{{ $profile.title }} at the Old Well on the UNC Chapel Hill campus" fetchpriority="high"><figcaption>At the Old Well, UNC Chapel Hill</figcaption></figure>
+    {{ end }}
     </div>
   </section>
 

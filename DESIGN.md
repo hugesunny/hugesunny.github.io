@@ -64,3 +64,5 @@ The profile band uses #f3f5f7 in light mode and #192632 in dark mode. The portra
 Desktop profile uses two columns: portrait and identity on the left, biography and links on the right. At 900px and below these stack. The given-name group and surname/degree group each stay together to keep the current name within two lines; smaller mobile sizes reduce portrait and heading size without clipping.
 
 The homepage now uses a text-led introduction on the left and a campus photograph on the right, inspired by the reference site's profile format. assets/media/profile-old-well.png is the user-approved bag-removal composite with original face pixels retained. The image keeps its square composition, is optimized through Hugo to WebP, and has a location caption. The author avatar is retained for other views. Mobile uses a smaller right-side photograph and full-width biography; no generated slogan or research claims were added.
+
+At 640px and below, the profile is a single column in reading order: identity, biography and links, then a 220px photograph and caption. Desktop keeps the photograph on the right.
