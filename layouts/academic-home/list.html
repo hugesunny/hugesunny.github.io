@@ -2,7 +2,8 @@
 {{ $profile := partial "functions/get_author_profile" (dict "slug" "me") }}
 {{ $design := hugo.Data.academic }}
 <main id="academic-main" class="academic-home" tabindex="-1" data-pagefind-body>
-  <section class="academic-container academic-hero" aria-labelledby="profile-name">
+  <section class="academic-profile-band" aria-labelledby="profile-name">
+    <div class="academic-container academic-hero">
     <div class="academic-profile-row">
       {{ with $profile.avatar }}{{ $portrait := .Resize "480x webp q85" }}
       <figure class="academic-portrait"><img src="{{ $portrait.RelPermalink }}" width="{{ $portrait.Width }}" height="{{ $portrait.Height }}" alt="{{ $profile.title }}" fetchpriority="high"></figure>
@@ -23,6 +24,7 @@
         {{ with $design.cv_url }}<a href="{{ . | relURL }}">CV</a>{{ end }}
         {{ range $profile.links }}{{ if eq .label "Email" }}<a href="{{ .url }}">Email</a>{{ end }}{{ end }}
       </nav>
+    </div>
   </section>
 
   {{ with site.GetPage $design.featured_publication }}
