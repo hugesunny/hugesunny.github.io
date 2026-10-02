@@ -60,3 +60,5 @@ The Contact layout includes a lazy-loaded Google Maps embed for Kenan Laboratori
 The homepage groups a 150px portrait on the left with name, role, and affiliation on the right. The introduction and profile links follow underneath. On mobile, the portrait is 86px and the name is 28px. Use proportional Resize rather than Fill for the original portrait; CSS height stays auto. No generated banner is used.
 
 The profile band uses #f3f5f7 in light mode and #192632 in dark mode. The portrait alone has a white mount (7px desktop, 5px mobile) and a 1px neutral border; scientific graphics remain unframed.
+
+Desktop profile uses two columns: portrait and identity on the left, biography and links on the right. At 900px and below these stack. The given-name group and surname/degree group each stay together to keep the current name within two lines; smaller mobile sizes reduce portrait and heading size without clipping.

@@ -9,13 +9,15 @@
       <figure class="academic-portrait"><img src="{{ $portrait.RelPermalink }}" width="{{ $portrait.Width }}" height="{{ $portrait.Height }}" alt="{{ $profile.title }}" fetchpriority="high"></figure>
       {{ end }}
       <div class="academic-hero-identity">
-        <h1 id="profile-name">{{ $profile.title }}{{ with $profile.postnominals }}<span class="academic-degree">, {{ delimit . ", " }}</span>{{ end }}</h1>
+        {{ $nameParts := split $profile.title " " }}
+        <h1 id="profile-name"><span class="academic-name-part">{{ delimit (first (sub (len $nameParts) 1) $nameParts) " " }}</span> <span class="academic-name-part">{{ index $nameParts (sub (len $nameParts) 1) }}{{ with $profile.postnominals }}<span class="academic-degree">, {{ delimit . ", " }}</span>{{ end }}</span></h1>
         <p class="academic-role">{{ $profile.role }}</p>
         {{ range $profile.affiliations }}
         <p class="academic-affiliation"><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ range $i, $line := split .name ", " }}{{ if $i }}<br>{{ end }}{{ $line }}{{ end }}</a></p>
         {{ end }}
       </div>
     </div>
+    <div class="academic-hero-description">
       <div class="academic-prose academic-hero-intro">{{ $design.home_intro | markdownify }}</div>
       <nav class="academic-actions" aria-label="Profile links">
         <a href="{{ "research/" | relURL }}">Research</a>
@@ -24,6 +26,7 @@
         {{ with $design.cv_url }}<a href="{{ . | relURL }}">CV</a>{{ end }}
         {{ range $profile.links }}{{ if eq .label "Email" }}<a href="{{ .url }}">Email</a>{{ end }}{{ end }}
       </nav>
+    </div>
     </div>
   </section>
 
