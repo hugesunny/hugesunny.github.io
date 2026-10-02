@@ -1,19 +1,20 @@
 # Presentation settings only. Author and publication data remain HugoBlox-native.
-eyebrow: Organic materials & electronics
-descriptor: Organic Semiconductors · Conjugated Polymers · Organic Electronics
 location: Chapel Hill, NC, USA
 department: Department of Chemistry
 institution: University of North Carolina at Chapel Hill
 cv_url: /uploads/resume.pdf
-journey:
-  - Molecular structure
-  - Thin-film structure
-  - Interfaces
-  - Charge transport
-  - Device performance
+home_intro: >-
+  I study conjugated polymers and organic semiconductors, with an emphasis on
+  structure-property relationships, charge transport, mechanical deformation,
+  molecular and interface engineering, organic photodetectors, and organic
+  electrochemical transistors. At UNC, I work with [Prof. Wei You](https://weiyougroup.org/).
+  I earned my PhD in Chemical Engineering at POSTECH under the supervision of
+  [Prof. Kilwon Cho](http://crg.postech.ac.kr/).
+featured_publication: /publications/kim-2024-multiscale/
 research_intro: My research focuses on understanding and controlling the relationships among molecular structure, thin-film morphology, interfaces, and charge transport in conjugated polymers for emerging organic electronic devices.
 research:
   - page: /projects/conjugated-polymer-structure-property/
+    publication: /publications/kim-2024-multiscale/
     short_title: Structure–property relationships
     summary: Connecting molecular packing and thin-film microstructure to charge transport in conjugated polymers.
   - page: /projects/deformable-organic-electronics/
@@ -22,4 +23,4 @@ research:
   - page: /projects/opd-oect/
     short_title: Optoelectronic & electrochemical devices
     summary: Engineering molecules and interfaces for organic photodetectors and electrochemical transistors.
-recent_publication_count: 5
+recent_publication_count: 3

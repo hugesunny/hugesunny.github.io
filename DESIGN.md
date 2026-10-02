@@ -5,7 +5,7 @@ This site keeps HugoBlox as its content and publication system. Local layouts pr
 ## Updating content
 
 - Profile, biography, education, social links: `data/authors/me.yaml`.
-- Homepage labels, research summaries, and number of recent papers: `data/academic.yaml`. The homepage automatically displays the first five papers from the same date-sorted collection as the publication index.
+- Homepage introduction, featured paper, research summaries, and number of recent papers: `data/academic.yaml`. The homepage displays one selected paper followed by the first three papers from the same date-sorted collection as the publication index.
 - Research detail: the existing three page bundles in `content/projects/`, referenced by `data/academic.yaml`.
 - Experience, teaching, presentations, contact: their existing Markdown files in `content/`. Keep `academic: true` to use the custom presentation.
 - Publications: keep using the root `publications.bib` import workflow. Review and merge the generated publication PR. The native bundles and `cite.bib` files under `content/publications/` remain authoritative for rendering and citation downloads.
@@ -14,7 +14,9 @@ This site keeps HugoBlox as its content and publication system. Local layouts pr
 
 ## Design boundaries
 
-`assets/css/custom.css` supplies the responsive design. `assets/js/academic-navigation.js` only handles the mobile menu and skip-link target. Search, citation actions, DOI/PDF links, pagination, and GitHub Pages deployment use HugoBlox's existing implementation. Publication detail pages use `layouts/publications/single.html` for consistent typography, year-only display, and sourced abstracts or summaries.
+`assets/css/custom.css` supplies the responsive design, including the mobile profile layout, publication thumbnails, action-link metrics, and light/dark colors. These rules are consolidated here rather than repeated in head hooks. The theme initialization and controller scripts remain in the existing head hooks. `assets/js/academic-navigation.js` only handles the mobile menu and skip-link target. Search, citation actions, DOI/PDF links, pagination, and GitHub Pages deployment use HugoBlox's existing implementation. Publication detail pages use `layouts/publications/single.html` for consistent typography, year-only display, and sourced abstracts or summaries.
+
+The homepage is ordered as profile, Selected Research, and Recent Publications. `home_intro` is a short presentation version of the author biography; keep it consistent with `data/authors/me.yaml`. `featured_publication` points to a native publication bundle. Its title, journal, year, and ToC image are read from that bundle; its two-sentence overview is taken from the sourced supplemental summary. Research themes can specify a `publication` link when supported by their existing content. The three Research sections retain their original `theme-1` to `theme-3` anchors.
 
 The supported custom header lives in `layouts/_partials/components/headers/academic.html`. The `academic-home`, `research`, and publication list layouts render content from the sources above. `layouts/landing/single.html` uses the custom rendering only for pages marked `academic: true`; other landing pages retain native rendering.
 
@@ -49,6 +51,10 @@ TOC images have not been copied from subscription publisher pages. The detail la
 
 ## Branding, footer, and map
 
-The original SK monogram is `static/images/sk-logo.svg` for navigation. HugoBlox generates the favicon from `assets/media/icon.svg` and the Apple touch icon from `assets/media/icon.png`. Keep these assets consistent; do not add a second favicon through a head hook. A locally authored `site_footer.html` renders the profile and site copyright without the promotional footer. The pinned HugoBlox source is MIT-licensed; its copyright and permission notice are retained in `licenses/HugoBlox-MIT.md`. No license key or validation logic is modified.
+The original SK monogram is `static/images/sk-logo.svg` for navigation. HugoBlox generates the favicon from `assets/media/icon.svg` and the Apple touch icon from `assets/media/icon.png`. `static/media/icon.png` serves the same existing PNG at the unprocessed `/media/icon.png` path used by native content views. Keep these assets consistent; do not add a second favicon through a head hook. A locally authored `site_footer.html` renders the profile and site copyright without the promotional footer. The pinned HugoBlox source is MIT-licensed; its copyright and permission notice are retained in `licenses/HugoBlox-MIT.md`. No license key or validation logic is modified.
 
 The Contact layout includes a lazy-loaded Google Maps embed for Kenan Laboratories, 125 South Road, with a direct Maps link. Education appears first on the Experience page.
+
+## Profile placement update
+
+The homepage groups a 150px portrait on the left with name, role, and affiliation on the right. The introduction and profile links follow underneath. On mobile, the portrait is 86px and the name is 28px. Use proportional Resize rather than Fill for the original portrait; CSS height stays auto. No generated banner is used.

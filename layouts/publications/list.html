@@ -1,6 +1,6 @@
 {{ define "main" }}
 <main id="academic-main" class="academic-container academic-records" tabindex="-1" data-pagefind-body>
-  <header class="academic-page-intro"><p class="academic-eyebrow">Journal articles</p><h1>{{ .Title }}</h1><div class="academic-prose">{{ .Content }}</div><p class="academic-intro-note">Publications on conjugated polymers, organic semiconductors, and organic electronic devices.</p></header>
+  <header class="academic-page-intro"><h1>{{ .Title }}</h1><div class="academic-prose">{{ .Content }}</div></header>
   {{ $paginator := .Paginate (partial "academic/sorted_publications.html" .RegularPages) }}
   {{ range $paginator.Pages }}{{ partial "views/citation.html" (dict "item" . "show_toc" true) }}{{ end }}
   {{ partial "components/paginator" . }}
