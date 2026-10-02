@@ -104,14 +104,14 @@ html.academic-dark .academic-theme-toggle .theme-icon-sun { display: block; }
 /* Profile: identity, background and links form one compact introduction. */
 .academic-profile-band { background: var(--academic-profile-background); }
 .academic-hero {
-  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 40px; align-items: start;
+  display: grid; grid-template-columns: minmax(0, 1fr) 280px; column-gap: 56px; row-gap: 24px; align-items: start;
   padding-block: 48px 38px;
 }
-.academic-profile-row { display: flex; align-items: start; gap: 20px; }
-.academic-hero-identity { min-width: 0; }
-.academic-hero h1 { font-size: clamp(30px, 2.5vw, 36px); line-height: 1.2; margin-bottom: 16px; }
+.academic-profile-row { display: contents; }
+.academic-hero-identity { min-width: 0; grid-column: 1; grid-row: 1; }
+.academic-hero h1 { font-size: 40px; line-height: 1.2; margin-bottom: 16px; }
 .academic-name-part { white-space: nowrap; }
-.academic-hero-description { min-width: 0; }
+.academic-hero-description { min-width: 0; grid-column: 1; grid-row: 2; }
 .academic-degree { font-size: .55em; font-weight: 400; letter-spacing: 0; white-space: nowrap; }
 .academic-role { color: var(--academic-navy); font-size: 16px; font-weight: 500; margin: 0 0 5px; }
 .academic-affiliation { font-size: 15px; line-height: 1.6; margin: 0; }
@@ -122,8 +122,9 @@ html.academic-dark .academic-theme-toggle .theme-icon-sun { display: block; }
   display: inline-flex; align-items: center; min-height: 36px;
   font-size: 14px; color: var(--academic-link); text-decoration: underline;
 }
-.academic-portrait { flex: 0 0 136px; width: 136px; margin: 0; padding: 7px; border: 1px solid var(--academic-photo-border); background: #fff; }
+.academic-portrait { grid-column: 2; grid-row: 1 / span 2; width: 280px; margin: 0; }
 .academic-portrait img { display: block; width: 100%; height: auto; }
+.academic-portrait figcaption { margin-top: 8px; font-size: 12px; line-height: 1.5; color: var(--academic-muted); }
 
 /* Selected research: show the existing scientific graphic at its own ratio. */
 .academic-featured { padding-block: 32px 40px; }
@@ -262,7 +263,8 @@ html.academic-dark .academic-teaching-entry .academic-prose { color: var(--acade
   .academic-navigation { display: none; position: absolute; left: -16px; right: -16px; top: 100%; padding: 12px 20px 22px; background: var(--academic-header); border-bottom: 1px solid var(--academic-line); grid-template-columns: 1fr 1fr; gap: 0 20px; }
   .academic-navigation.is-open { display: grid; }
   .academic-navigation a { padding: 12px; }
-  .academic-hero { grid-template-columns: 1fr; gap: 22px; padding-block: 36px; }
+  .academic-hero { grid-template-columns: minmax(0, 1fr) 220px; column-gap: 32px; row-gap: 22px; padding-block: 36px; }
+  .academic-portrait { width: 220px; }
   .academic-featured-row { gap: 28px; }
   .academic-research-theme { grid-template-columns: 240px minmax(0, 1fr); gap: 28px; }
   .academic-footer-profile { flex-direction: column; gap: 8px; }
@@ -275,12 +277,13 @@ html.academic-dark .academic-teaching-entry .academic-prose { color: var(--acade
   .academic-nav-inner { width: calc(100% - 32px); }
   .academic-home h1, .academic-records h1 { font-size: 32px; }
   .academic-home h2, .academic-records h2 { font-size: 24px; }
-  .academic-hero { padding-block: 28px; }
-  .academic-profile-row { gap: 18px; }
+  .academic-hero { grid-template-columns: minmax(0, 1fr) 100px; column-gap: 18px; padding-block: 28px; }
   .academic-hero h1 { font-size: 28px; margin-bottom: 10px; }
   .academic-role { font-size: 15px; line-height: 1.5; margin-bottom: 5px; }
   .academic-affiliation { font-size: 14px; }
-  .academic-portrait { flex-basis: 98px; width: 98px; padding: 5px; }
+  .academic-portrait { grid-row: 1; width: 100px; }
+  .academic-portrait figcaption { font-size: 10px; }
+  .academic-hero-description { grid-column: 1 / -1; }
   .academic-hero-intro { margin-top: 0; }
   .academic-actions { gap: 0 22px; margin-top: 12px; }
   .academic-actions a, .academic-more { min-height: 44px; }
@@ -331,7 +334,7 @@ html.academic-dark .academic-teaching-entry .academic-prose { color: var(--acade
 }
 
 @media (max-width: 360px) {
-  .academic-profile-row { gap: 14px; }
+  .academic-hero { grid-template-columns: minmax(0, 1fr) 82px; column-gap: 14px; }
   .academic-hero h1 { font-size: 24px; }
-  .academic-portrait { flex-basis: 82px; width: 82px; }
+  .academic-portrait { width: 82px; }
 }
