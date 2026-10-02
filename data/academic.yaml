@@ -4,13 +4,19 @@ department: Department of Chemistry
 institution: University of North Carolina at Chapel Hill
 cv_url: /uploads/resume.pdf
 home_intro: >-
-  I study conjugated polymers and organic semiconductors, with an emphasis on
-  structure-property relationships, charge transport, mechanical deformation,
-  molecular and interface engineering, organic photodetectors, and organic
-  electrochemical transistors. At UNC, I work with [Prof. Wei You](https://weiyougroup.org/).
-  I earned my PhD in Chemical Engineering at POSTECH under the supervision of
+  I study how molecular structure, thin-film morphology, and interfaces govern
+  charge transport in conjugated polymers and organic semiconductors. My work
+  spans mechanically deformable electronics, organic photodetectors, and organic
+  electrochemical transistors.
+home_background: >-
+  I currently work with [Prof. Wei You](https://weiyougroup.org/) at UNC Chapel Hill
+  and earned my PhD in Chemical Engineering at POSTECH under
   [Prof. Kilwon Cho](http://crg.postech.ac.kr/).
 featured_publication: /publications/kim-2024-multiscale/
+featured_overview: >-
+  This study examines how polymer backbone rigidity affects deformation and
+  charge transport under strain. Comparing DPP-4T and DPP-DTT connects molecular
+  structure with their different responses to stretching.
 research_intro: My research focuses on understanding and controlling the relationships among molecular structure, thin-film morphology, interfaces, and charge transport in conjugated polymers for emerging organic electronic devices.
 research:
   - page: /projects/conjugated-polymer-structure-property/

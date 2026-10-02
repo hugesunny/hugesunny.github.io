@@ -117,6 +117,7 @@ html.academic-dark .academic-theme-toggle .theme-icon-sun { display: block; }
 .academic-affiliation { font-size: 15px; line-height: 1.6; margin: 0; }
 .academic-affiliation a { color: var(--academic-text); }
 .academic-hero-intro { max-width: 68ch; margin-top: 0; }
+.academic-hero-background { max-width: 68ch; margin-top: 14px; }
 .academic-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 24px; margin-top: 16px; }
 .academic-actions a {
   display: inline-flex; align-items: center; min-height: 36px;

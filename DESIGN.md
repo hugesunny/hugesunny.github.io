@@ -66,3 +66,5 @@ Desktop profile uses two columns: portrait and identity on the left, biography a
 The homepage now uses a text-led introduction on the left and a campus photograph on the right, inspired by the reference site's profile format. assets/media/profile-old-well.png is the user-approved bag-removal composite with original face pixels retained. The image keeps its square composition, is optimized through Hugo to WebP, and has a location caption. The author avatar is retained for other views. Mobile uses a smaller right-side photograph and full-width biography; no generated slogan or research claims were added.
 
 At 640px and below, the profile is a single column in reading order: identity, biography and links, then a 220px photograph and caption. Desktop keeps the photograph on the right.
+
+The homepage separates home_intro (research focus) from home_background (current group and education). featured_overview is a concise presentation of the sourced summary for featured_publication; review both together if the featured paper changes. content/_index.md uses native seo.title to put the name first without an automatically duplicated site-name suffix.

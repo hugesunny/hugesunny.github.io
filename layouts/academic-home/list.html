@@ -16,6 +16,7 @@
     </div>
     <div class="academic-hero-description">
       <div class="academic-prose academic-hero-intro">{{ $design.home_intro | markdownify }}</div>
+      {{ with $design.home_background }}<div class="academic-prose academic-hero-background">{{ . | markdownify }}</div>{{ end }}
       <nav class="academic-actions" aria-label="Profile links">
         <a href="{{ "research/" | relURL }}">Research</a>
         <a href="{{ "publications/" | relURL }}">Publications</a>
@@ -49,7 +50,7 @@
         <h3><a href="{{ $paper.RelPermalink }}">{{ $paper.Title }}</a></h3>
         <p class="academic-featured-meta">{{ with $pub.display_short }}{{ . | markdownify }}{{ end }}, {{ $paper.Date.Format "2006" }}</p>
         {{ with $detail }}{{ if and .summary .source_url }}
-        <div class="academic-prose"><p>{{ range first 2 (split .summary ". ") }}{{ strings.TrimSuffix "." . }}. {{ end }}</p></div>
+        <div class="academic-prose"><p>{{ with $design.featured_overview }}{{ . }}{{ else }}{{ range first 2 (split .summary ". ") }}{{ strings.TrimSuffix "." . }}. {{ end }}{{ end }}</p></div>
         {{ end }}{{ end }}
         <a class="academic-more" href="{{ $paper.RelPermalink }}">Read the paper</a>
       </div>
