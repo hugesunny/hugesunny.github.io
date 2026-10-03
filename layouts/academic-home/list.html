@@ -65,7 +65,7 @@
       <a class="academic-more" href="{{ "publications/" | relURL }}">All publications</a>
     </div>
     {{ $papers := partial "academic/sorted_publications.html" (where site.RegularPages "Section" "publications") }}
-    <div class="academic-bibliography">{{ range first ($design.recent_publication_count | default 3) $papers }}{{ partial "views/citation.html" (dict "item" .) }}{{ end }}</div>
+    <div class="academic-bibliography">{{ range first ($design.recent_publication_count | default 3) $papers }}<article class="academic-index-item">{{ partial "academic/publication-row.html" (dict "paper" . "heading" 3 "filterable" false) }}</article>{{ end }}</div>
   </section>
 </main>
 {{ end }}

@@ -358,16 +358,16 @@ summary:focus-visible,input:focus-visible,select:focus-visible { outline: 3px so
 .academic-sort { margin-left: auto; display: flex; gap: 8px; align-items: center; }
 .academic-sort select { width: auto; }
 .academic-index-item { padding: 14px 0; border-bottom: 1px solid var(--academic-line); font-size: 14px; line-height: 1.55; }
-.academic-index-item h2 { margin: 0 0 5px; display: block; font-family: inherit; font-size: 15px; font-weight: 600; line-height: inherit; }
+.academic-index-item h2,.academic-index-item h3 { margin: 0 0 5px; display: block; font-family: inherit; font-size: 15px; font-weight: 600; line-height: inherit; }
 .academic-index-item .academic-authors { display: block; font-size: 13px; margin-bottom:3px; }
 .academic-index-item .academic-journal { display: inline; margin: 0; font-size: 13px; }
 .academic-index-citation { color:var(--academic-muted); font-size:13px; }
 .academic-tag-filters { display:grid; gap:10px; }
-.academic-tag-filters label { display:flex; align-items:baseline; gap:8px; font-weight:400; line-height:1.45; }
+.academic-tag-filters label { display:flex; align-items:baseline; gap:8px; font-weight:400; font-size:13px; line-height:1.45; }
 .academic-tag-filters input { flex-shrink:0; }
 .academic-paper-tags { display:flex; flex-wrap:wrap; gap:4px 16px; margin:7px 0 3px; }
-.academic-paper-tags button { color:var(--academic-link); font-size:12px; text-decoration:none; text-align:left; min-height:28px; padding:3px 10px; border:1px solid var(--academic-line); border-radius:999px; line-height:1.5; }
-.academic-paper-tags button:hover { border-color:var(--academic-link); color:var(--academic-navy); }
+.academic-paper-tags button,.academic-paper-tags a { color:var(--academic-link); font-size:12px; text-decoration:none; text-align:left; min-height:28px; padding:3px 10px; border:1px solid var(--academic-line); border-radius:999px; line-height:1.5; }
+.academic-paper-tags button:hover,.academic-paper-tags a:hover { border-color:var(--academic-link); color:var(--academic-navy); }
 .academic-index-item .academic-publication-actions { margin-top: 2px; gap: 16px; }
 .academic-index-item .hb-attachment-link { min-height: 28px; font-size: 12px; }
 .academic-index-item details { font-size: 13px; margin-top: 6px; }

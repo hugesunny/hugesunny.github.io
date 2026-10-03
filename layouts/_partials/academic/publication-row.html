@@ -1,0 +1,11 @@
+{{ $paper := .paper }}
+{{ $heading := .heading | default 2 }}
+{{ $slug := path.Base $paper.File.Dir }}
+{{ $extra := index hugo.Data.publication_details $slug }}
+{{ $areas := index hugo.Data.publication_tags.publications $slug | default slice }}
+<h{{ $heading }}><a href="{{ $paper.RelPermalink }}">{{ $paper.Title }}</a></h{{ $heading }}>
+<div class="academic-index-authors academic-authors">{{ partial "page_metadata_authors" $paper }}</div>
+<div class="academic-index-citation">{{ partial "academic/journal-reference.html" $paper }}</div>
+{{ if $areas }}<div class="academic-paper-tags" aria-label="Research tags">{{ range hugo.Data.publication_tags.tags }}{{ if in $areas .id }}{{ if $.filterable }}<button type="button" data-paper-tag="{{ .id }}" aria-label="Filter by {{ .title }}">{{ .title }}</button>{{ else }}<a href="{{ printf "/publications/#tags=%s" .id | relURL }}">{{ .title }}</a>{{ end }}{{ end }}{{ end }}</div>{{ end }}
+<div class="academic-publication-actions">{{ partial "page_links" (dict "page" $paper "is_list" 1) }}</div>
+{{ if $paper.Params.abstract }}<details><summary>Abstract</summary><div>{{ $paper.Params.abstract | markdownify }}</div></details>{{ else }}{{ with $extra }}<details><summary>{{ if .abstract_html }}Abstract{{ else }}Research overview{{ end }}</summary><div>{{ if .abstract_html }}{{ .abstract_html | safeHTML }}{{ else }}<p>{{ .summary }}</p>{{ end }}</div></details>{{ end }}{{ end }}
