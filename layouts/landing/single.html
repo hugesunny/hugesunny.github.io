@@ -49,6 +49,33 @@
       </div>
     </section>
 
+    <section class="academic-record-section" id="teaching" aria-labelledby="teaching-heading">
+      <h2 id="teaching-heading">Teaching &amp; Mentoring</h2>
+    <div class="academic-teaching-groups">
+      {{ range $i, $group := .Params.teaching_groups }}
+      <section class="academic-teaching-section">
+        <div>
+          <h3>{{ $group.title }}</h3>
+          <div class="academic-teaching-list">
+            {{ range $group.entries }}
+            <article class="academic-teaching-entry">
+              <div class="academic-teaching-date">{{ .dates }}</div>
+              <div>
+                <h4>{{ .role }}</h4>
+                {{ with .organization }}<p class="academic-teaching-org">{{ . }}</p>{{ end }}
+                {{ with .summary }}<div class="academic-prose"><p>{{ . | markdownify }}</p></div>{{ end }}
+                {{ with .bullets }}<ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+              </div>
+            </article>
+            {{ end }}
+          </div>
+        </div>
+      </section>
+      {{ end }}
+    </div>
+
+    </section>
+
     <section class="academic-record-section">
       <h2>Academic Service</h2>
       <div class="academic-service-list">
@@ -69,30 +96,6 @@
         {{ end }}
       </div>
     </section>
-
-  {{ else if eq $pageName "teaching" }}
-    <div class="academic-teaching-groups">
-      {{ range $i, $group := .Params.teaching_groups }}
-      <section class="academic-teaching-section">
-        <div>
-          <h2>{{ $group.title }}</h2>
-          <div class="academic-teaching-list">
-            {{ range $group.entries }}
-            <article class="academic-teaching-entry">
-              <div class="academic-teaching-date">{{ .dates }}</div>
-              <div>
-                <h3>{{ .role }}</h3>
-                {{ with .organization }}<p class="academic-teaching-org">{{ . }}</p>{{ end }}
-                {{ with .summary }}<div class="academic-prose"><p>{{ . | markdownify }}</p></div>{{ end }}
-                {{ with .bullets }}<ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
-              </div>
-            </article>
-            {{ end }}
-          </div>
-        </div>
-      </section>
-      {{ end }}
-    </div>
 
   {{ else }}
     {{ if eq $pageName "contact" }}<div class="academic-contact-grid">{{ end }}

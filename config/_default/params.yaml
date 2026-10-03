@@ -1,5 +1,5 @@
 mysite:
-  credit: true
+  credit: false
   discovery: true
 
 hugoblox:

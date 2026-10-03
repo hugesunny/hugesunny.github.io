@@ -29,7 +29,7 @@ Bio and People were removed at the owner’s request on 2026-10-03. Their old UR
 - Related work: build-time `layouts/_partials/related_finder.html`.
 - Verified co-author links used in bibliographies: `data/coauthors.json`. No People page. Legacy redirects: `static/bio/index.html` and `static/authors/index.html`.
 - Native search override: `layouts/_partials/components/search-modal.html`, with lazy Pagefind loading and failure fallback.
-- Credit/discovery: `config/_default/params.yaml`, footer and mysite-metadata hook. Both enabled; no information sharing or directory registration authorized.
+- Credit/discovery: `config/_default/params.yaml`, footer and mysite-metadata hook. Footer credit disabled; discovery enabled; no information sharing or directory registration authorized.
 - HTTPS canonical baseURL: `config/_default/hugo.yaml`. Build workflow must not override it with a CI-derived HTTP URL.
 - Vendored pinned modules: `_vendor/`. Existing schema/config uses modern HugoBlox kit, not the older blox-tailwind example.
 
@@ -46,3 +46,7 @@ Remaining limits: bulk BibTeX browser download did not yield a captured saved fi
 Commit current authorized changes, push main, then verify the workflow for that exact commit has completed successfully. Check live third-person intro and crawler endpoints. Never store credentials in this file. If CDN cache shows old content, use a commit-version query parameter for verification. Do not submit any mysite forms.
 
 For new edits, the previous deployment approval is historical, not blanket authorization to publish future changes. Update this handoff when the owner asks for continuity documentation.
+
+## Latest owner changes
+
+Teaching and mentoring are integrated into Experience at `/experience/#teaching`; `/teaching/` redirects there. Teaching is removed from navigation. Footer credit is disabled and the copyright is centered. Text links and actions share a 4px underline offset and 1px thickness.
