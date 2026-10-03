@@ -7,7 +7,7 @@
     <div class="academic-profile-row">
       <div class="academic-hero-identity">
         {{ $nameParts := split $profile.title " " }}
-        <h1 id="profile-name"><span class="academic-name-part">{{ delimit (first (sub (len $nameParts) 1) $nameParts) " " }}</span> <span class="academic-name-part">{{ index $nameParts (sub (len $nameParts) 1) }}{{ with $profile.postnominals }}<span class="academic-degree">, {{ delimit . ", " }}</span>{{ end }}</span></h1>
+        <h1 id="profile-name"><span class="academic-name-part">{{ delimit (first (sub (len $nameParts) 1) $nameParts) " " }}</span> <span class="academic-name-part">{{ index $nameParts (sub (len $nameParts) 1) }}</span></h1>
         <p class="academic-role">{{ $profile.role }}</p>
         {{ range $profile.affiliations }}
         <p class="academic-affiliation"><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ range $i, $line := split .name ", " }}{{ if $i }}<br>{{ end }}{{ $line }}{{ end }}</a></p>
@@ -16,17 +16,16 @@
     </div>
     <div class="academic-hero-description">
       <div class="academic-prose academic-hero-intro">{{ $design.home_intro | markdownify }}</div>
-      {{ with $design.home_background }}<div class="academic-prose academic-hero-background">{{ . | markdownify }}</div>{{ end }}
       <nav class="academic-actions" aria-label="Profile links">
-        <a href="{{ "research/" | relURL }}">Research</a>
+        <a href="#research-areas">Research Areas</a>
         <a href="{{ "publications/" | relURL }}">Publications</a>
         {{ range $profile.links }}{{ if eq .label "Google Scholar" }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">Google Scholar</a>{{ end }}{{ end }}
         {{ with $design.cv_url }}<a href="{{ . | relURL }}">CV</a>{{ end }}
-        {{ range $profile.links }}{{ if eq .label "Email" }}<a href="{{ .url }}">Email</a>{{ end }}{{ end }}
+        {{ range $profile.links }}{{ if eq .label "Email" }}<a href="{{ .url }}">{{ strings.TrimPrefix "mailto:" .url }}</a>{{ end }}{{ end }}
       </nav>
     </div>
-    {{ with resources.Get "media/profile-old-well.png" }}{{ $portrait := .Resize "840x webp q90" }}
-    <figure class="academic-portrait"><img src="{{ $portrait.RelPermalink }}" width="{{ $portrait.Width }}" height="{{ $portrait.Height }}" alt="{{ $profile.title }} at the Old Well on the UNC Chapel Hill campus" fetchpriority="high"><figcaption>At the Old Well, UNC Chapel Hill</figcaption></figure>
+    {{ with resources.Get "media/profile-cropped.jpg" }}{{ $portrait := .Resize "600x webp q88" }}
+    <figure class="academic-portrait"><img src="{{ $portrait.RelPermalink }}" width="{{ $portrait.Width }}" height="{{ $portrait.Height }}" alt="{{ $profile.title }} at the Old Well on the UNC Chapel Hill campus" fetchpriority="high"></figure>
     {{ end }}
     </div>
   </section>
@@ -57,6 +56,8 @@
     </article>
   </section>
   {{ end }}
+
+  {{ partial "academic/research-accordions.html" . }}
 
   <section class="academic-container academic-recent" id="papers" aria-labelledby="recent-publications-heading">
     <div class="academic-section-heading">

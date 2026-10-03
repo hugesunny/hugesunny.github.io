@@ -19,7 +19,8 @@
       {{- if and $termPage $termPage.RelPermalink -}}
         <a href="{{ $termPage.RelPermalink }}">{{ $display }}</a>
       {{- else -}}
-        {{ $display }}
+        {{- $person := index hugo.Data.coauthors $raw -}}
+        {{- if and $person $person.url -}}<a href="{{ $person.url }}">{{ $display }}</a>{{- else -}}{{ $display }}{{- end -}}
       {{- end -}}
     </span>
     {{- if isset $.Params "author_notes" -}}

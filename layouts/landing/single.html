@@ -2,7 +2,7 @@
 {{ if .Params.academic }}
 {{ $pageName := .File.ContentBaseName }}
 <main id="academic-main" class="academic-container academic-records academic-records-{{ $pageName }}" tabindex="-1" data-pagefind-body>
-  <header class="academic-page-intro"><p class="academic-eyebrow">{{ .Params.eyebrow | default "Academic profile" }}</p><h1>{{ .Title }}</h1></header>
+  <header class="academic-page-intro"><h1>{{ .Title }}</h1></header>
 
   {{ if eq $pageName "experience" }}
     {{ $profile := partial "functions/get_author_profile" (dict "slug" "me") }}
@@ -74,7 +74,6 @@
     <div class="academic-teaching-groups">
       {{ range $i, $group := .Params.teaching_groups }}
       <section class="academic-teaching-section">
-        <div class="academic-teaching-index">{{ printf "%02d" (add $i 1) }}</div>
         <div>
           <h2>{{ $group.title }}</h2>
           <div class="academic-teaching-list">

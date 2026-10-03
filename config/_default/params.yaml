@@ -1,3 +1,7 @@
+mysite:
+  credit: true
+  discovery: true
+
 hugoblox:
   schema: "2.0"
 

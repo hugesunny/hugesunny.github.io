@@ -1,0 +1,39 @@
+{
+  "areas": [
+    {
+      "id": "structure",
+      "page": "/projects/conjugated-polymer-structure-property/",
+      "title": "Structure–property relationships",
+      "publications": [
+        "chung-2024-structural",
+        "chung-2025-deformability",
+        "kim-2024-multiscale",
+        "kim-2025-electrostatic",
+        "ok-2025-polarity",
+        "min-2023-morphology",
+        "lee-2021-marangoni",
+        "lee-2025-crystallinity"
+      ]
+    },
+    {
+      "id": "deformation",
+      "page": "/projects/deformable-organic-electronics/",
+      "title": "Deformable organic electronics",
+      "publications": [
+        "chung-2024-structural",
+        "chung-2025-deformability",
+        "kim-2023-photocrosslinker",
+        "kim-2024-multiscale",
+        "park-2024-trapping"
+      ]
+    },
+    {
+      "id": "devices",
+      "page": "/projects/opd-oect/",
+      "title": "Optoelectronic & electrochemical devices",
+      "publications": [
+        "yi-2026-trapmodified"
+      ]
+    }
+  ]
+}

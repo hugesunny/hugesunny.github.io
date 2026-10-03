@@ -32,3 +32,11 @@ main:
   - name: Contact
     url: /contact/
     weight: 80
+
+  - name: Bio
+    url: /bio/
+    weight: 35
+
+  - name: People
+    url: /authors/
+    weight: 65

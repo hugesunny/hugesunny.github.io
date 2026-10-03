@@ -3,7 +3,7 @@
 # Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
 
 title: ''
-baseURL: 'https://hugesunny.github.io/'
+baseURL: 'https://seunghyunkim.org/'
 
 defaultContentLanguage: en
 hasCJKLanguage: false
@@ -37,7 +37,6 @@ imaging:
   hint: picture
 timeout: 600000
 taxonomies:
-  author: authors
   tag: tags
   publication_type: publication_types
 markup:

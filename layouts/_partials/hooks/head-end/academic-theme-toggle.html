@@ -1,16 +1,1 @@
-<script>
-(function () {
-  var root = document.documentElement;
-  var theme = 'light';
-  try {
-    theme = localStorage.getItem('academic-theme') || 'light';
-  } catch (e) {}
-  if (theme === 'dark') {
-    root.classList.add('academic-dark', 'dark');
-    root.style.colorScheme = 'dark';
-  } else {
-    root.classList.remove('academic-dark', 'dark');
-    root.style.colorScheme = 'light';
-  }
-})();
-</script>
+<script>document.documentElement.classList.remove("academic-dark", "dark");document.documentElement.style.colorScheme="light";</script>

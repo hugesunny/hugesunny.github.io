@@ -1,0 +1,10 @@
+{{ if site.Params.mysite.discovery }}<meta name="generator" content="Created using GaryKing.org/mysite (https://gking.harvard.edu/mysite)">
+{{ if .IsHome }}{{ dict "@context" "https://schema.org" "@type" "Person" "name" hugo.Data.authors.me.name.display "affiliation" (dict "@type" "Organization" "name" hugo.Data.academic.institution) "url" site.Home.Permalink "isBasedOn" "https://gking.harvard.edu/mysite" | jsonify | printf `<script type="application/ld+json">%s</script>` | safeHTML }}{{ end }}{{ end }}
+{{ if and (eq .Section "publications") .IsPage (not .Params.private) (not .Params.unlisted) }}
+<meta name="citation_title" content="{{ .Title }}">{{ range .Params.authors }}<meta name="citation_author" content="{{ . }}">{{ end }}{{ $dateMeta := .Date.Format "2006" }}{{ with index hugo.Data.publication_details (path.Base .File.Dir) }}{{ with .sort_date }}{{ $dateMeta = replace . "-" "/" }}{{ end }}{{ end }}<meta name="citation_publication_date" content="{{ $dateMeta }}">{{ with .Params.doi }}<meta name="citation_doi" content="{{ . }}">{{ end }}{{ with .Params.url_pdf }}<meta name="citation_pdf_url" content="{{ . | absURL }}">{{ end }}
+{{ $authors := slice }}{{ range .Params.authors }}{{ $authors = $authors | append (dict "@type" "Person" "name" .) }}{{ end }}
+{{ $extra := index hugo.Data.publication_details (path.Base .File.Dir) }}{{ $abstract := .Params.abstract | default "" }}{{ with $extra }}{{ $abstract = $abstract | default (.abstract_html | default .summary) }}{{ end }}
+{{ $date := .Date.Format "2006" }}{{ with $extra.sort_date }}{{ $date = . }}{{ end }}
+{{ $schema := dict "@context" "https://schema.org" "@type" "ScholarlyArticle" "headline" .Title "author" $authors "datePublished" $date "abstract" ($abstract | plainify | htmlUnescape) "url" .Permalink }}{{ with .Params.doi }}{{ $schema = merge $schema (dict "identifier" . "sameAs" (printf "https://doi.org/%s" .)) }}{{ end }}
+{{ $schema | jsonify | printf `<script type="application/ld+json">%s</script>` | safeHTML }}
+{{ end }}

@@ -1,0 +1,17 @@
+{{ $page := . }}{{ $slug := path.Base .File.Dir }}{{ $picks := slice }}{{ $explicit := slice }}
+{{ range slice "related_papers" "related_talks" "related_software" "related_datasets" }}{{ with index $page.Params . }}{{ $explicit = $explicit | append . }}{{ end }}{{ end }}
+{{ range slice "related_paper" "related_dataset" }}{{ with index $page.Params . }}{{ $explicit = $explicit | append . }}{{ end }}{{ end }}
+{{ $stop := split "a an and the of for in on to with by at as is are be or from into using via new not no it its we our their you your this that these those but if than then so can will would could should may might also more most some all any each every who whom which what when where why how about between among through over under after before upon across per vs de la les et du" " " }}
+{{ $tokens := slice }}{{ range findRE `[a-z0-9]+` (lower $page.Title) }}{{ if and (ge (len .) 3) (not (in $stop .)) }}{{ $tokens = $tokens | append . }}{{ end }}{{ end }}
+{{ range where site.RegularPages "Section" "in" (slice "publications" "events" "software") }}{{ if ne .RelPermalink $page.RelPermalink }}{{ $candidate := . }}{{ $otherSlug := path.Base .File.Dir }}{{ $score := 0 }}
+{{ if in $explicit $otherSlug }}{{ $score = 1000 }}{{ end }}
+{{ range hugo.Data.research_areas.areas }}{{ if and (in .publications $slug) (in .publications $otherSlug) }}{{ $score = add $score 20 }}{{ end }}{{ end }}
+{{ range uniq (findRE `[a-z0-9]+` (lower .Title)) }}{{ if in $tokens . }}{{ $score = add $score 2 }}{{ end }}{{ end }}
+{{ range .Params.authors }}{{ $author := . }}{{ if in ($page.Params.authors | default slice) . }}{{ $score = add $score 1 }}{{ else }}{{ range $page.Params.authors }}{{ if eq (index (last 1 (split . " ")) 0) (index (last 1 (split $author " ")) 0) }}{{ $score = add $score 1 }}{{ end }}{{ end }}{{ end }}{{ end }}
+{{ range .Params.tags }}{{ if in ($page.Params.tags | default slice) . }}{{ $score = add $score 2 }}{{ end }}{{ end }}
+{{ $threshold := 4 }}{{ if lt (len $explicit) 3 }}{{ $threshold = 2 }}{{ end }}
+{{ if ge $score $threshold }}{{ $picks = $picks | append (dict "page" . "score" (add (mul $score 10000) .Date.Year)) }}{{ end }}{{ end }}{{ end }}
+{{ $seen := slice }}{{ $count := 0 }}{{ if or $picks $page.Params.see_also $page.Params.dataverse_url }}<section class="gk-see-also" data-pagefind-ignore><h2>See Also</h2><ul>
+{{ range $page.Params.see_also }}{{ if .url }}<li><a href="{{ .url }}">{{ .title }}</a></li>{{ else }}{{ with site.GetPage (printf "/%s/%s" .section .slug) }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}{{ end }}
+{{ with $page.Params.dataverse_url }}<li><span>[Dataset]</span><a href="{{ . }}">{{ $page.Params.dataverse_name | default "Replication data" }}</a></li>{{ end }}
+{{ range sort $picks "score" "desc" }}{{ $key := replaceRE `[^a-z0-9]` "" (lower .page.Title) }}{{ if and (lt $count 8) (not (in $seen $key)) }}{{ $count = add $count 1 }}{{ $seen = $seen | append $key }}<li><span>[Paper]</span><a href="{{ .page.RelPermalink }}">{{ .page.Title }}</a> ({{ .page.Date.Format "2006" }})</li>{{ end }}{{ end }}</ul></section>{{ end }}

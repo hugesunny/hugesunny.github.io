@@ -1,0 +1,88 @@
+{
+  "entries": {
+    "bai-2025-stepwise": {
+      "tab": "articles",
+      "legacy_type": "article-journal"
+    },
+    "chung-2024-structural": {
+      "tab": "articles",
+      "legacy_type": "article-journal"
+    },
+    "chung-2025-deformability": {
+      "tab": "articles",
+      "legacy_type": "article-journal"
+    },
+    "hong-2021-heterointerface": {
+      "tab": "articles",
+      "legacy_type": "article-journal"
+    },
+    "hou-2026-siloxane": {
+      "tab": "articles",
+      "legacy_type": "article-journal"
+    },
+    "jang-2024-crosslinking": {
+      "tab": "articles",
+      "legacy_type": "article-journal"
+    },
+    "kim-2023-photocrosslinker": {
+      "tab": "articles",
+      "legacy_type": "article-journal"
+    },
+    "kim-2024-multiscale": {
+      "tab": "articles",
+      "legacy_type": "article-journal"
+    },
+    "kim-2025-electrostatic": {
+      "tab": "articles",
+      "legacy_type": "article-journal"
+    },
+    "lee-2021-marangoni": {
+      "tab": "articles",
+      "legacy_type": "article-journal"
+    },
+    "lee-2025-crystallinity": {
+      "tab": "articles",
+      "legacy_type": "article-journal"
+    },
+    "megretbonilla-2026-sustainability": {
+      "tab": "articles",
+      "legacy_type": "article-journal"
+    },
+    "min-2023-morphology": {
+      "tab": "articles",
+      "legacy_type": "article-journal"
+    },
+    "ok-2025-polarity": {
+      "tab": "articles",
+      "legacy_type": "article-journal"
+    },
+    "park-2020-biasstress": {
+      "tab": "articles",
+      "legacy_type": "article-journal"
+    },
+    "park-2023-protonated": {
+      "tab": "articles",
+      "legacy_type": "article-journal"
+    },
+    "park-2024-trapping": {
+      "tab": "articles",
+      "legacy_type": "article-journal"
+    },
+    "sung-2022-nanomorphology": {
+      "tab": "articles",
+      "legacy_type": "article-journal"
+    },
+    "sung-2024-luminescence": {
+      "tab": "articles",
+      "legacy_type": "article-journal"
+    },
+    "yi-2026-trapmodified": {
+      "tab": "articles",
+      "legacy_type": "article-journal"
+    },
+    "yu-2026-pedot": {
+      "tab": "articles",
+      "legacy_type": "article-journal"
+    }
+  }
+}

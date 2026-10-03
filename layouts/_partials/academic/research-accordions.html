@@ -1,0 +1,7 @@
+<section class="academic-container academic-areas" id="research-areas" aria-labelledby="areas-heading">
+<div class="academic-section-heading"><h2 id="areas-heading">Research Areas</h2><a class="academic-more" href="{{ "research/" | relURL }}">Research overview</a></div>
+{{ range hugo.Data.research_areas.areas }}{{ $area := . }}{{ with site.GetPage .page }}
+<details class="academic-area"><summary><h3>{{ .Title }}</h3></summary><div class="academic-area-content academic-prose">{{ .Content }}
+{{ $papers := slice }}{{ range $area.publications }}{{ with site.GetPage (printf "/publications/%s" .) }}{{ $papers = $papers | append . }}{{ end }}{{ end }}
+{{ if $papers }}<ul class="academic-area-papers">{{ range first 5 (partial "academic/sorted_publications.html" $papers) }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a> <span>({{ .Date.Format "2006" }})</span></li>{{ end }}</ul><a class="academic-more" href="{{ "publications/" | relURL }}#area={{ $area.id }}">View all publications in this area</a>{{ end }}
+</div></details>{{ end }}{{ end }}</section>
