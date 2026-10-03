@@ -335,9 +335,6 @@ summary:focus-visible,input:focus-visible,select:focus-visible { outline: 3px so
 .academic-footer-bottom { display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid #5a534b; padding-top: 16px; margin-top: 16px; }
 .academic-footer-bottom a { color: #e8e0d5; text-decoration: underline; }
 .academic-social-links { max-width: 540px; gap: 0 20px; }
-.academic-people { columns: 3; list-style: none; padding: 0; margin: 0 0 35px; }
-.academic-people li { break-inside: avoid; padding-block: 8px; }
-.academic-bio .academic-prose { max-width: 75ch; }
 .academic-index-tabs { position: sticky; top: 72px; z-index: 20; display: flex; gap: 24px; border-bottom: 1px solid var(--academic-line); background: var(--academic-background); }
 .academic-index-tabs button { padding: 10px 0; border-bottom: 2px solid transparent; color: var(--academic-muted); }
 .academic-index-tabs button[aria-selected=true] { color: var(--academic-text); border-color: var(--academic-link); font-weight: 600; }
@@ -368,7 +365,7 @@ summary:focus-visible,input:focus-visible,select:focus-visible { outline: 3px so
 .gk-see-also li { margin-top: 12px; font-size: 14px; }
 .gk-see-also span { color: var(--academic-muted); margin-right: 8px; font-size: 12px; }
 @media(max-width:1100px) { .academic-menu-toggle { display:flex; order:3; width:44px; margin-left:0; align-items:center; justify-content:center; } .academic-navigation { display:none;position:absolute;left:0;right:0;top:100%;background:var(--academic-header);padding:12px 20px;grid-template-columns:1fr; } .academic-navigation.is-open { display:grid; } .academic-navigation a { padding:12px; } }
-@media(max-width:760px) { .academic-index-grid { grid-template-columns: 1fr; gap: 20px; } .academic-filters { position:static; } .academic-years { display:flex;flex-wrap:wrap;gap:4px 16px;max-height:none; } .academic-people { columns:2; } }
+@media(max-width:760px) { .academic-index-grid { grid-template-columns: 1fr; gap: 20px; } .academic-filters { position:static; } .academic-years { display:flex;flex-wrap:wrap;gap:4px 16px;max-height:none; } }
 @media(max-width:640px) { .academic-index-tabs { top:68px; } .academic-footer-bottom { flex-direction:column; gap:8px; } .academic-sort { margin-left:0; } .academic-index-item { padding-block:18px; } }
 
 

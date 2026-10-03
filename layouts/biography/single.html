@@ -1,2 +1,0 @@
-{{ define "main" }}{{ $profile := partial "functions/get_author_profile" (dict "slug" "me") }}
-<main id="academic-main" class="academic-container academic-records academic-bio" tabindex="-1" data-pagefind-body><header class="academic-page-intro"><h1>{{ .Title }}</h1></header><div class="academic-prose">{{ $profile.bio | markdownify }}</div><nav class="academic-actions" aria-label="Biography links"><a href="{{ "uploads/resume.pdf" | relURL }}">Download CV</a><a href="{{ "experience/" | relURL }}">Education & experience</a></nav></main>{{ end }}

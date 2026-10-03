@@ -4,7 +4,7 @@ Read `HANDOFF.md`, `WEBSITE_PRINCIPLES.md`, and `UPDATING.md` before editing. Ch
 
 - Maintain the existing HugoBlox kit, Pagefind, BibTeX importer, and permanent published URLs. Do not introduce another framework or downgrade the theme to a prompt's example version.
 - Use a restrained academic design: warm off-white, slate links, serif principal headings, readable sans-serif body, circular owned portrait, dense bibliography. No ornamental banners, gradients, decorative numbers, repeated labels, or invented research claims.
-- Homepage introduction is third person, two sentences. Preserve its scientific meaning. Full Bio is distinct. Research/project descriptions may retain their existing first-person voice unless asked otherwise.
+- Homepage introduction is third person, two sentences. Preserve its scientific meaning. Do not recreate Bio or People pages; the owner removed them. Research/project descriptions may retain their existing first-person voice unless asked otherwise.
 - Keep all project presentation rules in `assets/css/custom.css`; do not append competing head-hook CSS overrides.
 - Preserve publication title, author, journal, year, DOI, BibTeX and CV data. Supplemental sourced summaries and verified ordering dates stay in `data/publication_details.json`, outside importer output.
 - Resolve co-author identities using paper/field/institution context. Leave uncertain initials unlinked; never guess identity from a name alone.

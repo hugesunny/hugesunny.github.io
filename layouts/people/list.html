@@ -1,3 +1,0 @@
-{{ define "main" }}
-{{ $names := slice }}{{ range where site.RegularPages "Section" "publications" }}{{ range .Params.authors }}{{ if ne . hugo.Data.authors.me.name.display }}{{ $names = $names | append . }}{{ end }}{{ end }}{{ end }}
-<main id="academic-main" class="academic-container academic-records" tabindex="-1" data-pagefind-body><header class="academic-page-intro"><h1>People</h1><p class="academic-intro-note">Co-authors on my publications.</p></header><ul class="academic-people">{{ range sort (uniq $names) }}<li>{{ $person := index hugo.Data.coauthors . }}{{ if and $person $person.url }}<a href="{{ $person.url }}">{{ . }}</a>{{ else }}{{ . }}{{ printf "<!-- External identity unresolved: %s -->" . | safeHTML }}{{ end }}</li>{{ end }}</ul></main>{{ end }}

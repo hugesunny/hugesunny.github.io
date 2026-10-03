@@ -3,11 +3,10 @@
 Seung Hyun Kim is a Postdoctoral Research Associate in the Department of Chemistry at the University of North Carolina at Chapel Hill.
 His research concerns conjugated polymers, structure–property relationships, charge transport, deformable electronics, organic photodetectors, and organic electrochemical transistors.
 
-- Bio: https://seunghyunkim.org/bio/
+- Experience: https://seunghyunkim.org/experience/
 - CV: https://seunghyunkim.org/uploads/resume.pdf
 - Research: https://seunghyunkim.org/research/
 - Publications: https://seunghyunkim.org/publications/
-- People: https://seunghyunkim.org/authors/
 - Teaching: https://seunghyunkim.org/teaching/
 - Presentations: https://seunghyunkim.org/presentations/
 - Contact: https://seunghyunkim.org/contact/

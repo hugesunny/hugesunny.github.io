@@ -4,10 +4,10 @@ Edit content on GitHub or locally. Keep published page folders and URLs unchange
 
 - **New paper:** update `publications.bib` and use the existing import workflow. Review the generated publication changes. Each paper keeps its `index.md`, `cite.bib`, and existing `toc.*` image.
 - **Abstracts and dates:** sourced summaries and verified ordering dates live in `data/publication_details.json`, outside the importer. Do not invent missing dates or PDF links.
-- **Homepage:** edit `home_intro`, `featured_publication`, and `featured_overview` in `data/academic.yaml`. Titles and venues are read from publication bundles. The short introduction differs from the full Bio page.
-- **Bio:** edit `bio` in `data/authors/me.yaml`. This is also the source for name, role, education, and social links.
+- **Homepage:** edit `home_intro`, `featured_publication`, and `featured_overview` in `data/academic.yaml`. Titles and venues are read from publication bundles. The short introduction is third person. There is no standalone Bio page.
+- **Profile:** `data/authors/me.yaml` remains the source for name, role, education, social links and retained biography text.
 - **Research:** edit the three bundles in `content/projects/`. `data/research_areas.json` lists the publication slugs explicitly associated with each area. A new paper appears in Publications automatically; add it to a research area only after checking the relationship.
-- **People:** the names are automatically collected from publication authors. The external links were resolved by web search and context checks and remain fallible. Review every entry and fix or remove wrong names or URLs in `data/coauthors.json`. Most initial-only names remain unlinked because identity cannot be safely inferred. Do not silently expand initials in bibliography data.
+- **Co-author links:** review the two external bibliography links in `data/coauthors.json`. Do not guess identities or expand initials. The owner removed the People page.
 - **Teaching, talks, experience:** edit the corresponding Markdown file in `content/`.
 - **CV:** replace `static/uploads/resume.pdf` at the same path.
 - **Credit and marker:** `config/_default/params.yaml`, `mysite.credit` and `mysite.discovery` are both true by the owner’s choice. There is no telemetry or automatic information submission.
