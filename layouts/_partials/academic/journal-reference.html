@@ -3,7 +3,7 @@
 {{ $fields := dict }}
 {{ with .Resources.GetMatch "cite.bib" }}
   {{ $bib := .Content }}
-  {{ range $field := slice "journal" "year" "volume" "number" "pages" "eid" }}
+  {{ range $field := slice "journal" "year" "volume" "number" "pages" "eid" "note" }}
     {{ $pattern := printf `(?mi)^\s*%s\s*=\s*\{([^\r\n}]*)\}` . }}
     {{ with findRESubmatch $pattern $bib 1 }}
       {{ $fields = merge $fields (dict $field (index (index . 0) 1)) }}
@@ -12,4 +12,4 @@
 {{ end }}
 {{ $journal := index $fields "journal" }}
 {{ if not $journal }}{{ $pub := partial "functions/resolve_publication.html" . }}{{ $journal = $pub.display_short | plainify }}{{ end }}
-<em>{{ $journal }}</em> <strong>{{ index $fields "year" | default (.Date.Format "2006") }}</strong>{{ with index $fields "volume" }}, <em>{{ . }}</em>{{ end }}{{ with index $fields "number" }} ({{ . }}){{ end }}{{ with (index $fields "pages" | default (index $fields "eid")) }}, {{ replace . "--" "–" }}{{ end }}.
+<em>{{ $journal }}</em> <strong>{{ index $fields "year" | default (.Date.Format "2006") }}</strong>{{ with index $fields "volume" }}, <em>{{ . }}</em>{{ end }}{{ with index $fields "number" }} ({{ . }}){{ end }}{{ with (index $fields "pages" | default (index $fields "eid")) }}, {{ replace . "--" "–" }}{{ end }}{{ if not (index $fields "volume") }}{{ with index $fields "note" }}{{ if in . "Just Accepted" }}, Just Accepted{{ else if in . "In press" }}, in press{{ end }}{{ end }}{{ end }}.

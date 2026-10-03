@@ -9,9 +9,7 @@
     <h2 id="theme-heading-{{ add $i 1 }}">{{ .Title }}</h2>
     <div class="academic-prose">
       {{ .Content }}
-      {{ with $theme.publication }}{{ with site.GetPage . }}
-      <p class="academic-related-paper">Related paper: <a href="{{ .RelPermalink }}">{{ .Title }}</a> ({{ .Date.Format "2006" }})</p>
-      {{ end }}{{ end }}
+      {{ with $theme.publications }}<div class="academic-related-papers"><h3>Selected papers</h3><ul>{{ range . }}{{ with site.GetPage . }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a> ({{ .Date.Format "2006" }})</li>{{ end }}{{ end }}</ul></div>{{ end }}
     </div>
   </section>
   {{ end }}{{ end }}

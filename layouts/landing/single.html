@@ -97,6 +97,8 @@
       </div>
     </section>
 
+  {{ else if eq $pageName "presentations" }}
+    <div class="academic-talks">{{ range .Params.presentations }}<article class="academic-talk"><h2>{{ .title }}</h2><p class="academic-talk-authors">{{ .authors | markdownify }}</p><p>{{ .venue }}</p><p class="academic-talk-meta"><strong>{{ .date }}</strong> · {{ .format }}</p></article>{{ end }}</div>
   {{ else }}
     {{ if eq $pageName "contact" }}<div class="academic-contact-grid">{{ end }}
     {{ range .Params.sections }}

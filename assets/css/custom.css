@@ -265,7 +265,7 @@ html.academic-dark .academic-teaching-entry .academic-prose { color: var(--acade
   .academic-nav-inner { width: calc(100% - 32px); }
   .academic-home h1, .academic-records h1 { font-size: 32px; }
   .academic-home h2, .academic-records h2 { font-size: 24px; }
-  .academic-hero { grid-template-columns: minmax(0, 1fr); padding-block: 28px; text-align: center; gap: 18px; }
+  .academic-hero { grid-template-columns: minmax(0, 1fr); padding-block: 22px; text-align: center; gap: 14px; }
   .academic-hero-identity { grid-column: 1; grid-row: 2; }
   .academic-hero h1 { font-size: 32px; margin-bottom: 10px; }
   .academic-role { font-size: 15px; line-height: 1.5; margin-bottom: 5px; }
@@ -273,7 +273,7 @@ html.academic-dark .academic-teaching-entry .academic-prose { color: var(--acade
   .academic-portrait { grid-column: 1; grid-row: 1; width: 144px; margin-inline: auto; }
   .academic-portrait figcaption { font-size: 12px; }
   .academic-hero-description { grid-column: 1; grid-row: 3; }
-  .academic-hero-intro { margin-top: 0; }
+  .academic-hero-intro { margin-top: 0; text-align:left; }
   .academic-actions { gap: 0 20px; margin-top: 12px; justify-content: center; }
   .academic-actions a, .academic-more { min-height: 44px; }
   .academic-featured { padding-block: 26px 30px; }
@@ -432,4 +432,21 @@ summary:focus-visible,input:focus-visible,select:focus-visible { outline: 3px so
   .academic-skills-grid { grid-template-columns:1fr; gap:23px; }
   .academic-teaching-section { grid-template-columns:minmax(0,1fr); gap:12px; margin-bottom:36px; }
   .academic-teaching-section>div:last-child>h3 { font-size:1.3rem; }
+}
+
+/* Responsive filters and structured academic records. */
+.academic-filter-panel > summary { display:none; }
+.academic-talk { padding:22px 0; border-bottom:1px solid var(--academic-line); }
+.academic-talk h2 { font-family:inherit; font-size:18px; line-height:1.5; margin:0 0 8px; }
+.academic-talk p { margin:4px 0; }
+.academic-talk-authors,.academic-talk-meta { font-size:14px; color:var(--academic-muted); }
+.academic-related-papers h3 { font-family:inherit; font-size:14px; margin-top:20px; }
+@media(max-width:760px) {
+ .academic-filter-panel > summary { display:list-item; font-size:13px; color:var(--academic-link); padding:12px 0; cursor:pointer; }
+ .academic-filter-panel[open] > summary { margin-bottom:12px; }
+ .academic-filters input[type=search] { margin-bottom:0; }
+ .academic-paper-tags a,.academic-paper-tags button { display:inline-flex; align-items:center; min-height:44px; }
+ .academic-index-item .hb-attachment-link,.academic-paper .hb-attachment-link { min-height:44px; padding-inline:6px; }
+ .academic-publication-actions { gap:12px; }
+ .academic-years label,.academic-tag-filters label { min-height:36px; }
 }

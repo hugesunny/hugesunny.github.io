@@ -17,3 +17,5 @@ Build with Hugo extended 0.162.1: `hugo --gc --minify`, followed by `pnpm run pa
 Publication lists display title, authors, and journal reference on separate lines. The journal reference reads year, volume, issue (`number`), pages or article number directly from `cite.bib`; missing fields are omitted. Full journal names are retained for readability, so this is an ACS-inspired display rather than strict ACS citation formatting.
 
 Authorship symbols are sourced from the owner’s September 29, 2026 CV (pages 2–3) in `data/publication_authorship.json`. They describe Seung Hyun Kim only: † equal contribution/co-first author, * corresponding author. Do not infer other authors’ roles or a co-first role from author order. The shared author partial displays them across lists and paper pages without altering BibTeX.
+
+Responsive publication filters are collapsed below 761px and open on desktop; query search stays visible. Research area hashes (`area`) use curated research assignments separately from publication tag hashes (`tags`). Presentation records are structured in `content/presentations.md`. Paper detail pages use the shared journal reference and publication tags.

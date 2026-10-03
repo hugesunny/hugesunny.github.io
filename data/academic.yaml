@@ -20,13 +20,20 @@ featured_overview: >-
 research_intro: My research focuses on understanding and controlling the relationships among molecular structure, thin-film morphology, interfaces, and charge transport in conjugated polymers for emerging organic electronic devices.
 research:
   - page: /projects/conjugated-polymer-structure-property/
-    publication: /publications/kim-2024-multiscale/
+    publications:
+      - /publications/kim-2024-multiscale/
+      - /publications/min-2023-morphology/
     short_title: Structure–property relationships
     summary: Connecting molecular packing and thin-film microstructure to charge transport in conjugated polymers.
   - page: /projects/deformable-organic-electronics/
+    publications:
+      - /publications/chung-2025-deformability/
+      - /publications/kim-2023-photocrosslinker/
     short_title: Deformable organic electronics
     summary: Understanding structural evolution and charge transport under mechanical deformation.
   - page: /projects/opd-oect/
+    publications:
+      - /publications/yi-2026-trapmodified/
     short_title: Optoelectronic & electrochemical devices
     summary: Engineering molecules and interfaces for organic photodetectors and electrochemical transistors.
 recent_publication_count: 3

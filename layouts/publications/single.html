@@ -2,13 +2,16 @@
 {{ $pub := partial "functions/resolve_publication.html" . }}
 {{ $extra := index hugo.Data.publication_details (path.Base .File.Dir) }}
 <main id="academic-main" class="academic-container academic-records academic-paper" tabindex="-1" data-pagefind-body>
-  <span data-pagefind-filter="type" hidden>publications</span>
+  <span data-pagefind-filter="type" data-pagefind-ignore hidden>publications</span>
   <header class="academic-paper-header">
-    <a class="academic-more" href="{{ "publications/" | relURL }}">← All publications</a>
-    <p class="academic-eyebrow">{{ .Date.Format "2006" }}</p>
+    <a data-pagefind-ignore class="academic-more" href="{{ "publications/" | relURL }}">← All publications</a>
+
     <h1 data-pagefind-meta="title">{{ .Title }}</h1>
     <div class="academic-paper-authors">{{ partial "page_metadata_authors" . }}</div>
-    <p class="academic-paper-journal">{{ $pub.display | markdownify }}</p>
+    <p class="academic-paper-journal">{{ partial "academic/journal-reference.html" . }}</p>
+    {{ $tags := index hugo.Data.publication_tags.publications (path.Base .File.Dir) | default slice }}
+    <div class="academic-paper-tags">{{ range hugo.Data.publication_tags.tags }}{{ if in $tags .id }}<a href="{{ printf "/publications/#tags=%s" .id | relURL }}">{{ .title }}</a>{{ end }}{{ end }}</div>
+    {{ with index hugo.Data.publication_authorship.publications (path.Base .File.Dir) }}<p class="academic-authorship-legend">Seung Hyun Kim’s authorship role: {{ if in . "co_first" }}† Equal contribution (co-first author).{{ end }}{{ if in . "corresponding" }}* Corresponding author.{{ end }}</p>{{ end }}
     <div class="academic-publication-actions">{{ partial "page_links" (dict "page" . "is_list" 0) }}</div>
   </header>
   {{ with .Resources.GetMatch "toc.*" }}<figure class="academic-paper-figure"><button class="academic-featured-image" type="button" data-toc-lightbox data-toc-src="{{ .RelPermalink }}" data-toc-title="{{ $.Title }}" aria-label="Enlarge ToC image for {{ $.Title }}"><img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="Table-of-contents graphic for {{ $.Title }}" loading="lazy"></button></figure>{{ end }}

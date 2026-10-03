@@ -1,16 +1,21 @@
 (() => {
   const root = document.querySelector('#publication-index'); if (!root) return;
   const items = [...root.querySelectorAll('.academic-index-item')], query = root.querySelector('#pub-query'), tags = [...root.querySelectorAll('[name=pub-tag]')], sort = root.querySelector('#pub-sort'), years = [...root.querySelectorAll('[name=pub-year]')], tabs = [...root.querySelectorAll('button[data-tab]')];
-  let tab = 'all';
+  const filterPanel = root.querySelector('.academic-filter-panel');
+  const mobileFilters = matchMedia('(max-width: 760px)');
+  const setFilterLayout = () => { filterPanel.open = !mobileFilters.matches; };
+  setFilterLayout(); mobileFilters.addEventListener('change', setFilterLayout);
+  let tab = 'all', legacyArea = '';
   const apply = (record = false) => {
+    if (record) legacyArea = "";
     const q = query.value.trim().toLowerCase(), checked = years.filter(el => el.checked).map(el => el.value), selectedTags = tags.filter(el => el.checked).map(el => el.value);
-    const visible = items.filter(item => { const show = (tab === 'all' || item.dataset.tab === tab) && (!q || item.textContent.toLowerCase().includes(q)) && (!selectedTags.length || selectedTags.some(tag => item.dataset.area.split(' ').includes(tag))) && (!checked.length || checked.includes(item.dataset.year)); item.hidden = !show; return show; });
+    const visible = items.filter(item => { const show = (!legacyArea || item.dataset.researchArea.split(' ').includes(legacyArea)) && (tab === 'all' || item.dataset.tab === tab) && (!q || item.textContent.toLowerCase().includes(q)) && (!selectedTags.length || selectedTags.some(tag => item.dataset.area.split(' ').includes(tag))) && (!checked.length || checked.includes(item.dataset.year)); item.hidden = !show; return show; });
     items.sort((a,b) => sort.value === 'az' ? a.dataset.title.localeCompare(b.dataset.title) : sort.value === 'za' ? b.dataset.title.localeCompare(a.dataset.title) : sort.value === 'oldest' ? a.dataset.date.localeCompare(b.dataset.date) : b.dataset.date.localeCompare(a.dataset.date)).forEach(item => root.querySelector('.academic-index-items').append(item));
     tabs.forEach(btn => btn.setAttribute('aria-selected', String(btn.dataset.tab === tab)));
     root.querySelector('.academic-result-count').textContent = `${visible.length} of ${items.length} results`; root.querySelector('.academic-no-results').hidden = !!visible.length;
     if (record) { const state = new URLSearchParams(); if (tab !== 'all') state.set('tab',tab); if (query.value) state.set('q',query.value); if (selectedTags.length) state.set('tags',selectedTags.join(',')); if (checked.length) state.set('years',checked.join(',')); if (sort.value !== 'newest') state.set('sort',sort.value); history.pushState(null, '', location.pathname + location.search + (state.size ? '#' + state.toString() : '')); }
   };
-  const restore = () => { const hash = location.hash.slice(1), state = new URLSearchParams(hash); tab = state.get('tab') || (hash === 'articles' ? 'articles' : 'all'); if (!['all','articles'].includes(tab)) tab = 'all'; query.value = state.get('q') || ''; tags.forEach(el => el.checked = (state.get('tags') || state.get('area') || '').split(',').includes(el.value)); sort.value = state.get('sort') || 'newest'; if (!sort.value) sort.value = 'newest'; years.forEach(el => el.checked = (state.get('years') || '').split(',').includes(el.value)); apply(); };
+  const restore = () => { const hash = location.hash.slice(1), state = new URLSearchParams(hash); tab = state.get('tab') || (hash === 'articles' ? 'articles' : 'all'); if (!['all','articles'].includes(tab)) tab = 'all'; query.value = state.get('q') || ''; legacyArea = state.get('area') || ''; tags.forEach(el => el.checked = (state.get('tags') || '').split(',').includes(el.value)); sort.value = state.get('sort') || 'newest'; if (!sort.value) sort.value = 'newest'; years.forEach(el => el.checked = (state.get('years') || '').split(',').includes(el.value)); apply(); };
   tabs.forEach(btn => btn.addEventListener('click', () => { tab = btn.dataset.tab; apply(true); })); query.addEventListener('input', () => apply(true)); [sort,...years,...tags].forEach(el => el.addEventListener('change', () => apply(true)));
   root.querySelectorAll('[data-paper-tag]').forEach(button => button.addEventListener('click', () => { tags.forEach(el => el.checked = el.value === button.dataset.paperTag); apply(true); }));
   root.querySelector('.academic-filter-reset').addEventListener('click', () => { query.value = ''; tags.forEach(el => el.checked = false); sort.value = 'newest'; years.forEach(el => el.checked = false); tab = 'all'; apply(true); });
