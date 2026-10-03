@@ -445,8 +445,21 @@ summary:focus-visible,input:focus-visible,select:focus-visible { outline: 3px so
  .academic-filter-panel > summary { display:list-item; font-size:13px; color:var(--academic-link); padding:12px 0; cursor:pointer; }
  .academic-filter-panel[open] > summary { margin-bottom:12px; }
  .academic-filters input[type=search] { margin-bottom:0; }
- .academic-paper-tags a,.academic-paper-tags button { display:inline-flex; align-items:center; min-height:44px; }
+ .academic-paper-tags a,.academic-paper-tags button { display:inline-flex; align-items:center; min-height:32px; }
  .academic-index-item .hb-attachment-link,.academic-paper .hb-attachment-link { min-height:44px; padding-inline:6px; }
  .academic-publication-actions { gap:12px; }
  .academic-years label,.academic-tag-filters label { min-height:36px; }
 }
+
+.academic-back-to-top { position:fixed; right:max(16px, env(safe-area-inset-right)); bottom:calc(16px + env(safe-area-inset-bottom)); z-index:40; width:44px; height:44px; display:flex; align-items:center; justify-content:center; border:1px solid var(--academic-line); border-radius:50%; background:var(--academic-background); color:var(--academic-link); font-size:22px; }
+.academic-back-to-top[hidden] { display:none; }
+.academic-back-to-top:hover { border-color:var(--academic-link); }
+@media print { .academic-back-to-top { display:none; } }
+
+.academic-section-nav { display:flex; flex-wrap:wrap; gap:8px 22px; margin:0 0 28px; padding-bottom:16px; border-bottom:1px solid var(--academic-line); font-size:14px; }
+.academic-section-nav a { color:var(--academic-link); }
+.academic-record-section[id] { scroll-margin-top:90px; }
+.academic-no-results { padding:24px 0; }
+.academic-no-results[hidden] { display:none; }
+.academic-filter-count { font-weight:600; }
+@media(max-width:760px) { .academic-section-nav a { display:inline-flex; align-items:center; min-height:44px; } }

@@ -13,12 +13,32 @@
     items.sort((a,b) => sort.value === 'az' ? a.dataset.title.localeCompare(b.dataset.title) : sort.value === 'za' ? b.dataset.title.localeCompare(a.dataset.title) : sort.value === 'oldest' ? a.dataset.date.localeCompare(b.dataset.date) : b.dataset.date.localeCompare(a.dataset.date)).forEach(item => root.querySelector('.academic-index-items').append(item));
     tabs.forEach(btn => btn.setAttribute('aria-selected', String(btn.dataset.tab === tab)));
     root.querySelector('.academic-result-count').textContent = `${visible.length} of ${items.length} results`; root.querySelector('.academic-no-results').hidden = !!visible.length;
+    const filterCount = selectedTags.length + checked.length + (legacyArea ? 1 : 0);
+    root.querySelector('.academic-filter-count').textContent = filterCount ? `· ${filterCount} selected` : '';
     if (record) { const state = new URLSearchParams(); if (tab !== 'all') state.set('tab',tab); if (query.value) state.set('q',query.value); if (selectedTags.length) state.set('tags',selectedTags.join(',')); if (checked.length) state.set('years',checked.join(',')); if (sort.value !== 'newest') state.set('sort',sort.value); history.pushState(null, '', location.pathname + location.search + (state.size ? '#' + state.toString() : '')); }
   };
   const restore = () => { const hash = location.hash.slice(1), state = new URLSearchParams(hash); tab = state.get('tab') || (hash === 'articles' ? 'articles' : 'all'); if (!['all','articles'].includes(tab)) tab = 'all'; query.value = state.get('q') || ''; legacyArea = state.get('area') || ''; tags.forEach(el => el.checked = (state.get('tags') || '').split(',').includes(el.value)); sort.value = state.get('sort') || 'newest'; if (!sort.value) sort.value = 'newest'; years.forEach(el => el.checked = (state.get('years') || '').split(',').includes(el.value)); apply(); };
   tabs.forEach(btn => btn.addEventListener('click', () => { tab = btn.dataset.tab; apply(true); })); query.addEventListener('input', () => apply(true)); [sort,...years,...tags].forEach(el => el.addEventListener('change', () => apply(true)));
   root.querySelectorAll('[data-paper-tag]').forEach(button => button.addEventListener('click', () => { tags.forEach(el => el.checked = el.value === button.dataset.paperTag); apply(true); }));
-  root.querySelector('.academic-filter-reset').addEventListener('click', () => { query.value = ''; tags.forEach(el => el.checked = false); sort.value = 'newest'; years.forEach(el => el.checked = false); tab = 'all'; apply(true); });
+  root.querySelectorAll('.academic-filter-reset').forEach(button => button.addEventListener('click', () => { query.value = ''; tags.forEach(el => el.checked = false); sort.value = 'newest'; years.forEach(el => el.checked = false); tab = 'all'; apply(true); }));
   root.querySelector('.academic-export').addEventListener('click', async event => { const button = event.currentTarget; button.disabled = true; try { const texts = await Promise.all(items.filter(el => !el.hidden && el.dataset.citation).map(async el => { const response = await fetch(el.dataset.citation); if (!response.ok) throw new Error('Citation unavailable'); return response.text(); })); const url = URL.createObjectURL(new Blob([texts.join('\n\n')],{type:'application/x-bibtex'})), link = document.createElement('a'); link.href = url; link.download = 'seung-hyun-kim-publications.bib'; link.click(); setTimeout(() => URL.revokeObjectURL(url),1000); } catch { root.querySelector('.academic-result-count').textContent = 'Citation download failed. Please use each paper’s Cite link.'; } finally { button.disabled = false; } });
+  root.addEventListener('click', event => {
+    const link = event.target.closest('.academic-index-item h2 a');
+    if (!link) return;
+    try { sessionStorage.setItem('academic-publication-return', JSON.stringify({ url:location.pathname + location.search + location.hash, paper:new URL(link.href).pathname, scrollY:window.scrollY, panelOpen:filterPanel.open })); } catch {}
+  });
+  const returnState = new URLSearchParams(location.hash.slice(1));
+  if (returnState.get('return') === '1') {
+    try {
+      const saved = JSON.parse(sessionStorage.getItem('academic-publication-return'));
+      returnState.delete('return');
+      const expected = location.pathname + location.search + (returnState.size ? '#' + returnState.toString() : '');
+      if (saved && saved.url === expected) {
+        history.replaceState(null, '', saved.url);
+        restore(); filterPanel.open = saved.panelOpen;
+        requestAnimationFrame(() => requestAnimationFrame(() => window.scrollTo({ top:saved.scrollY, behavior:'instant' })));
+      }
+    } catch {}
+  }
   window.addEventListener('popstate', restore); window.addEventListener('hashchange', restore); restore();
 })();

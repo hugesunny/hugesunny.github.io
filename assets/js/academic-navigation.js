@@ -24,3 +24,30 @@
     if (main) { main.id = 'academic-main'; main.setAttribute('tabindex', '-1'); }
   }
 })();
+
+(() => {
+  const button = document.querySelector('.academic-back-to-top');
+  if (!button) return;
+  const update = () => { button.hidden = window.scrollY < 400; };
+  window.addEventListener('scroll', update, { passive:true });
+  update();
+  button.addEventListener('click', () => {
+    const target = document.querySelector('#academic-main');
+    if (target) target.focus({ preventScroll:true });
+    window.scrollTo({ top:0, behavior:matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+  });
+})();
+
+// A detail page's list link retains the filter state and reading position in this tab.
+(() => {
+  const link = document.querySelector('.academic-paper-header > .academic-more');
+  if (!link) return;
+  try {
+    const saved = JSON.parse(sessionStorage.getItem('academic-publication-return'));
+    if (!saved || saved.paper !== location.pathname) return;
+    const url = new URL(saved.url, location.origin);
+    if (url.origin !== location.origin || url.pathname !== '/publications/') return;
+    const state = new URLSearchParams(url.hash.slice(1)); state.set('return','1');
+    link.href = url.pathname + url.search + '#' + state.toString();
+  } catch {}
+})();

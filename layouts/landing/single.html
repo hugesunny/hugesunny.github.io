@@ -5,8 +5,9 @@
   <header class="academic-page-intro"><h1>{{ .Title }}</h1></header>
 
   {{ if eq $pageName "experience" }}
+    <nav class="academic-section-nav" aria-label="Experience sections" data-pagefind-ignore><a href="#education">Education</a><a href="#research-experience">Research</a><a href="#projects">Projects</a><a href="#teaching">Teaching &amp; Mentoring</a><a href="#service">Service</a><a href="#skills">Skills</a></nav>
     {{ $profile := partial "functions/get_author_profile" (dict "slug" "me") }}
-    <section class="academic-record-section">
+    <section class="academic-record-section" id="education">
       <h2>Education</h2>
       <div class="academic-education">
         {{ range $profile.education }}
@@ -18,7 +19,7 @@
       </div>
     </section>
 
-    <section class="academic-record-section">
+    <section class="academic-record-section" id="research-experience">
       <h2>Research Experience</h2>
       <div class="academic-career-list">
         {{ range .Params.experience.research }}
@@ -35,7 +36,7 @@
       </div>
     </section>
 
-    <section class="academic-record-section">
+    <section class="academic-record-section" id="projects">
       <h2>Selected Sponsored Research Projects</h2>
       <div class="academic-project-grid">
         {{ range .Params.experience.projects }}
@@ -76,7 +77,7 @@
 
     </section>
 
-    <section class="academic-record-section">
+    <section class="academic-record-section" id="service">
       <h2>Academic Service</h2>
       <div class="academic-service-list">
         {{ range .Params.experience.service }}
@@ -88,7 +89,7 @@
       </div>
     </section>
 
-    <section class="academic-record-section">
+    <section class="academic-record-section" id="skills">
       <h2>Technical Skills</h2>
       <div class="academic-skills-grid">
         {{ range .Params.experience.skills }}

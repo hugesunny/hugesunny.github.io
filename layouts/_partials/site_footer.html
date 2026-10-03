@@ -1,3 +1,5 @@
 <footer class="container mx-auto">
 <div class="academic-footer-profile"><div><strong>{{ hugo.Data.authors.me.name.display }}</strong><p>{{ hugo.Data.authors.me.role }}<br>{{ hugo.Data.academic.institution }}</p></div><nav class="academic-social-links" aria-label="Footer navigation">{{ range site.Menus.main }}<a href="{{ .URL | relURL }}">{{ .Name }}</a>{{ end }}</nav></div>
 <div class="academic-footer-bottom"><span>© {{ now.Year }} {{ hugo.Data.authors.me.name.display }}</span>{{ if site.Params.mysite.credit }}<span>Created using <a href="https://garyking.org/mysite">GaryKing.org/mysite</a></span>{{ end }}</div></footer>
+
+<button class="academic-back-to-top" type="button" aria-label="Back to top" title="Back to top" hidden data-pagefind-ignore><span aria-hidden="true">↑</span></button>
