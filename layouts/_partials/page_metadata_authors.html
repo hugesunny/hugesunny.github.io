@@ -1,6 +1,8 @@
 {{/* Display author list. */}}
 
 {{- $authors := .Params.authors -}}
+{{- $roles := slice -}}
+{{- with .File -}}{{- $roles = index hugo.Data.publication_authorship.publications (path.Base .Dir) | default slice -}}{{- end -}}
 
 {{ if $authors }}
   {{- if not (reflect.IsSlice $authors) -}}
@@ -21,6 +23,10 @@
       {{- else -}}
         {{- $person := index hugo.Data.coauthors $raw -}}
         {{- if and $person $person.url -}}<a href="{{ $person.url }}">{{ $display }}</a>{{- else -}}{{ $display }}{{- end -}}
+      {{- end -}}
+      {{- if $highlight_name -}}
+        {{- if in $roles "co_first" -}}<sup class="academic-author-symbol" title="Equal contribution (co-first author)" aria-label="Equal contribution, co-first author">†</sup>{{- end -}}
+        {{- if in $roles "corresponding" -}}<sup class="academic-author-symbol" title="Corresponding author" aria-label="Corresponding author">*</sup>{{- end -}}
       {{- end -}}
     </span>
     {{- if isset $.Params "author_notes" -}}

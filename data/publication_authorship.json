@@ -1,0 +1,27 @@
+{
+  "source": "Seung_Hyun_Kim_CV_2026-09-29.pdf, pages 2–3; visually verified",
+  "scope": "Symbols indicate Seung Hyun Kim’s roles only; other authors’ roles are not inferred.",
+  "publications": {
+    "lee-2025-crystallinity": [
+      "co_first"
+    ],
+    "chung-2025-deformability": [
+      "co_first"
+    ],
+    "chung-2024-structural": [
+      "co_first"
+    ],
+    "kim-2023-photocrosslinker": [
+      "co_first"
+    ],
+    "hong-2021-heterointerface": [
+      "co_first"
+    ],
+    "park-2020-biasstress": [
+      "co_first"
+    ],
+    "yu-2026-pedot": [
+      "corresponding"
+    ]
+  }
+}

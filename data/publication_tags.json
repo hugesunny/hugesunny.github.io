@@ -1,0 +1,102 @@
+{
+  "tags": [
+    {
+      "id": "structure",
+      "title": "Molecular Structure & Morphology"
+    },
+    {
+      "id": "transport",
+      "title": "Charge & Ion Transport"
+    },
+    {
+      "id": "deformation",
+      "title": "Deformable Electronics"
+    },
+    {
+      "id": "stability",
+      "title": "Interfaces & Stability"
+    },
+    {
+      "id": "optoelectronics",
+      "title": "Organic Optoelectronics"
+    }
+  ],
+  "publications": {
+    "megretbonilla-2026-sustainability": [
+      "transport"
+    ],
+    "yu-2026-pedot": [
+      "stability",
+      "structure"
+    ],
+    "yi-2026-trapmodified": [
+      "optoelectronics",
+      "transport"
+    ],
+    "hou-2026-siloxane": [
+      "stability"
+    ],
+    "kim-2025-electrostatic": [
+      "transport"
+    ],
+    "bai-2025-stepwise": [
+      "structure",
+      "optoelectronics"
+    ],
+    "chung-2025-deformability": [
+      "deformation",
+      "structure"
+    ],
+    "ok-2025-polarity": [
+      "transport",
+      "structure"
+    ],
+    "lee-2025-crystallinity": [
+      "structure",
+      "transport"
+    ],
+    "kim-2024-multiscale": [
+      "deformation",
+      "transport"
+    ],
+    "park-2024-trapping": [
+      "deformation",
+      "stability"
+    ],
+    "jang-2024-crosslinking": [
+      "transport"
+    ],
+    "sung-2024-luminescence": [
+      "optoelectronics",
+      "stability"
+    ],
+    "chung-2024-structural": [
+      "structure",
+      "deformation"
+    ],
+    "park-2023-protonated": [
+      "transport",
+      "stability"
+    ],
+    "kim-2023-photocrosslinker": [
+      "deformation"
+    ],
+    "min-2023-morphology": [
+      "structure",
+      "transport"
+    ],
+    "sung-2022-nanomorphology": [
+      "optoelectronics",
+      "stability"
+    ],
+    "lee-2021-marangoni": [
+      "structure"
+    ],
+    "hong-2021-heterointerface": [
+      "stability"
+    ],
+    "park-2020-biasstress": [
+      "stability"
+    ]
+  }
+}
