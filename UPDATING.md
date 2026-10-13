@@ -3,7 +3,7 @@
 Edit content on GitHub or locally. Keep published page folders and URLs unchanged.
 
 - **New paper:** update `publications.bib` and use the existing import workflow. Review the generated publication changes. Each paper keeps its `index.md`, `cite.bib`, and existing `toc.*` image.
-- **Abstracts and dates:** sourced summaries and verified ordering dates live in `data/publication_details.json`, outside the importer. Do not invent missing dates or PDF links.
+- **Abstracts and dates:** sourced summaries and verified ordering dates live in `data/publication_details.json`, outside the importer. Do not invent missing dates or PDF links. Every paper shows a "Research overview" (`summary`). When a published abstract (`abstract_html`) is also stored, it appears collapsed under "Published abstract" on the paper page; add a paraphrased `summary` for any new paper that only has an abstract.
 - **Homepage:** edit `home_intro`, `featured_publication`, and `featured_overview` in `data/academic.yaml`. Titles and venues are read from publication bundles. The short introduction is third person. There is no standalone Bio page.
 - **Profile:** `data/authors/me.yaml` remains the source for name, role, education, social links and retained biography text.
 - **Research:** edit the three bundles in `content/projects/`. `data/research_areas.json` lists the publication slugs explicitly associated with each area. Publication tags are maintained separately in `data/publication_tags.json`: five owner-approved tags, one or two per paper. Assign every new paper a sourced relevant tag without changing the Research page categories. A new paper appears in Publications automatically; add it to a research area only after checking the relationship.
@@ -19,3 +19,5 @@ Publication lists display title, authors, and journal reference on separate line
 Authorship symbols are sourced from the owner’s September 29, 2026 CV (pages 2–3) in `data/publication_authorship.json`. They describe Seung Hyun Kim only: † equal contribution/co-first author, * corresponding author. Do not infer other authors’ roles or a co-first role from author order. The shared author partial displays them across lists and paper pages without altering BibTeX.
 
 Responsive publication filters are collapsed below 761px and open on desktop; query search stays visible. Research area hashes (`area`) use curated research assignments separately from publication tag hashes (`tags`). Presentation records are structured in `content/presentations.md`. Paper detail pages use the shared journal reference and publication tags.
+
+Link previews use `assets/media/sharing.jpg` (1200×630). Regenerate it if the title, affiliation or portrait changes. The `/projects/` bundles feed the Research page and homepage only; they are not published as pages, and old `/projects/` URLs redirect to `/research/` through `static/projects/`. Tag and publication-type listing pages are not published either.

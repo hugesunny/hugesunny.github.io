@@ -19,8 +19,7 @@ sections:
         Chapel Hill, NC 27599-3290  
         USA
 
-        **Email:** [shyunkim@unc.edu](mailto:shyunkim@unc.edu)  
-        **Phone:** [+1 336-212-7549](tel:+13362127549)
+        **Email:** [shyunkim@unc.edu](mailto:shyunkim@unc.edu)
 
         **Profiles**  
         [Google Scholar](https://scholar.google.com/citations?user=LhXDN0UAAAAJ&hl=en) ·

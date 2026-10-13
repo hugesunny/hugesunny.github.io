@@ -18,7 +18,12 @@ cascade:
 
 build:
   writeStats: true
-enableGitInfo: false
+enableGitInfo: true
+# Pages without a date (home, Research, Contact, ...) take their last Git commit date,
+# so og:updated_time reflects real edits instead of the newest paper year.
+frontmatter:
+  date: [date, publishDate, pubDate, published, ":git"]
+  lastmod: [":git", lastmod, modified, date, publishDate]
 summaryLength: 30
 pagination:
   pagerSize: 10

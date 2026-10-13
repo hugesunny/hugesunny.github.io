@@ -463,3 +463,13 @@ summary:focus-visible,input:focus-visible,select:focus-visible { outline: 3px so
 .academic-no-results[hidden] { display:none; }
 .academic-filter-count { font-weight:600; }
 @media(max-width:760px) { .academic-section-nav a { display:inline-flex; align-items:center; min-height:44px; } }
+
+/* Research page: one ToC graphic per theme under its heading. */
+.academic-research-theme-head { min-width: 0; }
+.academic-research-figure { margin-top: 18px; }
+@media(max-width:640px) { .academic-research-figure { max-width: 420px; } }
+
+/* Publication pages: original abstract kept behind the owner overview. */
+.academic-published-abstract { margin-top: 14px; font-size: 14px; }
+.academic-published-abstract summary { cursor: pointer; color: var(--academic-link); }
+.academic-published-abstract .academic-prose { margin-top: 10px; }
