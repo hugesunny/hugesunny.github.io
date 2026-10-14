@@ -50,3 +50,7 @@ For new edits, the previous deployment approval is historical, not blanket autho
 ## Latest owner changes
 
 Teaching and mentoring are integrated into Experience at `/experience/#teaching`; `/teaching/` redirects there. Teaching is removed from navigation. Footer credit is disabled and the copyright is centered. Text links and actions share a 4px underline offset and 1px thickness.
+
+## 2026-10-13 review changes (branch site-review-fixes, not yet published)
+
+Removed the demo `content/slides/` and empty `content/events/`. Stopped publishing `/projects/`, `/tags/` and `/publication_types/` (bundles still feed Research). Added `sharing.jpg` with `summary_large_image`, Git-based dates for undated pages, a fuller Person JSON-LD (isBasedOn kept for discovery), ORCID in the homepage links, one ToC figure per Research theme, and owner-style overviews for the six papers that only had publisher abstracts. Removed the phone number from Contact. Turned off the language switcher and dropped the unused CC license config. `profile-old-well.png` is intentionally kept.

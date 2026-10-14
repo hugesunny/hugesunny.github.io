@@ -6,7 +6,19 @@
   </header>
   {{ range $i, $theme := hugo.Data.academic.research }}{{ with site.GetPage $theme.page }}
   <section class="academic-research-theme" id="theme-{{ add $i 1 }}" aria-labelledby="theme-heading-{{ add $i 1 }}">
-    <h2 id="theme-heading-{{ add $i 1 }}">{{ .Title }}</h2>
+    <div class="academic-research-theme-head">
+      <h2 id="theme-heading-{{ add $i 1 }}">{{ .Title }}</h2>
+      {{/* One ToC graphic per theme: the first listed paper that has a toc.* image. */}}
+      {{ $figure := false }}{{ range $theme.publications }}{{ if not $figure }}{{ with site.GetPage . }}{{ $paper := . }}{{ with .Resources.GetMatch "toc.*" }}{{ $figure = dict "img" . "paper" $paper }}{{ end }}{{ end }}{{ end }}{{ end }}
+      {{ with $figure }}
+      <figure class="academic-featured-figure academic-research-figure">
+        <button class="academic-featured-image" type="button" data-toc-lightbox data-toc-src="{{ .img.RelPermalink }}" data-toc-title="{{ .paper.Title }}" aria-label="Enlarge ToC image for {{ .paper.Title }}">
+          <img src="{{ .img.RelPermalink }}" width="{{ .img.Width }}" height="{{ .img.Height }}" alt="ToC graphic for {{ .paper.Title }}" loading="lazy" decoding="async">
+        </button>
+        <figcaption>From <a href="{{ .paper.RelPermalink }}">{{ .paper.Title }}</a> ({{ .paper.Date.Format "2006" }}).</figcaption>
+      </figure>
+      {{ end }}
+    </div>
     <div class="academic-prose">
       {{ .Content }}
       {{ with $theme.publications }}<div class="academic-related-papers"><h3>Selected papers</h3><ul>{{ range . }}{{ with site.GetPage . }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a> ({{ .Date.Format "2006" }})</li>{{ end }}{{ end }}</ul></div>{{ end }}

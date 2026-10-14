@@ -6,7 +6,7 @@ Source repository for the academic website of Seung Hyun Kim.
 
 - Profile and biography: `data/authors/me.yaml`
 - Homepage research labels and summaries: `data/academic.yaml`
-- Research pages: `content/projects/`
+- Research pages: `content/projects/` (data for `/research/`; not published as pages)
 - Experience: `content/experience.md`
 - Teaching: `content/teaching.md`
 - Presentations: `content/presentations.md`

@@ -20,6 +20,7 @@
         <a href="#research-areas">Research Areas</a>
         <a href="{{ "publications/" | relURL }}">Publications</a>
         {{ range $profile.links }}{{ if eq .label "Google Scholar" }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">Google Scholar</a>{{ end }}{{ end }}
+        {{ range $profile.links }}{{ if eq .label "ORCID" }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">ORCID</a>{{ end }}{{ end }}
         {{ with $design.cv_url }}<a href="{{ . | relURL }}">CV</a>{{ end }}
         {{ range $profile.links }}{{ if eq .label "Email" }}<a href="{{ .url }}">{{ strings.TrimPrefix "mailto:" .url }}</a>{{ end }}{{ end }}
       </nav>

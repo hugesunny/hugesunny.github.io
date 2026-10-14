@@ -20,9 +20,10 @@
   {{ else }}
   {{ with $extra }}
   <section class="academic-paper-section">
-    <h2>{{ if .abstract_html }}Abstract{{ else }}Research overview{{ end }}</h2>
-    <div class="academic-prose">{{ if .abstract_html }}{{ .abstract_html | safeHTML }}{{ else }}<p>{{ .summary }}</p>{{ end }}</div>
-    <p class="academic-source">{{ if .abstract_html }}Abstract from{{ else }}Summary based on{{ end }} <a href="{{ .source_url }}" target="_blank" rel="noopener noreferrer">{{ .source_label }}</a>{{ with .license_url }} · <a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $extra.license_label }}</a>{{ end }}.</p>
+    <h2>{{ if .summary }}Research overview{{ else }}Abstract{{ end }}</h2>
+    <div class="academic-prose">{{ with .summary }}<p>{{ . }}</p>{{ else }}{{ .abstract_html | safeHTML }}{{ end }}</div>
+    {{ if and .summary .abstract_html }}<details class="academic-published-abstract"><summary>Published abstract</summary><div class="academic-prose">{{ .abstract_html | safeHTML }}</div></details>{{ end }}
+    <p class="academic-source">{{ if .summary }}Summary based on{{ else }}Abstract from{{ end }} <a href="{{ .source_url }}" target="_blank" rel="noopener noreferrer">{{ .source_label }}</a>{{ with .license_url }} · <a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $extra.license_label }}</a>{{ end }}.</p>
   </section>
   {{ end }}
   {{ end }}

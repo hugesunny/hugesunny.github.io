@@ -18,6 +18,7 @@
     "sort_date_basis": "journal issue"
   },
   "chung-2025-deformability": {
+    "summary": "Plasticizing molecular additives are used to tune the persistence length of the rigid conjugated polymer PDPP2T-TT-OD without modifying its backbone chemistry. Solution small-angle neutron scattering links each additive to changes in chain rigidity, and film measurements show that the mechanical modulus follows persistence length and the formation of uniformly entangled networks with smaller crystalline grains. The blended films become more deformable while charge mobility remains stable after stretching to 100% strain.",
     "abstract_html": "<p>Plastic electronics with deformable semiconducting polymer layers have emerged as a promising future technology. The design of semiconducting layers with tunable mechanical properties is crucial to improving the performance and reliability of plastic electronics, particularly for flexible and stretchable devices. Here, a method is demonstrated for systematically controlling the persistence length, allowing improvement of the mechanical properties of a single conjugated polymer system without the need for complex chemical modifications to the rigid backbone. The effects of plasticizing molecular additives (PMAs) on the rigidity of conjugated chains are thoroughly investigated through persistence length analysis. Solution‐based small‐angle neutron scattering reveals how different PMAs influence the persistence length of the benchmark rigid conjugated polymer PDPP2T‐TT‐OD. The mechanical, thermal, morphological, and electrical properties of PMA‐blended films are evaluated under deformation. The results show that the mechanical modulus is primarily influenced by modification of the persistence length and the formation of uniformly entangled networks with smaller crystalline grains. The analysis suggests that the uniform distribution of PMAs in PDPP2T‐TT‐OD films, combined with physically crosslinked chains, significantly enhances thin film deformability. Notably, charge mobility remains stable even after stretching to 100% strain. These findings provide valuable insights into the design principles of PMA‐blended conjugated polymer systems, offering a pathway for tailoring mechanical properties in future plastic electronics.</p>",
     "source_url": "https://doi.org/10.1002/adfm.202511256",
     "source_label": "the published article by the authors listed above",
@@ -26,7 +27,8 @@
     "checked": "2026-09-07",
     "sort_date": "2025-10",
     "sort_date_source": "https://api.crossref.org/works/10.1002/adfm.202511256",
-    "sort_date_basis": "journal issue"
+    "sort_date_basis": "journal issue",
+    "summary_basis": "owner-site overview paraphrased from the published abstract (abstract_html), 2026-10-13"
   },
   "hong-2021-heterointerface": {
     "summary": "A pentacene/Alq₃ bilayer forms the active and charge-storage regions of an organic transistor memory. Sequential deposition creates a heterointerface whose energy-level offset controls charge transfer during writing and erasing. The devices demonstrate nonvolatile memory operation with stability in air.",
@@ -119,6 +121,7 @@
     "sort_date_basis": "journal issue"
   },
   "ok-2025-polarity": {
+    "summary": "This study identifies the chemical and structural origin of p-to-n polarity switching in a heavily doped conjugated polymer, using gold(III) chloride-doped IDTBT as a model system. Quantitative X-ray photoelectron spectroscopy shows oxidation-state changes in Au and Cl and covalent chlorination of the polymer backbone, which ties the doping chemistry directly to the polarity change. The switching behavior is then used to build a p-n homojunction organic diode with a rectification ratio of 10⁴ to 10⁵.",
     "abstract_html": "<p> Despite significant recent advancements in highly functional organic semiconductors (OSCs), the <em>n</em> ‐type OSCs reported to date lag behind their <em>p</em> ‐type counterparts in terms of long‐term environmental stability. As an alternative approach to <em>n</em> ‐type materials, a few <em>p</em> ‐type polymers have been shown to undergo dramatic transitions in their charge carrier polarity to <em>n</em> ‐type through transition metal‐incorporated Lewis acid doping. Although the concept of polarity switching is promising, its unclear chemical origin—particularly from a materials science perspective—limits its potential as an <em>n</em> ‐type counterpart. In this work, the chemical and structural mechanisms underlying the <em>p</em> ‐to‐ <em>n</em> polarity switching in a heavily doped conjugated polymer are elucidated. Using gold(III) chloride‐doped indacenodithiophene‐co‐benzothiadiazole (IDTBT) as a model system, doping‐induced thin‐film structural changes are investigated. Quantitative X‐ray photoelectron spectroscopy analysis of doped IDTBT films provides direct evidence of oxidation state changes in Au and Cl ions and confirms the covalent chlorination of the polymer backbone, establishing a direct correlation between the chemical doping mechanism and polarity switching. Finally, leveraging this polarity switching behavior, a <em>p‐n</em> homojunction organic diode is demonstrated with a rectification ratio of 10 <sup>4</sup> –10 <sup>5</sup> , highlighting the versatility and potential of this excessively <em>p</em> ‐doped <em>n</em> ‐type OSC system for tailoring charge transport properties. </p>",
     "source_url": "https://doi.org/10.1002/adma.202505945",
     "source_label": "the published article by the authors listed above",
@@ -127,7 +130,8 @@
     "checked": "2026-09-07",
     "sort_date": "2025-10",
     "sort_date_source": "https://api.crossref.org/works/10.1002/adma.202505945",
-    "sort_date_basis": "journal issue"
+    "sort_date_basis": "journal issue",
+    "summary_basis": "owner-site overview paraphrased from the published abstract (abstract_html), 2026-10-13"
   },
   "park-2020-biasstress": {
     "summary": "This review examines why organic transistors lose stability during prolonged electrical bias. It connects charge-trapping measurements with the roles of semiconductor layers, gate insulators, and electrical contacts, then discusses materials and interface strategies for reducing bias-stress degradation.",
@@ -139,6 +143,7 @@
     "sort_date_basis": "journal issue"
   },
   "park-2023-protonated": {
+    "summary": "This work proposes direct protonation of organic semiconductors by water as an origin of bias-stress trap generation in organic field-effect transistors. Spectroscopic and electrical measurements combined with simulations show that this process is independent of trap generation at the insulator surface. The same behavior appears in small-bandgap polymers with fused thiophene rings regardless of crystalline order, suggesting a general mechanism in this class of polymer semiconductors.",
     "abstract_html": "<p>Despite dramatic improvements in the electronic characteristics of organic semiconductors, the low operational stability of organic field‐effect transistors (OFETs) hinders their direct use in practical applications. Although the literature contains numerous reports on the effects of water on the operational stability of OFETs, the underlying mechanisms of trap generation induced by water remain unclear. Here, a protonation‐induced trap generation of organic semiconductors is proposed as a possible origin of the operational instability in organic field‐effect transistors. Spectroscopic and electronic investigation techniques combined with simulations reveal that the direct protonation of organic semiconductors by water during operation may be responsible for the trap generation induced by bias stress; this phenomenon is independent of the trap generation at an insulator surface. In addition, the same feature occurred in small‐bandgap polymers with fused thiophene rings irrespective of their crystalline ordering, implying the generality of protonation induced trap generation in various polymer semiconductors with a small bandgap. The finding of the trap‐generation process provides new perspectives for achieving greater operational stability of organic field‐effect transistors.</p>",
     "source_url": "https://doi.org/10.1002/adma.202303707",
     "source_label": "the published article by the authors listed above",
@@ -147,9 +152,11 @@
     "checked": "2026-09-07",
     "sort_date": "2023-10",
     "sort_date_source": "https://api.crossref.org/works/10.1002/adma.202303707",
-    "sort_date_basis": "journal issue"
+    "sort_date_basis": "journal issue",
+    "summary_basis": "owner-site overview paraphrased from the published abstract (abstract_html), 2026-10-13"
   },
   "sung-2022-nanomorphology": {
+    "summary": "Earlier reports disagreed on whether small-molecule acceptors stabilize or destabilize polymer donors. Comparing PTB7:PCBM blends with contrasting acceptor morphologies shows that PCBM dispersed in a mixed phase drives triplet-mediated singlet oxygen generation and severe photooxidation of PTB7, whereas aggregated PCBM stabilizes the polymer. Photooxidation destroys crystalline PTB7 domains and degrades hole transport in step with solar cell efficiency losses, and the same trend holds for the nonfullerene blends PTB7:ITIC and PTB7:Y6.",
     "abstract_html": "<p> Previous studies have reported contradictory effects of small-molecule acceptors on the environmental stability of polymer:small-molecule blends, with one showing that a small-molecule acceptor stabilizes and another showing that it destabilizes the polymer donor. In this work, to investigate the origin of these contradictory results, the effects of the nanomorphologies of small-molecule acceptors on the environmental stability of polymer:small-molecule blends are demonstrated. Investigations on the environmental stabilities of polymer:fullerene blends of poly[[4,8-bis[(2-ethylhexyl)oxy]benzo[1,2- <em>b</em> :4,5- <em>b</em> ′]dithiophene-2,6-diyl][3-fluoro-2-[(2-ethylhexyl)carbonyl]thieno[3,4- <em>b</em> ]thiophenediyl]] (PTB7):phenyl-C <sub>61</sub> -butyric acid methyl ester (PCBM) with contrasting nanomorphologies of PCBM reveal that dispersed PCBM in a mixed phase is the critical factor that causes triplet-mediated singlet oxygen generation and, hence, the severe photooxidation of PTB7, whereas an aggregated PCBM phase stabilizes PTB7 by reducing the formation of PTB7 triplet excitons. In addition, the photooxidation of PTB7 substantially degrades hole transport in the PTB7:PCBM blends by destroying the crystalline PTB7 phases within the films; this effect is strongly correlated with the efficiency losses of the PTB7:PCBM organic solar cells. These conclusions are also extended to polymer:nonfullerene blends of PTB7:ITIC and PTB7:Y6, thereby confirming the generality of this phenomenon for polymer:small-molecule organic solar cells. </p>",
     "source_url": "https://doi.org/10.1038/s41427-022-00400-9",
     "source_label": "the published article by the authors listed above",
@@ -158,7 +165,8 @@
     "checked": "2026-09-07",
     "sort_date": "2022-12",
     "sort_date_source": "https://api.crossref.org/works/10.1038/s41427-022-00400-9",
-    "sort_date_basis": "journal issue"
+    "sort_date_basis": "journal issue",
+    "summary_basis": "owner-site overview paraphrased from the published abstract (abstract_html), 2026-10-13"
   },
   "sung-2024-luminescence": {
     "summary": "Photoaging can change an acceptor’s molecular conformation and quench its luminescence, increasing nonradiative voltage losses in organic solar cells. This study shows that introducing a third component with more stable luminescence can reduce the initial burn-in loss. Its distribution within the mixed phase is important to the stabilization effect.",
@@ -170,6 +178,7 @@
     "sort_date_basis": "journal issue"
   },
   "yi-2026-trapmodified": {
+    "summary": "Layer-by-layer solution processing of PTB7-Th and COTIC-4Cl inverted organic photodetectors increases crystallinity and lowers trap density, which reduces recombination and improves photoresponsivity. Adding the wide-bandgap polymer PVK shifts the trap distribution from shallow to deeper levels and suppresses charge injection under reverse bias, lowering dark current. The devices reach a specific detectivity above 10¹² Jones at 1050 nm under −0.2 V bias.",
     "abstract_html": "<p> Traps play a key role in the performance of infrared (IR) organic photodetectors (OPDs). However, the correlation between trap states and the device performance remains unclear, and the methods to modify trap states are very limited. In this work, inverted OPD devices based on PTB7‐Th and COTIC‐4Cl are fabricated by employing a layer‐by‐layer (LbL) solution processing method. LbL solution processing enhances the crystallinity and reduces the density of trap states, thereby mitigating carrier recombination and improving photoresponsivity. Moreover, a wide‐bandgap polymer, poly(N‐vinylcarbazole) (PVK), is introduced to further tailor the trap distribution, shifting it from shallower to deeper energy levels. Such changes in trap distribution suppress charge carrier injection under reverse bias resulting in a lower dark current. Finally, a high specific detectivity ( <em>D</em> <sup>*</sup> ) of over 10 <sup>12</sup> Jones at 1050 nm is achieved under a bias of −0.2 V with a dark current of 6.94 × 10 <sup>−9</sup> A cm <sup>−2</sup> . These results elucidate the important relationship of trap energy distribution with the device performance and provide a versatile additive incorporation method to tailor energetic position of trap states, advancing the development of high‐performance SWIR OPDs. </p>",
     "source_url": "https://doi.org/10.1002/adfm.202519588",
     "source_label": "the published article by the authors listed above",
@@ -178,7 +187,8 @@
     "checked": "2026-09-07",
     "sort_date": "2026-04-07",
     "sort_date_source": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/adfm.202519588",
-    "sort_date_basis": "journal issue"
+    "sort_date_basis": "journal issue",
+    "summary_basis": "owner-site overview paraphrased from the published abstract (abstract_html), 2026-10-13"
   },
   "yu-2026-pedot": {
     "summary": "This review follows how water uptake in PSS-rich regions changes PEDOT:PSS film structure, disrupts conducting pathways, and weakens adhesion. It compares solvent treatments, surfactants, crosslinking, and modification of PSS as stabilization approaches, with attention to the trade-offs among conductivity, mechanical properties, and water resistance.",
@@ -190,6 +200,7 @@
     "sort_date_basis": "online publication"
   },
   "park-2024-trapping": {
+    "summary": "This study examines how tensile strain affects the bias-stress stability of stretchable polymer field-effect transistors. Structural analysis of stretched films and spectroscopic quantification of trapped charge show that larger strain introduces cracks and nanoscale cavities that raise water content and reduce stability. Passivating the devices against water penetration removes the strain dependence of bias-stress stability.",
     "abstract_html": "<p>Despite recent dramatic improvements in the electronic characteristics of stretchable organic field-effect transistors (FETs), their low operational stability remains a bottleneck for their use in practical applications. Here, the operational stability, especially the bias-stress stability, of semiconducting polymer-based FETs under various tensile strains is investigated. Analyses on the structure of stretched semiconducting polymer films and spectroscopic quantification of trapped charges within them reveal the major cause of the strain-dependent bias-stress instability of the FETs. Devices with larger strains exhibit lower stability than those with smaller strains because of the increased water content, which is accompanied by the formation of cracks and nanoscale cavities in the semiconducting polymer film as results of the applied strain. The strain-dependence of bias-stress stability of stretchable OFETs can be eliminated by passivating the devices to avoid penetration of water molecules. This work provides new insights for the development of bias-stable stretchable OFETs.</p>",
     "source_url": "https://www.nature.com/articles/s41528-024-00359-3",
     "source_label": "Park, Kim, Lee & Cho (2024)",
@@ -198,6 +209,7 @@
     "checked": "2026-09-07",
     "sort_date": "2024-10-24",
     "sort_date_source": "https://api.crossref.org/works/10.1038/s41528-024-00359-3",
-    "sort_date_basis": "online publication"
+    "sort_date_basis": "online publication",
+    "summary_basis": "owner-site overview paraphrased from the published abstract (abstract_html), 2026-10-13"
   }
 }
