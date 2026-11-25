@@ -1,5 +1,10 @@
 /* Academic presentation. Layout, action links and theme colors live here. */
+/* Self-hosted heading serif (Source Serif 4, OFL-1.1, latin subset, two weights). Georgia remains the fallback. */
+@font-face { font-family: "Source Serif 4"; font-style: normal; font-weight: 600; font-display: swap; src: url("/fonts/source-serif-4-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Source Serif 4"; font-style: normal; font-weight: 700; font-display: swap; src: url("/fonts/source-serif-4-latin-700-normal.woff2") format("woff2"); }
+
 :root {
+  --academic-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
   --academic-navy: #2d2926;
   --academic-text: #34312e;
   --academic-muted: #66615b;
@@ -41,8 +46,8 @@ body .page-body { margin-block: 0; }
   margin: 0;
   letter-spacing: 0;
 }
-.academic-home h1, .academic-records h1 { font-family: Georgia, "Times New Roman", serif; font-size: 38px; }
-.academic-home h2, .academic-records h2 { font-family: Georgia, "Times New Roman", serif; font-size: 28px; }
+.academic-home h1, .academic-records h1 { font-family: var(--academic-serif); font-size: 38px; }
+.academic-home h2, .academic-records h2 { font-family: var(--academic-serif); font-size: 28px; }
 .academic-home h3, .academic-records h3 { font-size: 18px; }
 /* Text actions use the same underline metrics whether links or buttons. */
 a, button {
@@ -96,7 +101,7 @@ html.academic-dark .academic-theme-toggle .theme-icon-sun { display: block; }
 }
 .academic-profile-row { display: contents; }
 .academic-hero-identity { min-width: 0; grid-column: 2; grid-row: 1; }
-.academic-hero h1 { font-family: Georgia, "Times New Roman", serif; font-weight: 700; font-size: 48px; line-height: 1.2; margin-bottom: 16px; }
+.academic-hero h1 { font-family: var(--academic-serif); font-weight: 700; font-size: 48px; line-height: 1.2; margin-bottom: 16px; }
 .academic-name-part { white-space: nowrap; }
 .academic-hero-description { min-width: 0; grid-column: 2; grid-row: 2; }
 .academic-degree { font-size: .55em; font-weight: 400; letter-spacing: 0; white-space: nowrap; }
@@ -125,7 +130,7 @@ html.academic-dark .academic-theme-toggle .theme-icon-sun { display: block; }
 .academic-featured-image img { display: block; width: 100%; height: auto; }
 .academic-featured-figure figcaption { margin-top: 12px; font-size: 12px; line-height: 1.5; color: var(--academic-muted); }
 .academic-featured-figure figcaption a { color: var(--academic-link); text-decoration-line: underline; }
-.academic-featured-copy h3 { font-family: Georgia, "Times New Roman", serif; font-size: 27px; line-height: 1.45; }
+.academic-featured-copy h3 { font-family: var(--academic-serif); font-size: 27px; line-height: 1.45; }
 .academic-featured-meta { margin: 10px 0 16px; color: var(--academic-muted); font-size: 14px; }
 .academic-featured-copy .academic-more { margin-top: 16px; }
 .academic-recent { padding-block: 30px 42px; border-top: 1px solid var(--academic-line); }
@@ -331,7 +336,7 @@ html.academic-dark .academic-teaching-entry .academic-prose { color: var(--acade
 .academic-area { border-bottom: 1px solid var(--academic-line); }
 .academic-area summary { display: flex; align-items: center; gap: 18px; cursor: pointer; padding: 18px 0; list-style: none; }
 .academic-area summary::-webkit-details-marker { display: none; }
-.academic-area summary::before { content: '+'; font: 24px Georgia, serif; width: 18px; flex-shrink: 0; color: var(--academic-link); }
+.academic-area summary::before { content: '+'; font: 24px var(--academic-serif); width: 18px; flex-shrink: 0; color: var(--academic-link); }
 .academic-area[open] summary::before { content: '−'; }
 .academic-area summary h3 { font-size: 19px; font-weight: 500; }
 .academic-area-content { padding: 0 0 22px 36px; max-width: 85ch; }
