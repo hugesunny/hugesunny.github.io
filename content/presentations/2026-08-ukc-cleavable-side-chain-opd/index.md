@@ -6,5 +6,4 @@ location: 'Orlando, FL, USA'
 event_date: 2026-08-01
 date_precision: month
 format: oral
-related_publications: []
 ---

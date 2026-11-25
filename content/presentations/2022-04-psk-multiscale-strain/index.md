@@ -6,5 +6,4 @@ location: 'Daejeon, Korea'
 event_date: 2022-04-01
 date_precision: month
 format: poster
-related_publications: [kim-2024-multiscale]
 ---
