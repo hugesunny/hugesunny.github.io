@@ -19,8 +19,12 @@ sections:
         Chapel Hill, NC 27599-3290  
         USA  
         [Open in Google Maps](https://www.google.com/maps/search/?api=1&query=Kenan+Laboratories+125+South+Road+Chapel+Hill+NC)
-
-        **Email:** [shyunkim@unc.edu](mailto:shyunkim@unc.edu)
+  - block: markdown
+    content:
+      title: Contact
+      text: |-
+        **Email**  
+        [shyunkim@unc.edu](mailto:shyunkim@unc.edu)
 
         **Profiles**  
         [Google Scholar](https://scholar.google.com/citations?user=LhXDN0UAAAAJ&hl=en) ·

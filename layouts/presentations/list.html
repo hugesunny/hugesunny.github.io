@@ -13,7 +13,7 @@
   <button type="button" class="academic-filter-reset">Reset filters</button></details></aside>
   <div><div class="academic-index-toolbar"><span class="academic-result-count" role="status" aria-live="polite">{{ len $talks }} of {{ len $talks }} presentations</span><label class="academic-sort" for="talk-sort">Sort<select id="talk-sort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></label></div>
   <div class="academic-index-items">
-  {{ range $talks }}{{ $d := time .Params.event_date }}
+  {{ $lastYear := "" }}{{ range $talks }}{{ $d := time .Params.event_date }}{{ if ne ($d.Format "2006") $lastYear }}{{ $lastYear = $d.Format "2006" }}<h3 class="academic-year-heading">{{ $lastYear }}</h3>{{ end }}
   <article class="academic-index-item" data-format="{{ .Params.format }}" data-year="{{ $d.Format "2006" }}" data-date="{{ $d.Format "2006-01-02" }}">
     <h2>{{ .Title }}</h2>
     <div class="academic-index-authors academic-authors">{{ .Params.authors | markdownify }}</div>

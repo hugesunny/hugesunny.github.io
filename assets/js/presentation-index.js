@@ -10,6 +10,8 @@
     const q = query.value.trim().toLowerCase(), f = checked(formats), y = checked(years);
     const visible = items.filter(item => { const show = (!q || item.textContent.toLowerCase().includes(q)) && (!f.length || f.includes(item.dataset.format)) && (!y.length || y.includes(item.dataset.year)); item.hidden = !show; return show; });
     items.sort((a, b) => sort.value === 'oldest' ? a.dataset.date.localeCompare(b.dataset.date) : b.dataset.date.localeCompare(a.dataset.date)).forEach(item => list.append(item));
+    list.querySelectorAll('.academic-year-heading').forEach(h => h.remove());
+    let lastYear = ''; items.forEach(item => { if (item.hidden || item.dataset.year === lastYear) return; lastYear = item.dataset.year; const h = document.createElement('h3'); h.className = 'academic-year-heading'; h.textContent = lastYear; list.insertBefore(h, item); });
     root.querySelector('.academic-result-count').textContent = `${visible.length} of ${items.length} presentations`;
     root.querySelector('.academic-no-results').hidden = !!visible.length;
     root.querySelector('.academic-filter-count').textContent = f.length + y.length ? `· ${f.length + y.length} selected` : '';
