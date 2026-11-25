@@ -35,14 +35,21 @@
   <section class="academic-container academic-featured" id="selected-research" aria-labelledby="selected-research-heading">
     <h2 id="selected-research-heading">Selected Research</h2>
     <article class="academic-featured-row">
-      {{ with $paper.Resources.GetMatch "toc.*" }}
+      {{ with $design.featured_figure }}
+      <figure class="academic-featured-figure academic-illustration">
+        <button class="academic-featured-image" type="button" data-toc-lightbox data-toc-src="{{ .src | relURL }}" data-toc-title="{{ .alt }}" aria-label="Enlarge figure">
+          <img src="{{ .src | relURL }}" width="{{ .width }}" height="{{ .height }}" alt="{{ .alt }}" decoding="async">
+        </button>
+        <figcaption>{{ .caption }} From the <a href="{{ $paper.RelPermalink }}">published study</a>.</figcaption>
+      </figure>
+      {{ else }}{{ with $paper.Resources.GetMatch "toc.*" }}
       <figure class="academic-featured-figure">
         <button class="academic-featured-image" type="button" data-toc-lightbox data-toc-src="{{ .RelPermalink }}" data-toc-title="{{ $paper.Title }}" aria-label="Enlarge ToC image for {{ $paper.Title }}">
           {{ $d := partial "academic/toc-display.html" . }}<img src="{{ $d.RelPermalink }}" width="{{ $d.Width }}" height="{{ $d.Height }}" alt="ToC graphic for {{ $paper.Title }}" decoding="async">
         </button>
         <figcaption>Table-of-contents graphic from the <a href="{{ $paper.RelPermalink }}">published study</a>.</figcaption>
       </figure>
-      {{ end }}
+      {{ end }}{{ end }}
       <div class="academic-featured-copy">
         <h3><a href="{{ $paper.RelPermalink }}">{{ $paper.Title }}</a></h3>
         <p class="academic-featured-meta">{{ with $pub.display_short }}{{ . | markdownify }}{{ end }}, {{ $paper.Date.Format "2006" }}</p>

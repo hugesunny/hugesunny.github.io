@@ -17,15 +17,46 @@ featured_overview: >-
   This study examines how polymer backbone rigidity affects deformation and
   charge transport under strain. Comparing DPP-4T and DPP-DTT connects molecular
   structure with their different responses to stretching.
+featured_figure:
+  src: /media/illustrations/strain-alignment.svg
+  width: 446
+  height: 194
+  alt: Schematic of DPP-4T chains that are twisted and randomly oriented at 0% strain and aligned and planarized at 80% strain.
+  caption: Stretching aligns and planarizes DPP-4T backbones (schematic).
+research_question: When does structural change improve electronic function, and when does it cause failure?
+research_figure:
+  - src: /media/illustrations/why-skin-sensor.svg
+    width: 907
+    height: 205
+    alt: Skin-mounted optical sensor in which an LED, an organic photodetector and polymer transistors on a flexible substrate read heart rate and blood oxygen through bending, sweat and months of use.
+  - src: /media/illustrations/why-designed-for-use.svg
+    width: 907
+    height: 184
+    alt: Device function over time in use. A device optimized as made starts higher but fails in use; a device designed for use stays stable.
+research_figure_caption: Why design for use. a, A skin-mounted optical sensor needs a photodetector and transistors that keep working through months of bending, sweat and use. b, Optimized as made versus designed for use (schematics).
 research_intro: My research focuses on understanding and controlling the relationships among molecular structure, thin-film morphology, interfaces, and charge transport in conjugated polymers for emerging organic electronic devices.
 research:
   - page: /projects/conjugated-polymer-structure-property/
+    figure:
+      src: /media/illustrations/dpp4t-mobility-strain.svg
+      width: 238
+      height: 210
+      alt: Hole mobility of DPP-4T versus strain, rising about 1.8 times parallel to the strain and falling perpendicular to it.
+      caption: Hole mobility of DPP-4T parallel and perpendicular to strain, replotted from
+      paper: /publications/kim-2024-multiscale/
     publications:
       - /publications/kim-2024-multiscale/
       - /publications/min-2023-morphology/
     short_title: Structure–property relationships
     summary: Connecting molecular packing and thin-film microstructure to charge transport in conjugated polymers.
   - page: /projects/deformable-organic-electronics/
+    figure:
+      src: /media/illustrations/azide-crosslinking.svg
+      width: 446
+      height: 194
+      alt: Aryl azide photocrosslinking. UV light converts the aryl azide into a singlet nitrene that inserts into a side-chain C-H bond to form a covalent crosslink.
+      caption: Azide photocrosslinking through nitrene C–H insertion (schematic), from
+      paper: /publications/kim-2023-photocrosslinker/
     publications:
       - /publications/chung-2025-deformability/
       - /publications/kim-2023-photocrosslinker/

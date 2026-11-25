@@ -50,6 +50,9 @@ experience:
       summary: 'Investigated charge transport in aligned polymer semiconductors for stretchable electronics.'
 
   awards:
+    - dates: '2026'
+      title: 'Category Winner, Devices and Sensors'
+      organization: 'TSRC 2026'
     - dates: '2022'
       title: 'Outstanding Poster Award'
       organization: 'Polymer Society of Korea'
