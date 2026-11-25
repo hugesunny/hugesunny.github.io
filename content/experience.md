@@ -49,6 +49,26 @@ experience:
       role: 'Researcher'
       summary: 'Investigated charge transport in aligned polymer semiconductors for stretchable electronics.'
 
+  awards:
+    - dates: '2022'
+      title: 'Outstanding Poster Award'
+      organization: 'Polymer Society of Korea'
+    - dates: '2021–2023'
+      title: 'Samsung Electronics Scholarship'
+      organization: 'Samsung Electronics'
+    - dates: '2015'
+      title: 'Best Student Poster Award'
+      organization: 'Department of Chemical Engineering, POSTECH'
+    - dates: '2012–2016'
+      title: 'Presidential Science Scholarship'
+      organization: 'Korea Student Aid Foundation (KOSAF)'
+    - dates: '2011'
+      title: 'Samsung Junior Frontier Leader (JFL) Scholarship'
+      organization: 'Samsung SDS'
+    - dates: '2010'
+      title: 'Grand Prize, National BioLab Competition'
+      organization: 'Ministry of Health and Welfare'
+
   service:
     - dates: '2025–present'
       role: 'Ad Hoc Peer Reviewer'

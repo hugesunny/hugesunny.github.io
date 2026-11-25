@@ -278,7 +278,7 @@ html.academic-dark .academic-teaching-entry .academic-prose { color: var(--acade
   .academic-actions a, .academic-more { min-height: 44px; }
   .academic-featured { padding-block: 26px 30px; }
   .academic-featured-row { grid-template-columns: 1fr; gap: 22px; margin-top: 22px; }
-  .academic-featured-copy h3 { font-size: 24px; }
+  .academic-featured-copy h3 { font-size: 21px; line-height: 1.4; }
   .academic-featured-meta { margin-bottom: 12px; }
   .academic-featured-copy .academic-more { margin-top: 8px; }
   .academic-recent { padding-block: 26px 28px; }

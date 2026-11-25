@@ -10,6 +10,9 @@ The reference site's layout and visual treatment take precedence over the prompt
 
 ## Maintenance
 
+The favicon uses the slate link color so the site has one accent. Publication JSON-LD dates come from the verified `sort_date`, through overrides in `layouts/_partials/jsonld/`. No third-party scripts are loaded for page content.
+
+
 All project CSS is consolidated in `assets/css/custom.css`, including the previously inline record-page styles. Native HugoBlox owns Pagefind, Cite, DOI links and page shell. Filter enhancements use vanilla JS over server-rendered publication rows. Hash states restore on back/forward. BibTeX export uses the original citation files, without rewriting entries.
 
 Research area assignments are curated by publication title evidence and stored outside importer output. The areas contain no speculative publication relationships. See Also is computed at build time using explicit overrides, shared research area, title tokens, authors and tags. It does not imply a scientific dependency between papers.

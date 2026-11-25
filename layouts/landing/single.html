@@ -5,7 +5,7 @@
   <header class="academic-page-intro"><h1>{{ .Title }}</h1></header>
 
   {{ if eq $pageName "experience" }}
-    <nav class="academic-section-nav" aria-label="Experience sections" data-pagefind-ignore><a href="#education">Education</a><a href="#research-experience">Research</a><a href="#projects">Projects</a><a href="#teaching">Teaching &amp; Mentoring</a><a href="#service">Service</a><a href="#skills">Skills</a></nav>
+    <nav class="academic-section-nav" aria-label="Experience sections" data-pagefind-ignore><a href="#education">Education</a><a href="#research-experience">Research</a><a href="#projects">Projects</a><a href="#awards">Honors &amp; Awards</a><a href="#teaching">Teaching &amp; Mentoring</a><a href="#service">Service</a><a href="#skills">Skills</a></nav>
     {{ $profile := partial "functions/get_author_profile" (dict "slug" "me") }}
     <section class="academic-record-section" id="education">
       <h2>Education</h2>
@@ -49,6 +49,20 @@
         {{ end }}
       </div>
     </section>
+
+    {{ with .Params.experience.awards }}
+    <section class="academic-record-section" id="awards">
+      <h2>Honors &amp; Awards</h2>
+      <div class="academic-service-list">
+        {{ range . }}
+        <article>
+          <div class="academic-service-date">{{ .dates }}</div>
+          <div><h3>{{ .title }}</h3><p>{{ .organization }}</p></div>
+        </article>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
 
     <section class="academic-record-section" id="teaching" aria-labelledby="teaching-heading">
       <h2 id="teaching-heading">Teaching &amp; Mentoring</h2>
