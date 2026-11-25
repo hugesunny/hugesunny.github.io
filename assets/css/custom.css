@@ -505,6 +505,3 @@ summary:focus-visible,input:focus-visible,select:focus-visible { outline: 3px so
 @media(max-width:640px) { .academic-contact-grid { grid-template-columns: 1fr; gap: 0; } }
 @media(max-width:760px) { .academic-section-nav { position: static; } }
 .academic-records .academic-record-section { scroll-margin-top: 130px; }
-/* Presentations: year headings between talks, rebuilt by presentation-index.js after sorting and filtering. */
-.academic-year-heading { font-family: var(--academic-serif); font-size: 20px; font-weight: 600; color: var(--academic-navy); margin: 26px 0 4px; padding-bottom: 6px; border-bottom: 1px solid var(--academic-line); }
-.academic-index-items > .academic-year-heading:first-child { margin-top: 14px; }
