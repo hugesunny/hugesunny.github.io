@@ -5,22 +5,24 @@
 
 :root {
   --academic-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
-  --academic-navy: #2d2926;
-  --academic-text: #34312e;
-  --academic-muted: #66615b;
-  --academic-link: #526d79;
-  --academic-line: #ded8cf;
-  --academic-wash: #f1eee7;
-  --academic-background: #faf9f5;
-  --academic-header: #faf9f5;
-  --academic-footer: #2d2926;
-  --academic-focus: #526d79;
-  --academic-profile-background: #faf9f5;
+  /* Ink blue theme (Nov 2026): near-white paper so white ToC graphics blend in, ink-blue links, blue-black footer. */
+  --academic-navy: #1b2430;
+  --academic-text: #1f2328;
+  --academic-muted: #5b6169;
+  --academic-link: #1f4e79;
+  --academic-line: #e3e5e8;
+  --academic-wash: #f3f4f6;
+  --academic-background: #fdfdfc;
+  --academic-header: #fdfdfc;
+  --academic-footer: #1b2430;
+  --academic-focus: #1f4e79;
+  --academic-profile-background: #fdfdfc;
   --academic-photo-border: #d4d9de;
-  --hb-color-background: #faf9f5;
-  --hb-color-foreground: #34312e;
-  --hb-color-header-bg: #faf9f5;
-  --hb-color-header-fg: #2d2926;
+  --academic-footer-text: #dfe5ec;
+  --hb-color-background: #fdfdfc;
+  --hb-color-foreground: #1f2328;
+  --hb-color-header-bg: #fdfdfc;
+  --hb-color-header-fg: #1b2430;
   color-scheme: light;
 }
 
@@ -219,12 +221,12 @@ html.academic-dark .academic-theme-toggle .theme-icon-sun { display: block; }
 
 /* Footer and theme support for the existing supplementary record layouts. */
 .page-footer { background: var(--academic-footer); border-top: 1px solid var(--academic-line); margin-top: 12px; }
-.page-footer > footer.container { max-width: 1120px; width: calc(100% - 80px); margin: 0 auto; padding: 24px 0 18px; font-size: 12px; color: #e8e0d5; }
+.page-footer > footer.container { max-width: 1120px; width: calc(100% - 80px); margin: 0 auto; padding: 24px 0 18px; font-size: 12px; color: var(--academic-footer-text); }
 .academic-footer-profile { display: flex; justify-content: space-between; gap: 25px; margin-bottom: 12px; }
-.academic-footer-profile strong { color: #fdfbf8; font-size: 14px; font-weight: 500; }
+.academic-footer-profile strong { color: #ffffff; font-size: 14px; font-weight: 500; }
 .academic-footer-profile p { margin: 5px 0 0; }
 .academic-social-links { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
-.academic-social-links a { font-size: 13px; padding-block: 10px; color: #e8e0d5; }
+.academic-social-links a { font-size: 13px; padding-block: 10px; color: var(--academic-footer-text); }
 .page-footer .powered-by { font-size: 12px; }
 html.academic-dark .academic-project-card { background: var(--academic-wash); border-color: var(--academic-line); }
 html.academic-dark .academic-career-body h3,
@@ -339,9 +341,9 @@ html.academic-dark .academic-teaching-entry .academic-prose { color: var(--acade
 .academic-area summary h3 { font-size: 19px; font-weight: 500; }
 .academic-area-content { padding: 0 0 22px 36px; max-width: 85ch; }
 .academic-area-papers { font-size: 14px; }
-summary:focus-visible,input:focus-visible,select:focus-visible { outline: 3px solid #9a6c2f; outline-offset: 3px; }
-.academic-footer-bottom { display: flex; justify-content: center; text-align: center; gap: 20px; border-top: 1px solid #5a534b; padding-top: 16px; margin-top: 16px; }
-.academic-footer-bottom a { color: #e8e0d5; text-decoration-line: underline; }
+summary:focus-visible,input:focus-visible,select:focus-visible { outline: 3px solid var(--academic-focus); outline-offset: 3px; }
+.academic-footer-bottom { display: flex; justify-content: center; text-align: center; gap: 20px; border-top: 1px solid #3a4656; padding-top: 16px; margin-top: 16px; }
+.academic-footer-bottom a { color: var(--academic-footer-text); text-decoration-line: underline; }
 .academic-social-links { max-width: 540px; gap: 0 20px; }
 .academic-authorship-legend { font-size:13px; color:var(--academic-muted); margin:0 0 18px; line-height:1.6; }
 .academic-author-symbol { font-size:.75em; line-height:0; position:relative; top:-.35em; vertical-align:baseline; margin-left:1px; }
@@ -351,7 +353,7 @@ summary:focus-visible,input:focus-visible,select:focus-visible { outline: 3px so
 .academic-index-grid { display: grid; grid-template-columns: 210px minmax(0,1fr); gap: 36px; margin-top: 24px; }
 .academic-filters { align-self: start; position: sticky; top: 134px; background: var(--academic-wash); border: 1px solid var(--academic-line); padding: 18px; border-radius: 4px; }
 .academic-filters > label,.academic-filters legend { display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; }
-.academic-filters input[type=search],.academic-filters select,.academic-sort select { width: 100%; border: 1px solid #c7c0b7; background: #faf9f5; padding: 8px; color: var(--academic-text); font: inherit; font-size: 13px; }
+.academic-filters input[type=search],.academic-filters select,.academic-sort select { width: 100%; border: 1px solid #c9ced6; background: var(--academic-background); padding: 8px; color: var(--academic-text); font: inherit; font-size: 13px; }
 .academic-filters > input,.academic-filters > select { margin-bottom: 20px; }
 .academic-years { margin-bottom: 16px; }
 .academic-years label { display: flex; gap: 9px; align-items: center; padding: 5px 0; font-size: 13px; }
@@ -404,7 +406,7 @@ summary:focus-visible,input:focus-visible,select:focus-visible { outline: 3px so
 .academic-career-meta { margin:4px 0 0; color:var(--academic-muted); font-size:.875rem; }
 .academic-career-body ul,.academic-teaching-entry ul { margin:15px 0 0; padding-left:20px; list-style:disc; }
 .academic-career-body li,.academic-teaching-entry li { margin-top:7px; font-size:.9375rem; line-height:1.75; }
-.academic-career-body li::marker,.academic-teaching-entry li::marker { color:#7299b8; }
+.academic-career-body li::marker,.academic-teaching-entry li::marker { color:#7a9cc0; }
 .academic-project-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
 .academic-project-card { border:1px solid var(--academic-line); border-top:2px solid var(--academic-line); border-radius:4px; padding:20px 21px 22px; background:var(--academic-wash); }
 .academic-project-date { display:block; margin-bottom:11px; color:var(--academic-muted); font-size:.75rem; font-weight:650; letter-spacing:.04em; }
