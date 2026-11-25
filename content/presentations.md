@@ -5,6 +5,16 @@ academic: true
 
 presentations:
   - authors: "**S. H. Kim**"
+    title: "Tuning Dark Current and Photoresponse through Cleavable Side-Chain Engineering in Layer-by-Layer D18/Y6 Organic Photodetectors"
+    venue: "MRS Fall Meeting & Exhibit, Boston, MA, USA"
+    date: "December 2026"
+    format: "Poster presentation"
+  - authors: "**S. H. Kim**"
+    title: "From Structural Change to Electronic Function: Conjugated Polymers for Organic Electronics"
+    venue: "MRS Fall Meeting & Exhibit, Boston, MA, USA"
+    date: "December 2026"
+    format: "Poster presentation"
+  - authors: "**S. H. Kim**"
     title: "Balancing Dark Current and Photoresponse in Organic Photodetectors via Cleavable Side Chain Engineering"
     venue: "U.S.-Korea Conference on Science, Technology, and Entrepreneurship, Orlando, FL, USA"
     date: "August 2026"

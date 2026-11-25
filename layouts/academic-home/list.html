@@ -38,7 +38,7 @@
       {{ with $paper.Resources.GetMatch "toc.*" }}
       <figure class="academic-featured-figure">
         <button class="academic-featured-image" type="button" data-toc-lightbox data-toc-src="{{ .RelPermalink }}" data-toc-title="{{ $paper.Title }}" aria-label="Enlarge ToC image for {{ $paper.Title }}">
-          <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="ToC graphic for {{ $paper.Title }}" decoding="async">
+          {{ $d := partial "academic/toc-display.html" . }}<img src="{{ $d.RelPermalink }}" width="{{ $d.Width }}" height="{{ $d.Height }}" alt="ToC graphic for {{ $paper.Title }}" decoding="async">
         </button>
         <figcaption>Table-of-contents graphic from the <a href="{{ $paper.RelPermalink }}">published study</a>.</figcaption>
       </figure>

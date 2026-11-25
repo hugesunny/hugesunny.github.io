@@ -14,7 +14,7 @@
     {{ with index hugo.Data.publication_authorship.publications (path.Base .File.Dir) }}<p class="academic-authorship-legend">Seung Hyun Kim’s authorship role: {{ if in . "co_first" }}† Equal contribution (co-first author).{{ end }}{{ if in . "corresponding" }}* Corresponding author.{{ end }}</p>{{ end }}
     <div class="academic-publication-actions">{{ partial "page_links" (dict "page" . "is_list" 0) }}</div>
   </header>
-  {{ with .Resources.GetMatch "toc.*" }}<figure class="academic-paper-figure"><button class="academic-featured-image" type="button" data-toc-lightbox data-toc-src="{{ .RelPermalink }}" data-toc-title="{{ $.Title }}" aria-label="Enlarge ToC image for {{ $.Title }}"><img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="Table-of-contents graphic for {{ $.Title }}" loading="lazy"></button></figure>{{ end }}
+  {{ with .Resources.GetMatch "toc.*" }}<figure class="academic-paper-figure"><button class="academic-featured-image" type="button" data-toc-lightbox data-toc-src="{{ .RelPermalink }}" data-toc-title="{{ $.Title }}" aria-label="Enlarge ToC image for {{ $.Title }}">{{ $d := partial "academic/toc-display.html" . }}<img src="{{ $d.RelPermalink }}" width="{{ $d.Width }}" height="{{ $d.Height }}" alt="Table-of-contents graphic for {{ $.Title }}" loading="lazy"></button></figure>{{ end }}
   {{ with .Params.abstract }}
   <section class="academic-paper-section"><h2>Abstract</h2><div class="academic-prose">{{ . | markdownify }}</div></section>
   {{ else }}

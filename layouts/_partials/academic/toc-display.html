@@ -1,0 +1,10 @@
+{{- /* Display copy of a ToC graphic: never upscaled, at most 1800px wide (2x of the 900px column), WebP only when it is smaller than the original. The lightbox keeps the original file. */ -}}
+{{- $orig := . -}}
+{{- $img := $orig -}}
+{{- if gt $orig.Width 1800 -}}
+  {{- $img = $orig.Resize "1800x webp q88 drawing" -}}
+{{- else -}}
+  {{- $webp := $orig.Process "webp q88 drawing" -}}
+  {{- if lt (len $webp.Content) (len $orig.Content) -}}{{- $img = $webp -}}{{- end -}}
+{{- end -}}
+{{- return $img -}}

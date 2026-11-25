@@ -13,7 +13,7 @@
       {{ with $figure }}
       <figure class="academic-featured-figure academic-research-figure">
         <button class="academic-featured-image" type="button" data-toc-lightbox data-toc-src="{{ .img.RelPermalink }}" data-toc-title="{{ .paper.Title }}" aria-label="Enlarge ToC image for {{ .paper.Title }}">
-          <img src="{{ .img.RelPermalink }}" width="{{ .img.Width }}" height="{{ .img.Height }}" alt="ToC graphic for {{ .paper.Title }}" loading="lazy" decoding="async">
+          {{ $d := partial "academic/toc-display.html" .img }}<img src="{{ $d.RelPermalink }}" width="{{ $d.Width }}" height="{{ $d.Height }}" alt="ToC graphic for {{ .paper.Title }}" loading="lazy" decoding="async">
         </button>
         <figcaption>From <a href="{{ .paper.RelPermalink }}">{{ .paper.Title }}</a> ({{ .paper.Date.Format "2006" }}).</figcaption>
       </figure>

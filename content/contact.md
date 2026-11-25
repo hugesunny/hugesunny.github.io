@@ -17,7 +17,8 @@ sections:
         125 South Road  
         Kenan Labs C541/C548  
         Chapel Hill, NC 27599-3290  
-        USA
+        USA  
+        [Open in Google Maps](https://www.google.com/maps/search/?api=1&query=Kenan+Laboratories+125+South+Road+Chapel+Hill+NC)
 
         **Email:** [shyunkim@unc.edu](mailto:shyunkim@unc.edu)
 

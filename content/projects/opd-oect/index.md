@@ -14,3 +14,6 @@ For OPDs, I focus on molecular and interface engineering, donor/acceptor
 interfaces, charge-blocking layers, and suppression of reverse-bias leakage while
 preserving photoresponse. For OECTs, I investigate volumetric capacitance, doping
 efficiency, and mixed ionic-electronic transport in conjugated polymers.
+
+Ongoing work examines cleavable side-chain engineering of conjugated polymer
+donors in layer-by-layer OPDs to tune dark current and photoresponse.
