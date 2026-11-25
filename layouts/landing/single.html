@@ -107,7 +107,7 @@
       <h2>Technical Skills</h2>
       <div class="academic-skills-grid">
         {{ range .Params.experience.skills }}
-        <article><h3>{{ .category }}</h3><p>{{ .items }}</p></article>
+        <article><h3>{{ .category }}</h3>{{ if reflect.IsSlice .items }}<ul class="academic-skill-lines">{{ range .items }}<li>{{ . }}</li>{{ end }}</ul>{{ else }}<p>{{ .items }}</p>{{ end }}</article>
         {{ end }}
       </div>
     </section>

@@ -1,0 +1,6 @@
+{{ define "main" }}
+<main id="academic-main" class="academic-container academic-records academic-news-page" tabindex="-1" data-pagefind-body>
+  <header class="academic-page-intro"><h1>{{ .Title }}</h1></header>
+  {{ partial "academic/news-list.html" (dict "limit" 0) }}
+</main>
+{{ end }}

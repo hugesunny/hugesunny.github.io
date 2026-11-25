@@ -263,6 +263,7 @@ html.academic-dark .academic-teaching-entry .academic-prose { color: var(--acade
   .academic-featured-row { gap: 28px; }
   .academic-research-theme { grid-template-columns: 300px minmax(0, 1fr); gap: 28px; }
   .academic-footer-profile { flex-direction: column; gap: 8px; }
+  .academic-footer-profile .academic-social-links { justify-content: flex-start; }
   .academic-publication.academic-publication-with-toc { grid-template-columns: 48px minmax(0, 1fr) 145px; }
   .academic-pub-toc { width: 145px; }
   .academic-pub-toc img { max-width: 145px; max-height: 118px; }
@@ -344,7 +345,7 @@ html.academic-dark .academic-teaching-entry .academic-prose { color: var(--acade
 summary:focus-visible,input:focus-visible,select:focus-visible { outline: 3px solid var(--academic-focus); outline-offset: 3px; }
 .academic-footer-bottom { display: flex; justify-content: center; text-align: center; gap: 20px; border-top: 1px solid #3a4656; padding-top: 16px; margin-top: 16px; }
 .academic-footer-bottom a { color: var(--academic-footer-text); text-decoration-line: underline; }
-.academic-social-links { max-width: 540px; gap: 0 20px; }
+.academic-social-links { max-width: 640px; gap: 0 20px; justify-content: flex-end; }
 .academic-authorship-legend { font-size:13px; color:var(--academic-muted); margin:0 0 18px; line-height:1.6; }
 .academic-author-symbol { font-size:.75em; line-height:0; position:relative; top:-.35em; vertical-align:baseline; margin-left:1px; }
 .academic-index-tabs { position: sticky; top: 72px; z-index: 20; display: flex; gap: 24px; border-bottom: 1px solid var(--academic-line); background: var(--academic-background); }
@@ -420,6 +421,8 @@ summary:focus-visible,input:focus-visible,select:focus-visible { outline: 3px so
 .academic-skills-grid article { border-top:1px solid var(--academic-line); padding-top:16px; }
 .academic-skills-grid h3 { font-size:.9375rem; }
 .academic-skills-grid p { margin:8px 0 0; color:var(--academic-muted); font-size:.875rem; line-height:1.7; }
+.academic-skill-lines { list-style:none; margin:8px 0 0; padding:0; color:var(--academic-muted); font-size:.875rem; line-height:1.7; }
+.academic-skill-lines li + li { margin-top:4px; }
 
 /* Teaching and mentoring within Experience. */
 .academic-teaching-section { display:grid; grid-template-columns:minmax(0,1fr); gap:24px; margin-bottom:58px; }
@@ -505,3 +508,21 @@ summary:focus-visible,input:focus-visible,select:focus-visible { outline: 3px so
 @media(max-width:640px) { .academic-contact-grid { grid-template-columns: 1fr; gap: 0; } }
 @media(max-width:760px) { .academic-section-nav { position: static; } }
 .academic-records .academic-record-section { scroll-margin-top: 130px; }
+/* News: homepage block (latest items) and /news/ page share one list style. */
+.academic-news { padding-block: 30px 34px; border-top: 1px solid var(--academic-line); }
+.academic-news-list { list-style: none; margin: 0; padding: 0; }
+.academic-news-item { display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 24px; padding: 13px 0; border-bottom: 1px solid var(--academic-line); }
+.academic-news-item:last-child { border-bottom: 0; }
+.academic-news-date { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding-top: 2px; }
+.academic-news-date time { font-size: 13px; font-weight: 600; color: var(--academic-muted); white-space: nowrap; }
+.academic-news-badge { font-size: 11px; font-weight: 600; line-height: 1.6; color: var(--academic-link); border: 1px solid var(--academic-line); border-radius: 999px; padding: 0 8px; }
+.academic-news-text { font-size: 15px; line-height: 1.65; color: var(--academic-text); }
+.academic-news-text p { margin: 0; }
+.academic-news-text a { color: var(--academic-link); text-decoration-line: underline; }
+.academic-news-page .academic-news-list { margin-top: 8px; max-width: 900px; }
+.academic-news-page .academic-news-item { padding: 16px 0; }
+@media(max-width:640px) {
+  .academic-news { padding-block: 24px 26px; }
+  .academic-news-item { grid-template-columns: 1fr; gap: 4px; padding: 14px 0; }
+  .academic-news-date { flex-direction: row; align-items: center; gap: 10px; }
+}

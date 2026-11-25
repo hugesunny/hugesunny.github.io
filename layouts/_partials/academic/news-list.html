@@ -1,0 +1,12 @@
+{{/* News rows. Input: dict "limit" (0 = all). Items are leaf bundles in content/news/ (not rendered as pages). */}}
+{{ $items := slice }}{{ with site.GetPage "/news" }}{{ $items = sort .Pages "Params.news_date" "desc" }}{{ end }}
+{{ with .limit }}{{ $items = first . $items }}{{ end }}
+<ol class="academic-news-list">
+  {{ range $items }}{{ $d := time .Params.news_date }}{{ $day := eq .Params.date_precision "day" }}
+  <li class="academic-news-item" data-date="{{ $d.Format "2006-01-02" }}">
+    <div class="academic-news-date"><time datetime="{{ if $day }}{{ $d.Format "2006-01-02" }}{{ else }}{{ $d.Format "2006-01" }}{{ end }}">{{ if $day }}{{ $d.Format "Jan 2, 2006" }}{{ else }}{{ $d.Format "Jan 2006" }}{{ end }}</time></div>
+    <div class="academic-news-text">{{ .Params.text | markdownify }}</div>
+  </li>
+  {{ end }}
+</ol>
+{{ $script := resources.Get "js/news.js" | minify | fingerprint }}<script src="{{ $script.RelPermalink }}" defer></script>

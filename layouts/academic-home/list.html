@@ -28,6 +28,16 @@
     </div>
   </section>
 
+  {{ with site.GetPage "/news" }}{{ if .Pages }}
+  <section class="academic-container academic-news" id="news" aria-labelledby="news-heading">
+    <div class="academic-section-heading">
+      <h2 id="news-heading">News</h2>
+      <a class="academic-more" href="{{ "news/" | relURL }}">All news</a>
+    </div>
+    {{ partial "academic/news-list.html" (dict "limit" ($design.home_news_count | default 4)) }}
+  </section>
+  {{ end }}{{ end }}
+
   {{ with site.GetPage $design.featured_publication }}
   {{ $paper := . }}
   {{ $detail := index hugo.Data.publication_details (path.Base $paper.File.Dir) }}

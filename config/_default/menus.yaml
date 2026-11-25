@@ -22,6 +22,10 @@ main:
     url: /presentations/
     weight: 60
 
+  - name: News
+    url: /news/
+    weight: 65
+
   - name: CV
     url: /uploads/resume.pdf
     weight: 70
