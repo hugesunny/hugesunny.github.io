@@ -447,10 +447,10 @@ summary:focus-visible,input:focus-visible,select:focus-visible { outline: 3px so
 
 /* Responsive filters and structured academic records. */
 .academic-filter-panel > summary { display:none; }
-.academic-talk { padding:22px 0; border-bottom:1px solid var(--academic-line); }
-.academic-talk h2 { font-family:inherit; font-size:18px; line-height:1.5; margin:0 0 8px; }
-.academic-talk p { margin:4px 0; }
-.academic-talk-authors,.academic-talk-meta { font-size:14px; color:var(--academic-muted); }
+/* Presentations list reuses the Publications index styles; only the date/format line and related-paper line are specific. */
+.academic-index-item .academic-talk-meta { margin-top: 4px; font-size: 13px; color: var(--academic-muted); }
+.academic-index-item .academic-talk-meta time { color: var(--academic-text); font-weight: 600; }
+.academic-index-item .academic-talk-related { margin-top: 4px; font-size: 13px; color: var(--academic-muted); }
 .academic-related-papers h3 { font-family:inherit; font-size:14px; margin-top:20px; }
 @media(max-width:760px) {
  .academic-filter-panel > summary { display:list-item; font-size:13px; color:var(--academic-link); padding:12px 0; cursor:pointer; }

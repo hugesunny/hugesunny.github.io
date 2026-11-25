@@ -1,0 +1,27 @@
+{{ define "main" }}
+<main id="academic-main" class="academic-container academic-records" tabindex="-1" data-pagefind-body>
+  <header class="academic-page-intro"><h1>{{ .Title }}</h1></header>
+  {{/* Each talk is a leaf bundle in content/presentations/ (not rendered as its own page). Same list, filter and sort pattern as Publications. */}}
+  {{ $talks := sort .Pages "Params.event_date" "desc" }}
+  {{ $formats := dict "oral" "Oral presentation" "poster" "Poster presentation" }}
+  <div id="presentation-index">
+  <div class="academic-index-grid"><aside class="academic-filters" aria-label="Presentation filters">
+  <label for="talk-query">Search presentations</label><input id="talk-query" type="search" placeholder="Title, meeting, place…">
+  <details class="academic-filter-panel" open><summary>Filters <span class="academic-filter-count" aria-live="polite"></span></summary>
+  <fieldset><legend>Format</legend><div class="academic-tag-filters"><label><input type="checkbox" name="talk-format" value="oral">Oral</label><label><input type="checkbox" name="talk-format" value="poster">Poster</label></div></fieldset>
+  <fieldset><legend>Year</legend><div class="academic-years">{{ $years := slice }}{{ range $talks }}{{ $years = $years | append ((time .Params.event_date).Format "2006") }}{{ end }}{{ range sort (uniq $years) "value" "desc" }}<label><input type="checkbox" name="talk-year" value="{{ . }}">{{ . }}</label>{{ end }}</div></fieldset>
+  <button type="button" class="academic-filter-reset">Reset filters</button></details></aside>
+  <div><div class="academic-index-toolbar"><span class="academic-result-count" role="status" aria-live="polite">{{ len $talks }} of {{ len $talks }} presentations</span><label class="academic-sort" for="talk-sort">Sort<select id="talk-sort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></label></div>
+  <div class="academic-index-items">
+  {{ range $talks }}{{ $d := time .Params.event_date }}
+  <article class="academic-index-item" data-format="{{ .Params.format }}" data-year="{{ $d.Format "2006" }}" data-date="{{ $d.Format "2006-01-02" }}">
+    <h2>{{ .Title }}</h2>
+    <div class="academic-index-authors academic-authors">{{ .Params.authors | markdownify }}</div>
+    <div class="academic-index-citation"><em>{{ .Params.event }}</em>, {{ .Params.location }}</div>
+    <div class="academic-talk-meta"><time datetime="{{ if eq .Params.date_precision "day" }}{{ $d.Format "2006-01-02" }}{{ else }}{{ $d.Format "2006-01" }}{{ end }}">{{ $d.Format "January 2006" }}</time> · {{ index $formats .Params.format | default .Params.format }}</div>
+    {{ with .Params.related_publications }}<div class="academic-talk-related">Related paper{{ if gt (len .) 1 }}s{{ end }}: {{ range $i, $s := . }}{{ with site.GetPage (printf "/publications/%s" $s) }}{{ if $i }}; {{ end }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}{{ end }}</div>{{ end }}
+  </article>{{ end }}
+  </div><div class="academic-no-results" hidden><p>No presentations match these filters.</p><button type="button" class="academic-filter-reset">Clear search and filters</button></div></div></div></div>
+  {{ $script := resources.Get "js/presentation-index.js" | minify | fingerprint }}<script src="{{ $script.RelPermalink }}" defer></script>
+</main>
+{{ end }}
