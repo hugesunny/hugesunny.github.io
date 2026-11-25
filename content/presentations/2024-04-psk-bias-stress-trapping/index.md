@@ -6,5 +6,5 @@ location: 'Jeju, Korea'
 event_date: 2024-04-01
 date_precision: month
 format: oral
-related_publications: []
+related_publications: [park-2024-trapping]
 ---

@@ -6,5 +6,5 @@ location: 'North Carolina Biotechnology Center, Durham, NC, USA'
 event_date: 2026-09-29
 date_precision: day
 format: poster
-related_publications: []
+related_publications: [chung-2025-deformability]
 ---

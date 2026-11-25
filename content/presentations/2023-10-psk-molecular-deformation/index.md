@@ -6,5 +6,5 @@ location: 'Jeju, Korea'
 event_date: 2023-10-01
 date_precision: month
 format: oral
-related_publications: []
+related_publications: [kim-2024-multiscale]
 ---
